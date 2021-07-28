@@ -3,20 +3,31 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D569F05926B149F800F39E8E /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = D569F05826B149F800F39E8E /* Charts */; };
+		D569F06026B14C5500F39E8E /* SidebarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D569F05F26B14C5500F39E8E /* SidebarViewModel.swift */; };
+		D569F06226B14C8100F39E8E /* SidebarMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = D569F06126B14C8100F39E8E /* SidebarMenu.swift */; };
+		D569F06826B152DB00F39E8E /* TrendsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D569F06726B152DB00F39E8E /* TrendsView.swift */; };
+		D569F06B26B152F700F39E8E /* CasesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D569F06A26B152F700F39E8E /* CasesView.swift */; };
+		D569F06E26B159ED00F39E8E /* ButtonStyle+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D569F06D26B159ED00F39E8E /* ButtonStyle+Extensions.swift */; };
 		D5C2CFCB26B05D7F0003C89A /* MaliarApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C2CFCA26B05D7F0003C89A /* MaliarApp.swift */; };
-		D5C2CFCD26B05D7F0003C89A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C2CFCC26B05D7F0003C89A /* ContentView.swift */; };
+		D5C2CFCD26B05D7F0003C89A /* SidebarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C2CFCC26B05D7F0003C89A /* SidebarView.swift */; };
 		D5C2CFCF26B05D820003C89A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5C2CFCE26B05D820003C89A /* Assets.xcassets */; };
 		D5C2CFD226B05D820003C89A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5C2CFD126B05D820003C89A /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D569F05F26B14C5500F39E8E /* SidebarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarViewModel.swift; sourceTree = "<group>"; };
+		D569F06126B14C8100F39E8E /* SidebarMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarMenu.swift; sourceTree = "<group>"; };
+		D569F06726B152DB00F39E8E /* TrendsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendsView.swift; sourceTree = "<group>"; };
+		D569F06A26B152F700F39E8E /* CasesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CasesView.swift; sourceTree = "<group>"; };
+		D569F06D26B159ED00F39E8E /* ButtonStyle+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ButtonStyle+Extensions.swift"; sourceTree = "<group>"; };
 		D5C2CFC726B05D7F0003C89A /* Maliar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Maliar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5C2CFCA26B05D7F0003C89A /* MaliarApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaliarApp.swift; sourceTree = "<group>"; };
-		D5C2CFCC26B05D7F0003C89A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		D5C2CFCC26B05D7F0003C89A /* SidebarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarView.swift; sourceTree = "<group>"; };
 		D5C2CFCE26B05D820003C89A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D5C2CFD126B05D820003C89A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D5C2CFD326B05D820003C89A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -28,12 +39,114 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D569F05926B149F800F39E8E /* Charts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D569F05526B146F800F39E8E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D5C2CFD326B05D820003C89A /* Info.plist */,
+				D5C2CFD426B05D820003C89A /* Maliar.entitlements */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D569F05626B1495700F39E8E /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				D569F05A26B14A5E00F39E8E /* SidebarMenu */,
+				D569F06326B14FBB00F39E8E /* Trends */,
+				D569F06426B14FEB00F39E8E /* Cases */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		D569F05A26B14A5E00F39E8E /* SidebarMenu */ = {
+			isa = PBXGroup;
+			children = (
+				D569F05B26B14A8900F39E8E /* Model */,
+				D569F05D26B14A9700F39E8E /* View */,
+				D569F05C26B14A9200F39E8E /* ViewModel */,
+			);
+			path = SidebarMenu;
+			sourceTree = "<group>";
+		};
+		D569F05B26B14A8900F39E8E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D569F06126B14C8100F39E8E /* SidebarMenu.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D569F05C26B14A9200F39E8E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				D569F05F26B14C5500F39E8E /* SidebarViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		D569F05D26B14A9700F39E8E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D5C2CFCC26B05D7F0003C89A /* SidebarView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D569F05E26B14AC200F39E8E /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				D569F06C26B1599000F39E8E /* Extensions */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		D569F06326B14FBB00F39E8E /* Trends */ = {
+			isa = PBXGroup;
+			children = (
+				D569F06526B152CA00F39E8E /* View */,
+			);
+			path = Trends;
+			sourceTree = "<group>";
+		};
+		D569F06426B14FEB00F39E8E /* Cases */ = {
+			isa = PBXGroup;
+			children = (
+				D569F06626B152CF00F39E8E /* View */,
+			);
+			path = Cases;
+			sourceTree = "<group>";
+		};
+		D569F06526B152CA00F39E8E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D569F06726B152DB00F39E8E /* TrendsView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D569F06626B152CF00F39E8E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D569F06A26B152F700F39E8E /* CasesView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D569F06C26B1599000F39E8E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D569F06D26B159ED00F39E8E /* ButtonStyle+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		D5C2CFBE26B05D7F0003C89A = {
 			isa = PBXGroup;
 			children = (
@@ -54,10 +167,10 @@
 			isa = PBXGroup;
 			children = (
 				D5C2CFCA26B05D7F0003C89A /* MaliarApp.swift */,
-				D5C2CFCC26B05D7F0003C89A /* ContentView.swift */,
+				D569F05E26B14AC200F39E8E /* Utilities */,
+				D569F05626B1495700F39E8E /* Features */,
 				D5C2CFCE26B05D820003C89A /* Assets.xcassets */,
-				D5C2CFD326B05D820003C89A /* Info.plist */,
-				D5C2CFD426B05D820003C89A /* Maliar.entitlements */,
+				D569F05526B146F800F39E8E /* Supporting Files */,
 				D5C2CFD026B05D820003C89A /* Preview Content */,
 			);
 			path = Maliar;
@@ -87,6 +200,9 @@
 			dependencies = (
 			);
 			name = Maliar;
+			packageProductDependencies = (
+				D569F05826B149F800F39E8E /* Charts */,
+			);
 			productName = Maliar;
 			productReference = D5C2CFC726B05D7F0003C89A /* Maliar.app */;
 			productType = "com.apple.product-type.application";
@@ -114,6 +230,9 @@
 				Base,
 			);
 			mainGroup = D5C2CFBE26B05D7F0003C89A;
+			packageReferences = (
+				D569F05726B149F800F39E8E /* XCRemoteSwiftPackageReference "Charts" */,
+			);
 			productRefGroup = D5C2CFC826B05D7F0003C89A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -140,8 +259,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D5C2CFCD26B05D7F0003C89A /* ContentView.swift in Sources */,
+				D569F06826B152DB00F39E8E /* TrendsView.swift in Sources */,
+				D569F06026B14C5500F39E8E /* SidebarViewModel.swift in Sources */,
+				D5C2CFCD26B05D7F0003C89A /* SidebarView.swift in Sources */,
 				D5C2CFCB26B05D7F0003C89A /* MaliarApp.swift in Sources */,
+				D569F06E26B159ED00F39E8E /* ButtonStyle+Extensions.swift in Sources */,
+				D569F06B26B152F700F39E8E /* CasesView.swift in Sources */,
+				D569F06226B14C8100F39E8E /* SidebarMenu.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,14 +392,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = Maliar/Maliar.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "Maliar/Supporting Files/Maliar.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Maliar/Preview Content\"";
 				DEVELOPMENT_TEAM = SCZQ3M4JVY;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = Maliar/Info.plist;
+				INFOPLIST_FILE = "Maliar/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -292,14 +416,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = Maliar/Maliar.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "Maliar/Supporting Files/Maliar.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Maliar/Preview Content\"";
 				DEVELOPMENT_TEAM = SCZQ3M4JVY;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = Maliar/Info.plist;
+				INFOPLIST_FILE = "Maliar/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -333,6 +457,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D569F05726B149F800F39E8E /* XCRemoteSwiftPackageReference "Charts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/danielgindi/Charts.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.6.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D569F05826B149F800F39E8E /* Charts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D569F05726B149F800F39E8E /* XCRemoteSwiftPackageReference "Charts" */;
+			productName = Charts;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D5C2CFBF26B05D7F0003C89A /* Project object */;
 }

@@ -11,7 +11,7 @@ import SwiftUI
 struct MaliarApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            SidebarView()
         }
     }
 }
