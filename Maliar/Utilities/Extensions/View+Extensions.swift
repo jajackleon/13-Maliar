@@ -11,11 +11,25 @@ extension View {
     func saveAsImage(width: CGFloat, height: CGFloat, _ completion: @escaping (NSImage) -> Void) {
         let size = CGSize(width: width, height: height)
         
-        let controller = NSHostingController(rootView: self.frame(width: width, height: height))
-        controller.view.bounds = CGRect(origin: .zero, size: size)
-        let image = controller.view.asImage()
-        
-        completion(image)
+        let nsView = NSHostingView(rootView: self)
+        guard let bitmapRep = nsView.bitmapImageRepForCachingDisplay(in: nsView.bounds) else { return }
+        bitmapRep.size = nsView.bounds.size
+        nsView.cacheDisplay(in: nsView.bounds, to: bitmapRep)
+        let data = bitmapRep.representation(using: .png, properties: [:])
+    }
+    
+    func snapshot() -> NSImage {
+        let view = NSHostingView(rootView: self)
+
+        let targetSize = view.intrinsicContentSize
+        view.bounds = CGRect(origin: .zero, size: targetSize)
+
+        return view.asImage()
+//        let renderer = UIGraphicsImageRenderer(size: targetSize)
+//
+//        return renderer.image { _ in
+//            view.drawHierarchy(in: controller.view.bounds, afterScreenUpdates: true)
+//        }
     }
 }
 

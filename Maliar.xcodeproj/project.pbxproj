@@ -17,6 +17,8 @@
 		D57BC8DB26B7A12700F8DB8B /* DownloadShareButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57BC8DA26B7A12700F8DB8B /* DownloadShareButtonView.swift */; };
 		D57BC8DD26B7A54200F8DB8B /* DownloadShareButtonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57BC8DC26B7A54200F8DB8B /* DownloadShareButtonViewModel.swift */; };
 		D57BC8DF26B7AE1000F8DB8B /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57BC8DE26B7AE1000F8DB8B /* View+Extensions.swift */; };
+		D58FD4A026B7DD81001F7B15 /* FileType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58FD49F26B7DD81001F7B15 /* FileType.swift */; };
+		D58FD4A226B8042B001F7B15 /* NSImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58FD4A126B8042B001F7B15 /* NSImage+Extensions.swift */; };
 		D5C2CFCB26B05D7F0003C89A /* MaliarApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C2CFCA26B05D7F0003C89A /* MaliarApp.swift */; };
 		D5C2CFCD26B05D7F0003C89A /* SidebarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C2CFCC26B05D7F0003C89A /* SidebarView.swift */; };
 		D5C2CFCF26B05D820003C89A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5C2CFCE26B05D820003C89A /* Assets.xcassets */; };
@@ -33,6 +35,8 @@
 		D57BC8DA26B7A12700F8DB8B /* DownloadShareButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadShareButtonView.swift; sourceTree = "<group>"; };
 		D57BC8DC26B7A54200F8DB8B /* DownloadShareButtonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadShareButtonViewModel.swift; sourceTree = "<group>"; };
 		D57BC8DE26B7AE1000F8DB8B /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
+		D58FD49F26B7DD81001F7B15 /* FileType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileType.swift; sourceTree = "<group>"; };
+		D58FD4A126B8042B001F7B15 /* NSImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSImage+Extensions.swift"; sourceTree = "<group>"; };
 		D5C2CFC726B05D7F0003C89A /* Maliar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Maliar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5C2CFCA26B05D7F0003C89A /* MaliarApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaliarApp.swift; sourceTree = "<group>"; };
 		D5C2CFCC26B05D7F0003C89A /* SidebarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarView.swift; sourceTree = "<group>"; };
@@ -153,6 +157,7 @@
 			children = (
 				D569F06D26B159ED00F39E8E /* ButtonStyle+Extensions.swift */,
 				D57BC8DE26B7AE1000F8DB8B /* View+Extensions.swift */,
+				D58FD4A126B8042B001F7B15 /* NSImage+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -179,6 +184,7 @@
 			children = (
 				D57BC8DA26B7A12700F8DB8B /* DownloadShareButtonView.swift */,
 				D57BC8DC26B7A54200F8DB8B /* DownloadShareButtonViewModel.swift */,
+				D58FD49F26B7DD81001F7B15 /* FileType.swift */,
 			);
 			path = DownloadShareButton;
 			sourceTree = "<group>";
@@ -298,10 +304,12 @@
 				D57BC8DD26B7A54200F8DB8B /* DownloadShareButtonViewModel.swift in Sources */,
 				D569F06826B152DB00F39E8E /* TrendsView.swift in Sources */,
 				D57BC8DF26B7AE1000F8DB8B /* View+Extensions.swift in Sources */,
+				D58FD4A226B8042B001F7B15 /* NSImage+Extensions.swift in Sources */,
 				D569F06026B14C5500F39E8E /* SidebarViewModel.swift in Sources */,
 				D5C2CFCD26B05D7F0003C89A /* SidebarView.swift in Sources */,
 				D57BC8DB26B7A12700F8DB8B /* DownloadShareButtonView.swift in Sources */,
 				D57BC8D826B79C2800F8DB8B /* DateSelectorView.swift in Sources */,
+				D58FD4A026B7DD81001F7B15 /* FileType.swift in Sources */,
 				D5C2CFCB26B05D7F0003C89A /* MaliarApp.swift in Sources */,
 				D569F06E26B159ED00F39E8E /* ButtonStyle+Extensions.swift in Sources */,
 				D569F06B26B152F700F39E8E /* CasesView.swift in Sources */,

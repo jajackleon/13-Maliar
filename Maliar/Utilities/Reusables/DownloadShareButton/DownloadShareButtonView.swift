@@ -8,14 +8,20 @@
 import SwiftUI
 
 struct DownloadShareButtonView: View {
-    var fileItem: [Any]
-    var viewModel = DownloadShareButtonViewModel()
+    var viewModel: DownloadShareButtonViewModel
+    var fileItem: Any
+    
+    init(fileItem: Any) {
+        self.fileItem = fileItem
+        viewModel = DownloadShareButtonViewModel(fileItem)
+    }
     
     var body: some View {
         HStack {
             // Download Menu
             Button {
                 // Show Finder window
+                viewModel.openSaveDialog(fileContent: fileItem)
             } label: {
                 Image(systemName: "square.and.arrow.down")
             }
@@ -23,12 +29,12 @@ struct DownloadShareButtonView: View {
             Menu {
                 ForEach(
                     NSSharingService
-                        .sharingServices(forItems: fileItem),
+                        .sharingServices(forItems: [""]),
                     id: \.title
                 ) { item in
                     Button {
                         // Action for each button
-                        item.perform(withItems: ["Testerz"]) // can be changed depends on the view
+                        item.perform(withItems: [viewModel.generateFile()]) // can be changed depends on the view
                     } label: {
                         Image(nsImage: item.image)
                         Text(item.title)
@@ -44,6 +50,6 @@ struct DownloadShareButtonView: View {
 
 struct DownloadShareButtonView_Previews: PreviewProvider {
     static var previews: some View {
-        DownloadShareButtonView(fileItem: ["A"])
+        DownloadShareButtonView(fileItem: "A")
     }
 }
