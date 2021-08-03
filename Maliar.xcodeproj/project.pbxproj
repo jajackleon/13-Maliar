@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D50DDFBD26B8EAF100B5D172 /* CasesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50DDFBC26B8EAF100B5D172 /* CasesViewModel.swift */; };
+		D50DDFC026B8ECF400B5D172 /* NewsCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50DDFBF26B8ECF400B5D172 /* NewsCase.swift */; };
+		D50DDFC226B8FA7500B5D172 /* TableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50DDFC126B8FA7500B5D172 /* TableHeaderView.swift */; };
+		D50DDFC526B8FBE900B5D172 /* TableHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50DDFC426B8FBE900B5D172 /* TableHeader.swift */; };
+		D50DDFC726B9009C00B5D172 /* TableCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50DDFC626B9009C00B5D172 /* TableCellView.swift */; };
 		D569F05926B149F800F39E8E /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = D569F05826B149F800F39E8E /* Charts */; };
 		D569F06026B14C5500F39E8E /* SidebarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D569F05F26B14C5500F39E8E /* SidebarViewModel.swift */; };
 		D569F06226B14C8100F39E8E /* SidebarMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = D569F06126B14C8100F39E8E /* SidebarMenu.swift */; };
@@ -26,6 +31,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D50DDFBC26B8EAF100B5D172 /* CasesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CasesViewModel.swift; sourceTree = "<group>"; };
+		D50DDFBF26B8ECF400B5D172 /* NewsCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCase.swift; sourceTree = "<group>"; };
+		D50DDFC126B8FA7500B5D172 /* TableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableHeaderView.swift; sourceTree = "<group>"; };
+		D50DDFC426B8FBE900B5D172 /* TableHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TableHeader.swift; path = Maliar/Features/Cases/Model/TableHeader.swift; sourceTree = SOURCE_ROOT; };
+		D50DDFC626B9009C00B5D172 /* TableCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableCellView.swift; sourceTree = "<group>"; };
 		D569F05F26B14C5500F39E8E /* SidebarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarViewModel.swift; sourceTree = "<group>"; };
 		D569F06126B14C8100F39E8E /* SidebarMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarMenu.swift; sourceTree = "<group>"; };
 		D569F06726B152DB00F39E8E /* TrendsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendsView.swift; sourceTree = "<group>"; };
@@ -58,6 +68,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D50DDFBB26B8EAC400B5D172 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				D50DDFBC26B8EAF100B5D172 /* CasesViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		D50DDFBE26B8ECDC00B5D172 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D50DDFC426B8FBE900B5D172 /* TableHeader.swift */,
+				D50DDFBF26B8ECF400B5D172 /* NewsCase.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		D569F05526B146F800F39E8E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -131,6 +158,8 @@
 		D569F06426B14FEB00F39E8E /* Cases */ = {
 			isa = PBXGroup;
 			children = (
+				D50DDFBE26B8ECDC00B5D172 /* Model */,
+				D50DDFBB26B8EAC400B5D172 /* ViewModel */,
 				D569F06626B152CF00F39E8E /* View */,
 			);
 			path = Cases;
@@ -147,6 +176,8 @@
 		D569F06626B152CF00F39E8E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D50DDFC126B8FA7500B5D172 /* TableHeaderView.swift */,
+				D50DDFC626B9009C00B5D172 /* TableCellView.swift */,
 				D569F06A26B152F700F39E8E /* CasesView.swift */,
 			);
 			path = View;
@@ -307,11 +338,16 @@
 				D58FD4A226B8042B001F7B15 /* NSImage+Extensions.swift in Sources */,
 				D569F06026B14C5500F39E8E /* SidebarViewModel.swift in Sources */,
 				D5C2CFCD26B05D7F0003C89A /* SidebarView.swift in Sources */,
+				D50DDFBD26B8EAF100B5D172 /* CasesViewModel.swift in Sources */,
+				D50DDFC026B8ECF400B5D172 /* NewsCase.swift in Sources */,
 				D57BC8DB26B7A12700F8DB8B /* DownloadShareButtonView.swift in Sources */,
+				D50DDFC526B8FBE900B5D172 /* TableHeader.swift in Sources */,
 				D57BC8D826B79C2800F8DB8B /* DateSelectorView.swift in Sources */,
 				D58FD4A026B7DD81001F7B15 /* FileType.swift in Sources */,
 				D5C2CFCB26B05D7F0003C89A /* MaliarApp.swift in Sources */,
 				D569F06E26B159ED00F39E8E /* ButtonStyle+Extensions.swift in Sources */,
+				D50DDFC226B8FA7500B5D172 /* TableHeaderView.swift in Sources */,
+				D50DDFC726B9009C00B5D172 /* TableCellView.swift in Sources */,
 				D569F06B26B152F700F39E8E /* CasesView.swift in Sources */,
 				D569F06226B14C8100F39E8E /* SidebarMenu.swift in Sources */,
 			);
