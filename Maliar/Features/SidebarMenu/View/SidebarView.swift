@@ -14,10 +14,18 @@ struct SidebarView: View {
         NavigationView {
             List {
                 Button {
-                    
+                    // Action to open notif
                 } label: {
-                    Image(systemName: "clock")
-                    Text("Updates")
+                    HStack {
+                        Image(systemName: "bell")
+                        Text("Notification")
+                        Spacer()
+                        Text("4") // based on how many received notif
+                            .foregroundColor(.white)
+                            .padding(.horizontal, 5)
+                            .background(Color.red)
+                            .cornerRadius(4)
+                    }
                 }
                 .buttonStyle(PlainButtonStyle())
                 ForEach(
