@@ -12,6 +12,7 @@ class CasesViewModel: ObservableObject {
     @Published var filterStartDate = Date()
     @Published var filterEndDate = Date()
     @Published var searchQuery = ""
+    @Published var csvContent = ""
     
     var gridItem: [GridItem] = [
         GridItem(.fixed(40), spacing: 0),

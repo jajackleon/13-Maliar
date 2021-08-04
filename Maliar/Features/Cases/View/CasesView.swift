@@ -7,8 +7,6 @@
 
 import SwiftUI
 
-
-
 struct CasesView: View {
     @ObservedObject var viewModel = CasesViewModel()
     
@@ -36,19 +34,19 @@ struct CasesView: View {
                         LazyVGrid(columns: viewModel.gridItem, alignment: .center, spacing: 0) {
                             // Header in the first place
                             TableHeaderView(TableHeader.number)
-                            TableHeaderView(TableHeader.rowDate) { header in
+                            TableHeaderView(TableHeader.rowDate) /* { header in
                                 viewModel.sortTable(header)
-                            }
+                            } */
                             TableHeaderView(TableHeader.newsTitle)
                             TableHeaderView(TableHeader.animalName)
-                            TableHeaderView(TableHeader.numOfAnimal) { header in
-                                viewModel.sortTable(header)
-                            }
+                            TableHeaderView(TableHeader.numOfAnimal) /* { header in
+                             viewModel.sortTable(header)
+                         } */
                             TableHeaderView(TableHeader.province)
                             TableHeaderView(TableHeader.district)
-                            TableHeaderView(TableHeader.caseTime) { header in
-                                viewModel.sortTable(header)
-                            }
+                            TableHeaderView(TableHeader.caseTime) /* { header in
+                             viewModel.sortTable(header)
+                         } */
                             TableHeaderView(TableHeader.link)
                             
                             // Show the Data
@@ -94,6 +92,9 @@ struct CasesView: View {
         }
         .onAppear {
             viewModel.searchOnTable(keyword: "")
+        }
+        .onChange(of: viewModel.searchQuery) { value in
+            viewModel.csvContent = viewModel.generateCSVContent()
         }
     }
 }

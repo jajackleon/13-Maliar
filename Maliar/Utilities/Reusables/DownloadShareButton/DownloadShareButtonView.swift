@@ -8,13 +8,8 @@
 import SwiftUI
 
 struct DownloadShareButtonView: View {
-    var viewModel: DownloadShareButtonViewModel
+    var viewModel = DownloadShareButtonViewModel()
     var fileItem: Any
-    
-    init(fileItem: Any) {
-        self.fileItem = fileItem
-        viewModel = DownloadShareButtonViewModel(fileItem)
-    }
     
     var body: some View {
         HStack {
@@ -34,7 +29,7 @@ struct DownloadShareButtonView: View {
                 ) { item in
                     Button {
                         // Action for each button
-                        item.perform(withItems: [viewModel.generateFile()]) // can be changed depends on the view
+                        item.perform(withItems: [viewModel.generateFile(fileContent: fileItem)]) // can be changed depends on the view
                     } label: {
                         Image(nsImage: item.image)
                         Text(item.title)
@@ -50,6 +45,6 @@ struct DownloadShareButtonView: View {
 
 struct DownloadShareButtonView_Previews: PreviewProvider {
     static var previews: some View {
-        DownloadShareButtonView(fileItem: "A")
+        DownloadShareButtonView(fileItem: "asdf")
     }
 }
