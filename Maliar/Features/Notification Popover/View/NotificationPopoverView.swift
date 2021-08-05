@@ -8,30 +8,55 @@
 import SwiftUI
 
 struct NotificationPopoverView: View {
-    @State var sliderValue: Int = 0
+    @StateObject var viewModel = NotificationPopoverViewModel()
     
     var body: some View {
         VStack(alignment: .center, spacing: 0) {
             // Where the buttons are
             HStack {
-                Button("Unread") {
-                    
+                Button {
+                    viewModel.showUnread()
+                } label: {
+                    VStack {
+                        Text("Unread")
+                            .padding()
+                            .border(width: 1, edges: [.bottom], color: viewModel.showingOpened ? Color.accentColor : Color.clear)
+                    }
                 }
-                Button("All Notification") {
-                    
+                .buttonStyle(PlainButtonStyle())
+                Button {
+                    viewModel.showAllNotif()
+                } label: {
+                    VStack {
+                        Text("All Notification")
+                            .padding()
+                            .border(width: 1, edges: [.bottom], color: viewModel.showingOpened ? Color.clear : Color.accentColor)
+                    }
                 }
+                .buttonStyle(PlainButtonStyle())
                 Spacer()
-                Button("Clear all") {
-                    
+                if viewModel.showingOpened {
+                    Button {
+                        viewModel.readAll()
+                    } label: {
+                        Text("Read All")
+                            .padding()
+                    }
+                    .buttonStyle(LinkButtonStyle())
+                    .accentColor(.accentColor)
                 }
             }
             Divider()
             // Where to see the notification
-            ScrollView {
-                
+            List(viewModel.sorted, id: \.id) { element in
+                NotificationRow(notification: element)
             }
         }
-        .frame(width: 300, height: 550)
+        .onAppear {
+            // Show unread news
+            viewModel.showUnread()
+        }
+        .frame(width: 350, height: 550)
     }
 }
 

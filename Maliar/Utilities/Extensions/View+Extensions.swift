@@ -31,6 +31,10 @@ extension View {
 //            view.drawHierarchy(in: controller.view.bounds, afterScreenUpdates: true)
 //        }
     }
+    
+    func border(width: CGFloat, edges: [Edge], color: Color) -> some View {
+        overlay(EdgeBorder(width: width, edges: edges).foregroundColor(color))
+    }
 }
 
 extension NSView {

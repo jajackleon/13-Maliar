@@ -12,6 +12,8 @@
 		D50DDFC226B8FA7500B5D172 /* TableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50DDFC126B8FA7500B5D172 /* TableHeaderView.swift */; };
 		D50DDFC526B8FBE900B5D172 /* TableHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50DDFC426B8FBE900B5D172 /* TableHeader.swift */; };
 		D50DDFC726B9009C00B5D172 /* TableCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50DDFC626B9009C00B5D172 /* TableCellView.swift */; };
+		D53DDF8526BB8B8500913A35 /* EdgeBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53DDF8426BB8B8500913A35 /* EdgeBorder.swift */; };
+		D53DDF8726BB8DE200913A35 /* NotificationRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53DDF8626BB8DE200913A35 /* NotificationRow.swift */; };
 		D547CD6B26BAB6DB00E8B91E /* NotificationPopoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D547CD6A26BAB6DB00E8B91E /* NotificationPopoverView.swift */; };
 		D547CD6D26BAB6F000E8B91E /* NotificationPopoverViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D547CD6C26BAB6F000E8B91E /* NotificationPopoverViewModel.swift */; };
 		D547CD6F26BAB71100E8B91E /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = D547CD6E26BAB71100E8B91E /* Notification.swift */; };
@@ -39,6 +41,8 @@
 		D50DDFC126B8FA7500B5D172 /* TableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableHeaderView.swift; sourceTree = "<group>"; };
 		D50DDFC426B8FBE900B5D172 /* TableHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TableHeader.swift; path = Maliar/Features/Cases/Model/TableHeader.swift; sourceTree = SOURCE_ROOT; };
 		D50DDFC626B9009C00B5D172 /* TableCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableCellView.swift; sourceTree = "<group>"; };
+		D53DDF8426BB8B8500913A35 /* EdgeBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdgeBorder.swift; sourceTree = "<group>"; };
+		D53DDF8626BB8DE200913A35 /* NotificationRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationRow.swift; sourceTree = "<group>"; };
 		D547CD6A26BAB6DB00E8B91E /* NotificationPopoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationPopoverView.swift; sourceTree = "<group>"; };
 		D547CD6C26BAB6F000E8B91E /* NotificationPopoverViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationPopoverViewModel.swift; sourceTree = "<group>"; };
 		D547CD6E26BAB71100E8B91E /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
@@ -91,6 +95,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		D53DDF8326BB8B5D00913A35 /* Custom Shape */ = {
+			isa = PBXGroup;
+			children = (
+				D53DDF8426BB8B8500913A35 /* EdgeBorder.swift */,
+			);
+			path = "Custom Shape";
+			sourceTree = "<group>";
+		};
 		D547CD6626BAB56300E8B91E /* Notification Popover */ = {
 			isa = PBXGroup;
 			children = (
@@ -121,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				D547CD6A26BAB6DB00E8B91E /* NotificationPopoverView.swift */,
+				D53DDF8626BB8DE200913A35 /* NotificationRow.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -182,6 +195,7 @@
 		D569F05E26B14AC200F39E8E /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				D53DDF8326BB8B5D00913A35 /* Custom Shape */,
 				D57BC8D526B798DF00F8DB8B /* Reusables */,
 				D569F06C26B1599000F39E8E /* Extensions */,
 			);
@@ -375,9 +389,11 @@
 			files = (
 				D57BC8DD26B7A54200F8DB8B /* DownloadShareButtonViewModel.swift in Sources */,
 				D569F06826B152DB00F39E8E /* TrendsView.swift in Sources */,
+				D53DDF8526BB8B8500913A35 /* EdgeBorder.swift in Sources */,
 				D57BC8DF26B7AE1000F8DB8B /* View+Extensions.swift in Sources */,
 				D58FD4A226B8042B001F7B15 /* NSImage+Extensions.swift in Sources */,
 				D569F06026B14C5500F39E8E /* SidebarViewModel.swift in Sources */,
+				D53DDF8726BB8DE200913A35 /* NotificationRow.swift in Sources */,
 				D5C2CFCD26B05D7F0003C89A /* SidebarView.swift in Sources */,
 				D50DDFBD26B8EAF100B5D172 /* CasesViewModel.swift in Sources */,
 				D50DDFC026B8ECF400B5D172 /* NewsCase.swift in Sources */,

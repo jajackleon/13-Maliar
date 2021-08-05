@@ -82,7 +82,7 @@ struct CasesView: View {
                 Image(systemName: "square.and.pencil")
             }
             .help("Edit Data")
-            DownloadShareButtonView(fileItem: viewModel.generateCSVContent())
+            DownloadShareButtonView(textItem: $viewModel.csvContent)
             TextField("Search", text: $viewModel.searchQuery)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .frame(minWidth: 200)
@@ -92,9 +92,6 @@ struct CasesView: View {
         }
         .onAppear {
             viewModel.searchOnTable(keyword: "")
-        }
-        .onChange(of: viewModel.searchQuery) { value in
-            viewModel.csvContent = viewModel.generateCSVContent()
         }
     }
 }

@@ -83,12 +83,12 @@ class CasesViewModel: ObservableObject {
     @Published var filtered = [NewsCase]()
     
     // MARK: - Generate CSV String
-    func generateCSVContent() -> String {
+    func generateCSVContent() {
         var csvHead = "No,Date,News Title,Animal Name,Number of Animal,Province,District,Case Time,News Link\n"
         for (index, data) in fullData.enumerated() {
             csvHead.append("\(index+1),\(data.date),\(data.newsTitle),\(data.animalName),\(data.numberOfAnimal),\(data.province),\(data.district),\(data.caseTime),\(data.link.absoluteString)\n")
         }
-        return csvHead
+        self.csvContent = csvHead
     }
     
     // MARK: - Sort the table based on ...
@@ -128,5 +128,6 @@ class CasesViewModel: ObservableObject {
                 return newsCase.newsTitle.contains(keyword) || newsCase.animalName.contains(keyword) || newsCase.district.contains(keyword) || newsCase.province.contains(keyword)
             }
         }
+        generateCSVContent()
     }
 }
