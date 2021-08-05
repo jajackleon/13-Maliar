@@ -19,37 +19,53 @@ struct NotificationPopoverView: View {
                 } label: {
                     VStack {
                         Text("Unread")
+                            .foregroundColor(.primary)
                             .padding()
                             .border(width: 1, edges: [.bottom], color: viewModel.showingOpened ? Color.accentColor : Color.clear)
                     }
                 }
-                .buttonStyle(PlainButtonStyle())
+                .buttonStyle(LinkButtonStyle())
                 Button {
                     viewModel.showAllNotif()
                 } label: {
                     VStack {
                         Text("All Notification")
+                            .foregroundColor(.primary)
                             .padding()
                             .border(width: 1, edges: [.bottom], color: viewModel.showingOpened ? Color.clear : Color.accentColor)
                     }
                 }
-                .buttonStyle(PlainButtonStyle())
+                .buttonStyle(LinkButtonStyle())
                 Spacer()
                 if viewModel.showingOpened {
                     Button {
                         viewModel.readAll()
                     } label: {
                         Text("Read All")
+                            .foregroundColor(.accentColor)
                             .padding()
                     }
                     .buttonStyle(LinkButtonStyle())
-                    .accentColor(.accentColor)
                 }
             }
             Divider()
             // Where to see the notification
-            List(viewModel.sorted, id: \.id) { element in
-                NotificationRow(notification: element)
+            if viewModel.sorted.count == 0 {
+                Spacer()
+                Image("notif_placeholder")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 150)
+                Text("All caught up!")
+                    .font(.title2)
+                    .fontWeight(.bold)
+                    .foregroundColor(.accentColor)
+                    .padding()
+                Spacer()
+            } else {
+                List(viewModel.sorted, id: \.id) { element in
+                    NotificationRow(notification: element)
+                }
             }
         }
         .onAppear {

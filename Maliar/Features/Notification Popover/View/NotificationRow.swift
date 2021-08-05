@@ -17,6 +17,7 @@ struct NotificationRow: View {
                 ZStack {
                     Color.accentColor
                     
+                    // if image available, change
                     Image(systemName: "photo")
                         .resizable()
                         .scaledToFit()

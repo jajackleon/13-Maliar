@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CasesView: View {
-    @ObservedObject var viewModel = CasesViewModel()
+    @StateObject var viewModel = CasesViewModel()
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -16,6 +16,7 @@ struct CasesView: View {
                 Text("Cases")
                     .font(.largeTitle)
                     .fontWeight(.bold)
+                    .foregroundColor(.accentColor)
                 Spacer()
                 DateSelectorView(startDate: $viewModel.filterStartDate, endDate: $viewModel.filterEndDate)
             }
@@ -59,7 +60,7 @@ struct CasesView: View {
                                 TableCellView(text: "\(data.province)")
                                 TableCellView(text: "\(data.district)")
                                 TableCellView(text: "\(data.getFormattedDate(date: data.caseTime))")
-                                TableCellView(text: "\(data.link.absoluteString)")
+                                TableCellView(url: data.link)
                             }
                         }
                     }
