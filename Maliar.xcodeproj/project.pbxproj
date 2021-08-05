@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5D34AEFA26BB86670037FD77 /* AnimalTrends.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D34AEF926BB86670037FD77 /* AnimalTrends.swift */; };
+		5D34AEFC26BB8AC50037FD77 /* LocationTrends.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D34AEFB26BB8AC50037FD77 /* LocationTrends.swift */; };
+		5D34AF0026BB97450037FD77 /* LocationBarChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D34AEFF26BB97450037FD77 /* LocationBarChartView.swift */; };
+		5D34AF0226BB99CD0037FD77 /* LocationChartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D34AF0126BB99CD0037FD77 /* LocationChartViewModel.swift */; };
+		5D34AF0626BBA8F00037FD77 /* AnimalBarChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D34AF0526BBA8F00037FD77 /* AnimalBarChartView.swift */; };
+		5D34AF0826BBA9460037FD77 /* AnimalChartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D34AF0726BBA9460037FD77 /* AnimalChartViewModel.swift */; };
 		D569F05926B149F800F39E8E /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = D569F05826B149F800F39E8E /* Charts */; };
 		D569F06026B14C5500F39E8E /* SidebarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D569F05F26B14C5500F39E8E /* SidebarViewModel.swift */; };
 		D569F06226B14C8100F39E8E /* SidebarMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = D569F06126B14C8100F39E8E /* SidebarMenu.swift */; };
@@ -26,6 +32,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5D34AEF926BB86670037FD77 /* AnimalTrends.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalTrends.swift; sourceTree = "<group>"; };
+		5D34AEFB26BB8AC50037FD77 /* LocationTrends.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTrends.swift; sourceTree = "<group>"; };
+		5D34AEFF26BB97450037FD77 /* LocationBarChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationBarChartView.swift; sourceTree = "<group>"; };
+		5D34AF0126BB99CD0037FD77 /* LocationChartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationChartViewModel.swift; sourceTree = "<group>"; };
+		5D34AF0526BBA8F00037FD77 /* AnimalBarChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalBarChartView.swift; sourceTree = "<group>"; };
+		5D34AF0726BBA9460037FD77 /* AnimalChartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalChartViewModel.swift; sourceTree = "<group>"; };
 		D569F05F26B14C5500F39E8E /* SidebarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarViewModel.swift; sourceTree = "<group>"; };
 		D569F06126B14C8100F39E8E /* SidebarMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarMenu.swift; sourceTree = "<group>"; };
 		D569F06726B152DB00F39E8E /* TrendsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendsView.swift; sourceTree = "<group>"; };
@@ -58,6 +70,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5DF49D8026BA69290091CF5E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5D34AEFB26BB8AC50037FD77 /* LocationTrends.swift */,
+				5D34AEF926BB86670037FD77 /* AnimalTrends.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5DF49D8126BA69360091CF5E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				5D34AF0126BB99CD0037FD77 /* LocationChartViewModel.swift */,
+				5D34AF0726BBA9460037FD77 /* AnimalChartViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		D569F05526B146F800F39E8E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -123,7 +153,9 @@
 		D569F06326B14FBB00F39E8E /* Trends */ = {
 			isa = PBXGroup;
 			children = (
+				5DF49D8026BA69290091CF5E /* Model */,
 				D569F06526B152CA00F39E8E /* View */,
+				5DF49D8126BA69360091CF5E /* ViewModel */,
 			);
 			path = Trends;
 			sourceTree = "<group>";
@@ -140,6 +172,8 @@
 			isa = PBXGroup;
 			children = (
 				D569F06726B152DB00F39E8E /* TrendsView.swift */,
+				5D34AEFF26BB97450037FD77 /* LocationBarChartView.swift */,
+				5D34AF0526BBA8F00037FD77 /* AnimalBarChartView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -303,13 +337,19 @@
 			files = (
 				D57BC8DD26B7A54200F8DB8B /* DownloadShareButtonViewModel.swift in Sources */,
 				D569F06826B152DB00F39E8E /* TrendsView.swift in Sources */,
+				5D34AF0826BBA9460037FD77 /* AnimalChartViewModel.swift in Sources */,
 				D57BC8DF26B7AE1000F8DB8B /* View+Extensions.swift in Sources */,
 				D58FD4A226B8042B001F7B15 /* NSImage+Extensions.swift in Sources */,
+				5D34AF0026BB97450037FD77 /* LocationBarChartView.swift in Sources */,
+				5D34AF0226BB99CD0037FD77 /* LocationChartViewModel.swift in Sources */,
 				D569F06026B14C5500F39E8E /* SidebarViewModel.swift in Sources */,
+				5D34AF0626BBA8F00037FD77 /* AnimalBarChartView.swift in Sources */,
 				D5C2CFCD26B05D7F0003C89A /* SidebarView.swift in Sources */,
 				D57BC8DB26B7A12700F8DB8B /* DownloadShareButtonView.swift in Sources */,
+				5D34AEFC26BB8AC50037FD77 /* LocationTrends.swift in Sources */,
 				D57BC8D826B79C2800F8DB8B /* DateSelectorView.swift in Sources */,
 				D58FD4A026B7DD81001F7B15 /* FileType.swift in Sources */,
+				5D34AEFA26BB86670037FD77 /* AnimalTrends.swift in Sources */,
 				D5C2CFCB26B05D7F0003C89A /* MaliarApp.swift in Sources */,
 				D569F06E26B159ED00F39E8E /* ButtonStyle+Extensions.swift in Sources */,
 				D569F06B26B152F700F39E8E /* CasesView.swift in Sources */,
@@ -444,7 +484,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Maliar/Preview Content\"";
-				DEVELOPMENT_TEAM = SCZQ3M4JVY;
+				DEVELOPMENT_TEAM = TW4WHS432Q;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Maliar/Supporting Files/Info.plist";
@@ -468,7 +508,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Maliar/Preview Content\"";
-				DEVELOPMENT_TEAM = SCZQ3M4JVY;
+				DEVELOPMENT_TEAM = TW4WHS432Q;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Maliar/Supporting Files/Info.plist";
