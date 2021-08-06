@@ -95,6 +95,10 @@
 			children = (
 				5D34AEFB26BB8AC50037FD77 /* LocationTrends.swift */,
 				5D34AEF926BB86670037FD77 /* AnimalTrends.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		D50DDFBB26B8EAC400B5D172 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -117,6 +121,10 @@
 			children = (
 				5D34AF0126BB99CD0037FD77 /* LocationChartViewModel.swift */,
 				5D34AF0726BBA9460037FD77 /* AnimalChartViewModel.swift */,
+			);
+			path = "ViewModel";
+			sourceTree = "<group>";
+		};
 		D53DDF8326BB8B5D00913A35 /* Custom Shape */ = {
 			isa = PBXGroup;
 			children = (
