@@ -14,13 +14,13 @@ struct SidebarView: View {
         NavigationView {
             List {
                 Button {
-                    // Action to open notif
+                    viewModel.showPopover()
                 } label: {
                     HStack {
                         Image(systemName: "bell")
                         Text("Notification")
                         Spacer()
-                        Text("4") // based on how many received notif
+                        Text("0") // based on how many received notif
                             .foregroundColor(.white)
                             .padding(.horizontal, 5)
                             .background(Color.red)
@@ -28,6 +28,9 @@ struct SidebarView: View {
                     }
                 }
                 .buttonStyle(PlainButtonStyle())
+                .popover(isPresented: $viewModel.notificationPopoverShown, arrowEdge: .leading) {
+                    NotificationPopoverView()
+                }
                 ForEach(
                     viewModel.menuItems,
                     id: \.hashValue

@@ -13,19 +13,15 @@ struct DateSelectorView: View {
     
     var body: some View {
         HStack {
-            Image(systemName: "calendar")
-                .foregroundColor(.accentColor)
-            DatePicker("", selection: $startDate, in: ...Date(), displayedComponents: .date)
-                .datePickerStyle(StepperFieldDatePickerStyle())
-            VStack {
-                Divider()
-                    .background(Color.accentColor)
+            DatePicker(selection: $startDate, in: ...Date(), displayedComponents: .date) {
+                Image(systemName: "calendar")
             }
-            .frame(width: 10)
-            DatePicker("", selection: $endDate, in: startDate...Date(), displayedComponents: .date)
+            .datePickerStyle(StepperFieldDatePickerStyle())
+            DatePicker("——", selection: $endDate, in: startDate...Date(), displayedComponents: .date)
                 .datePickerStyle(StepperFieldDatePickerStyle())
         }
-        .frame(width: 270)
+        .frame(width: 290)
+        .foregroundColor(.accentColor)
     }
 }
 
