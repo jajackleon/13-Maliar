@@ -17,7 +17,7 @@ struct TrendsView: View {
     @Environment(\.colorScheme)
     
     var colorScheme
-    @StateObject var viewModel = LocationChartViewModel()
+    var viewModel = LocationChartViewModel()
     
     var body: some View {
         VStack {
