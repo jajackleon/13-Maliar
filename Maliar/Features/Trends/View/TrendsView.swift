@@ -8,15 +8,26 @@
 import SwiftUI
 
 struct TrendsView: View {
+    
+    @State private var animalSelected: Double = Double.nan
+    @State private var isAnimalSelected: Bool = false
+    @State private var startDate: Date = Date()
+    @State private var endDate: Date = Date()
+    
+    @Environment(\.colorScheme)
+    
+    var colorScheme
+    @StateObject var viewModel = LocationChartViewModel()
+    
     var body: some View {
         VStack {
             HStack {
                 Text("Trends")
                     .font(.largeTitle)
-                    .bold()
-                    .foregroundColor(.orange)
+                    .fontWeight(.semibold)
+                    .foregroundColor(.accentColor)
                 Spacer()
-                Text("Calendar")
+                DateSelectorView(startDate: $startDate, endDate: $endDate)
             }
             
             Spacer()
@@ -25,36 +36,54 @@ struct TrendsView: View {
                 GroupBox() {
                     HStack {
                         Spacer()
-                        VStack {
+                        VStack (alignment: .leading) {
                             Text("Animal Overview")
+                                .font(.title)
+                                .fontWeight(.semibold)
+                                .foregroundColor(.accentColor)
                             Text("Based on the total number of news")
-                            AnimalBarChartView()
+                                .font(.body)
+                                .foregroundColor(.secondary)
+                            Spacer()
+                            AnimalBarChartView( animalSelected: $animalSelected, isAnimalSelected: $isAnimalSelected)
                         }
                         Spacer()
                     }
                 }
-//                .frame(maxHeight: 800)
                 .aspectRatio(CGSize(width: 1.2, height: 1), contentMode: .fit)
+                .background(colorScheme == .light ? Color.white : Color(red: 0.2, green: 0.2, blue: 0.2))
+                .cornerRadius(10)
+                
                 
                 GroupBox() {
                     HStack {
                         Spacer()
-                        VStack {
+                        VStack (alignment: .leading) {
                             Text("Location Overview")
+                                .font(.title)
+                                .fontWeight(.semibold)
+                                .foregroundColor(.accentColor)
                             Text("Based on the total number of news")
-                            LocationBarChartView()
+                                .font(.body)
+                                .foregroundColor(.secondary)
+                            Spacer()
+                            LocationBarChartView(animalSelected: $animalSelected, isAnimalSelected: $isAnimalSelected, viewModel: LocationChartViewModel(), entries: viewModel.setLocationTrend(isAnimalSelected: isAnimalSelected, animalSelected: animalSelected))
                         }
                         Spacer()
                     }
                     
                 }
-//                .frame(maxHeight: 800)
                 .aspectRatio(CGSize(width: 0.8, height: 1), contentMode: .fit)
+                .background(colorScheme == .light ? Color.white : Color(red: 0.2, green: 0.2, blue: 0.2))
+                .cornerRadius(10)
             }
             
         }
         .padding(.horizontal, 24.0)
         .padding(.vertical, 27.0)
+        .toolbar {
+            DownloadShareButtonView(textItem: .constant("Trends"))
+        }
     }
 }
 

@@ -17,7 +17,7 @@ struct LocationTrends {
         return locationTrends.map{BarChartDataEntry(x: $0.locationCode, y: $0.quantity )}
     }
     
-    static var locations = ["Medan", "Sumatera", "Aceh", "Jawa","Papua", "lalala", "hasafaf", "afafagag", "afagag", "agagdds"]
+    static var locations = ["Medan", "Sumatera", "Aceh", "Jawa","Papua", "Maluku", "Afrika", "Indonesia", "Australia", "Amerika"]
     
     static var allLocations: [LocationTrends] {
         [

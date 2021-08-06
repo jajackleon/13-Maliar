@@ -236,8 +236,8 @@
 			isa = PBXGroup;
 			children = (
 				5DF49D8026BA69290091CF5E /* Model */,
-				D569F06526B152CA00F39E8E /* View */,
 				5DF49D8126BA69360091CF5E /* ViewModel */,
+				D569F06526B152CA00F39E8E /* View */,
 			);
 			path = Trends;
 			sourceTree = "<group>";

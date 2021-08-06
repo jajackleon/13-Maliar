@@ -9,14 +9,19 @@ import SwiftUI
 import Charts
 
 struct LocationBarChartView: NSViewRepresentable {
+   
+    @Binding var animalSelected: Double
+    @Binding var isAnimalSelected: Bool
     @StateObject var viewModel = LocationChartViewModel()
+    
+    let entries: [BarChartDataEntry]
     
     func makeNSView(context: Context) -> HorizontalBarChartView {
         return HorizontalBarChartView()
     }
     
     func updateNSView(_ nsView: HorizontalBarChartView, context: Context) {
-        let dataSet = BarChartDataSet(entries: viewModel.locationList)
+        let dataSet = BarChartDataSet(entries: entries)
         dataSet.label = "Location"
         nsView.noDataText = "No Data"
         nsView.data = BarChartData(dataSet: dataSet)
@@ -26,6 +31,7 @@ struct LocationBarChartView: NSViewRepresentable {
         nsView.scaleYEnabled = false
         nsView.legend.enabled = false
         nsView.highlightPerTapEnabled = false
+        nsView.highlightPerDragEnabled = false
         
         //Chart Formatting
         nsView.barData?.barWidth = 0.5
@@ -40,15 +46,15 @@ struct LocationBarChartView: NSViewRepresentable {
     }
     
     func formatDataSet(dataSet: BarChartDataSet) {
-        dataSet.colors = [.orange]
-        dataSet.valueColors = [.black]
+        dataSet.colors = [NSColor(.accentColor)]
+        dataSet.valueColors = [NSColor(.primary)]
         let formatter = NumberFormatter()
         formatter.numberStyle = .none
         dataSet.valueFormatter = DefaultValueFormatter(formatter: formatter)
     }
     
     func formatRightAxis(rightAxis: YAxis) {
-        rightAxis.labelTextColor = .black
+        rightAxis.labelTextColor = NSColor(.primary)
         let formatter = NumberFormatter()
         formatter.numberStyle = .none
         rightAxis.valueFormatter = DefaultAxisValueFormatter(formatter: formatter)
@@ -64,11 +70,11 @@ struct LocationBarChartView: NSViewRepresentable {
     func formatXAxis (xAxis: XAxis) {
         xAxis.valueFormatter = IndexAxisValueFormatter(values: LocationTrends.locations)
         xAxis.labelPosition = .bottom
-        xAxis.labelTextColor = .black
+        xAxis.labelTextColor = NSColor(.primary)
         xAxis.drawGridLinesEnabled = false
         xAxis.granularity = 1
-        xAxis.labelCount = 12
-        xAxis.wordWrapEnabled = true
+        xAxis.labelCount = 10
+
     }
     
     
