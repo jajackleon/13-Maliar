@@ -64,7 +64,9 @@ struct NotificationPopoverView: View {
                 Spacer()
             } else {
                 List(viewModel.sorted, id: \.id) { element in
-                    NotificationRow(notification: element)
+                    NotificationRow(notification: element) {
+                        viewModel.readNotif($0)
+                    }
                 }
             }
         }

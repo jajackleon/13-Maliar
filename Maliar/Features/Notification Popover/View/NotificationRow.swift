@@ -8,35 +8,46 @@
 import SwiftUI
 
 struct NotificationRow: View {
-    var notification: Notification
+    @State var notification: Notification
     @State var hovering: Bool = false
+    var onReadButtonClicked: (Notification) -> Void
     
     var body: some View {
         GroupBox {
             HStack {
+                // if image available, change
                 ZStack {
                     Color.accentColor
-                    
-                    // if image available, change
-                    Image(systemName: "photo")
-                        .resizable()
-                        .scaledToFit()
-                        .padding(.all, 10)
+                    if let imageOfNews = notification.img {
+                        Image(nsImage: imageOfNews)
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 50, height: 50)
+                            .clipShape(Circle())
+                    } else {
+                        Image(systemName: "photo")
+                            .resizable()
+                            .scaledToFit()
+                            .padding(.all, 10)
+                    }
                 }
                 .frame(width: 50, height: 50)
                 .clipShape(Circle())
                 VStack(alignment: .leading) {
-                    Text("Kukang is currently trending")
+                    Text(notification.notifTitle)
                         .foregroundColor(.primary)
-                    Text("Now")
+                    Text("\(notification.getRelativeDate())")
                         .foregroundColor(.secondary)
                 }
                 Spacer()
-                if hovering {
+                if hovering && !notification.opened {
                     Button {
                         // Action to delete
+                        notification.readNotif()
+                        self.onReadButtonClicked(notification)
                     } label: {
-                        Image(systemName: "xmark.circle.fill")
+                        // xmark.circle.fill
+                        Image(systemName: "r.circle.fill")
                             .foregroundColor(.accentColor)
                     }
                     .buttonStyle(PlainButtonStyle())
@@ -54,6 +65,11 @@ struct NotificationRow: View {
 
 struct NotificationRow_Previews: PreviewProvider {
     static var previews: some View {
-        NotificationRow(notification: Notification(opened: false))
+        NotificationRow(notification: Notification(firebaseID: "asdfv", title: "SSS", dateReceived: Date(timeIntervalSinceNow: -1000000), opened: false)) {
+            print("\($0) Should clear")
+        }
+        NotificationRow(notification: Notification(firebaseID: "asdfv", title: "SSS", image: NSImage(named: "notif_placeholder"),  dateReceived: Date(timeIntervalSinceNow: -1000000), opened: false)) {
+            print("\($0) Should clear")
+        }
     }
 }

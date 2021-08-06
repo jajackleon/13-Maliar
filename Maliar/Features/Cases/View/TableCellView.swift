@@ -37,7 +37,7 @@ struct TableCellView: View {
                         .padding(5)
                         .foregroundColor(.accentColor)
                 }
-                .buttonStyle(LinkButtonStyle())
+                .buttonStyle(PlainButtonStyle())
             }
         }
     }

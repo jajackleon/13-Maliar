@@ -9,6 +9,7 @@ import SwiftUI
 
 struct CasesView: View {
     @StateObject var viewModel = CasesViewModel()
+    @Environment(\.colorScheme) var colorScheme
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -66,6 +67,9 @@ struct CasesView: View {
                     }
                 }
             }
+            .background(colorScheme == .light ? Color.white : Color(red: 0.2, green: 0.2, blue: 0.2))
+            .clipShape(RoundedRectangle(cornerRadius: 10))
+            .cornerRadius(10)
         }
         .navigationTitle("Cases")
         .padding()
