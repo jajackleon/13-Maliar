@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		496079C826BEC2B900A4E81A /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 496079C726BEC2B900A4E81A /* FirebaseAnalytics */; };
+		496079CA26BEC2B900A4E81A /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 496079C926BEC2B900A4E81A /* FirebaseDatabase */; };
+		496079CC26BEC2B900A4E81A /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 496079CB26BEC2B900A4E81A /* FirebaseCrashlytics */; };
 		D50DDFBD26B8EAF100B5D172 /* CasesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50DDFBC26B8EAF100B5D172 /* CasesViewModel.swift */; };
 		D50DDFC026B8ECF400B5D172 /* NewsCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50DDFBF26B8ECF400B5D172 /* NewsCase.swift */; };
 		D50DDFC226B8FA7500B5D172 /* TableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50DDFC126B8FA7500B5D172 /* TableHeaderView.swift */; };
@@ -71,6 +74,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				496079CA26BEC2B900A4E81A /* FirebaseDatabase in Frameworks */,
+				496079CC26BEC2B900A4E81A /* FirebaseCrashlytics in Frameworks */,
+				496079C826BEC2B900A4E81A /* FirebaseAnalytics in Frameworks */,
 				D569F05926B149F800F39E8E /* Charts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -322,6 +328,7 @@
 				D5C2CFC326B05D7F0003C89A /* Sources */,
 				D5C2CFC426B05D7F0003C89A /* Frameworks */,
 				D5C2CFC526B05D7F0003C89A /* Resources */,
+				496079CE26BEC82400A4E81A /* Crashlytics Run Script */,
 			);
 			buildRules = (
 			);
@@ -330,6 +337,9 @@
 			name = Maliar;
 			packageProductDependencies = (
 				D569F05826B149F800F39E8E /* Charts */,
+				496079C726BEC2B900A4E81A /* FirebaseAnalytics */,
+				496079C926BEC2B900A4E81A /* FirebaseDatabase */,
+				496079CB26BEC2B900A4E81A /* FirebaseCrashlytics */,
 			);
 			productName = Maliar;
 			productReference = D5C2CFC726B05D7F0003C89A /* Maliar.app */;
@@ -360,6 +370,7 @@
 			mainGroup = D5C2CFBE26B05D7F0003C89A;
 			packageReferences = (
 				D569F05726B149F800F39E8E /* XCRemoteSwiftPackageReference "Charts" */,
+				496079C626BEC2B900A4E81A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = D5C2CFC826B05D7F0003C89A /* Products */;
 			projectDirPath = "";
@@ -381,6 +392,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		496079CE26BEC82400A4E81A /* Crashlytics Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
+			);
+			name = "Crashlytics Run Script";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n${BUILD_DIR%Build/*}/SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/run\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D5C2CFC326B05D7F0003C89A /* Sources */ = {
@@ -603,6 +636,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		496079C626BEC2B900A4E81A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.5.0;
+			};
+		};
 		D569F05726B149F800F39E8E /* XCRemoteSwiftPackageReference "Charts" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/danielgindi/Charts.git";
@@ -614,6 +655,21 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		496079C726BEC2B900A4E81A /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 496079C626BEC2B900A4E81A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		496079C926BEC2B900A4E81A /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 496079C626BEC2B900A4E81A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		496079CB26BEC2B900A4E81A /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 496079C626BEC2B900A4E81A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
+		};
 		D569F05826B149F800F39E8E /* Charts */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = D569F05726B149F800F39E8E /* XCRemoteSwiftPackageReference "Charts" */;
