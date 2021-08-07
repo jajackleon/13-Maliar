@@ -12,15 +12,16 @@ import Foundation
 */
 
 struct NewsCase: Identifiable {
-    var id = UUID()
-    var date: Date
-    var newsTitle: String
+    var id: String = UUID().uuidString
+    var date: Date = Date()
     var animalName: String
-    var numberOfAnimal: Int
-    var province: String
     var district: String
-    var caseTime: Date
-    var link: URL
+    var link: String
+    var newsTitle: String
+    var numberOfAnimal: String
+    var province: String
+    var newsTime: String
+    var caseTime: String
     
     func getFormattedDate(date: Date) -> String {
         let df = DateFormatter()
