@@ -99,6 +99,15 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		5DF49D8126BA69360091CF5E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				5D34AF0126BB99CD0037FD77 /* LocationChartViewModel.swift */,
+				5D34AF0726BBA9460037FD77 /* AnimalChartViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		D50DDFBB26B8EAC400B5D172 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -114,15 +123,6 @@
 				D50DDFBF26B8ECF400B5D172 /* NewsCase.swift */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		5DF49D8126BA69360091CF5E /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				5D34AF0126BB99CD0037FD77 /* LocationChartViewModel.swift */,
-				5D34AF0726BBA9460037FD77 /* AnimalChartViewModel.swift */,
-			);
-			path = "ViewModel";
 			sourceTree = "<group>";
 		};
 		D53DDF8326BB8B5D00913A35 /* Custom Shape */ = {
@@ -580,7 +580,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Maliar/Preview Content\"";
-				DEVELOPMENT_TEAM = TW4WHS432Q;
+				DEVELOPMENT_TEAM = SCZQ3M4JVY;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Maliar/Supporting Files/Info.plist";
@@ -604,7 +604,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Maliar/Preview Content\"";
-				DEVELOPMENT_TEAM = TW4WHS432Q;
+				DEVELOPMENT_TEAM = SCZQ3M4JVY;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Maliar/Supporting Files/Info.plist";
