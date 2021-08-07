@@ -14,6 +14,12 @@ class CasesViewModel: ObservableObject {
     @Published var searchQuery = ""
     @Published var csvContent = ""
     
+    private var db = Firestore.firestore()
+    
+    private var tableData: CollectionReference{
+        db.collection("tableDatas")
+    }
+    
     var gridItem: [GridItem] = [
         GridItem(.fixed(40), spacing: 0),
         GridItem( spacing: 0),
@@ -28,56 +34,11 @@ class CasesViewModel: ObservableObject {
     
     // Full data ini nanti bisa ngambil dari 
     var fullData: [NewsCase] = [
-        NewsCase(
-            date: Date(),
-            newsTitle: "Penindasan",
-            animalName: "Burung Rangkong",
-            numberOfAnimal: 4,
-            province: "DKI",
-            district: "Jakbar",
-            caseTime: Date(),
-            link: URL(string: "https://www.google.com/")!
-        ),
-        NewsCase(
-            date: Date(),
-            newsTitle: "Penjualan",
-            animalName: "Harimau sumatra",
-            numberOfAnimal: 2,
-            province: "DKI",
-            district: "Jakbar",
-            caseTime: Date(),
-            link: URL(string: "https://www.yahoo.com/")!
-        ),
-        NewsCase(
-            date: Date(),
-            newsTitle: "Bukti ekspor dibatalkan",
-            animalName: "Gajah Afrika",
-            numberOfAnimal: 10,
-            province: "DKI",
-            district: "Jakbar",
-            caseTime: Date(),
-            link: URL(string: "https://www.amazon.com/")!
-        ),
-        NewsCase(
-            date: Date(),
-            newsTitle: "Penjualan",
-            animalName: "Harimau sumatra",
-            numberOfAnimal: 2,
-            province: "DKI",
-            district: "Jakbar",
-            caseTime: Date(),
-            link: URL(string: "https://www.nestle.com/")!
-        ),
-        NewsCase(
-            date: Date(),
-            newsTitle: "50 ekor harimau ditemukan tewas setelah mengonsumsi apel beracun",
-            animalName: "Harimau",
-            numberOfAnimal: 10,
-            province: "DKI",
-            district: "Jakbar",
-            caseTime: Date(),
-            link: URL(string: "https://www.apple.com/")!
-        )
+        NewsCase(animalName: "", district: "", link: "", newsTitle: "", numberOfAnimal: "", province: "", newsTime: "", caseTime: ""),
+        NewsCase(animalName: "", district: "", link: "", newsTitle: "", numberOfAnimal: "", province: "", newsTime: "", caseTime: ""),
+        NewsCase(animalName: "", district: "", link: "", newsTitle: "", numberOfAnimal: "", province: "", newsTime: "", caseTime: ""),
+        NewsCase(animalName: "", district: "", link: "", newsTitle: "", numberOfAnimal: "", province: "", newsTime: "", caseTime: ""),
+        NewsCase(animalName: "", district: "", link: "", newsTitle: "", numberOfAnimal: "", province: "", newsTime: "", caseTime: ""),
     ]
     
     @Published var filtered = [NewsCase]()
@@ -86,7 +47,7 @@ class CasesViewModel: ObservableObject {
     func generateCSVContent() {
         var csvHead = "No,Date,News Title,Animal Name,Number of Animal,Province,District,Case Time,News Link\n"
         for (index, data) in fullData.enumerated() {
-            csvHead.append("\(index+1),\(data.date),\(data.newsTitle),\(data.animalName),\(data.numberOfAnimal),\(data.province),\(data.district),\(data.caseTime),\(data.link.absoluteString)\n")
+            csvHead.append("\(index+1),\(data.date),\(data.newsTitle),\(data.animalName),\(data.numberOfAnimal),\(data.province),\(data.district),\(data.caseTime),\(data.link)\n")
         }
         self.csvContent = csvHead
     }

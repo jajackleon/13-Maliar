@@ -60,8 +60,8 @@ struct CasesView: View {
                                 TableCellView(text: "\(data.numberOfAnimal)")
                                 TableCellView(text: "\(data.province)")
                                 TableCellView(text: "\(data.district)")
-                                TableCellView(text: "\(data.getFormattedDate(date: data.caseTime))")
-                                TableCellView(url: data.link)
+                                TableCellView(text: "\(data.getFormattedDate(date: data.date))")
+                                TableCellView(text: "\(data.link)")
                             }
                         }
                     }
