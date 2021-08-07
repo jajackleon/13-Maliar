@@ -17,6 +17,10 @@
 		49607A3E26BEF78300A4E81A /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 49607A3D26BEF78300A4E81A /* FirebaseStorage */; };
 		49607A4026BEF78300A4E81A /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 49607A3F26BEF78300A4E81A /* FirebaseAuth */; };
 		49607A4426BEFD0400A4E81A /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = 49607A4326BEFD0400A4E81A /* SwiftSoup */; };
+		49607A4B26BEFE8B00A4E81A /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49607A4726BEFE8A00A4E81A /* Constant.swift */; };
+		49607A4C26BEFE8B00A4E81A /* KompasScraper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49607A4826BEFE8A00A4E81A /* KompasScraper.swift */; };
+		49607A4D26BEFE8B00A4E81A /* AntaraScraper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49607A4926BEFE8B00A4E81A /* AntaraScraper.swift */; };
+		49607A4E26BEFE8B00A4E81A /* GoogleCrawler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49607A4A26BEFE8B00A4E81A /* GoogleCrawler.swift */; };
 		5D34AEFA26BB86670037FD77 /* AnimalTrends.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D34AEF926BB86670037FD77 /* AnimalTrends.swift */; };
 		5D34AEFC26BB8AC50037FD77 /* LocationTrends.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D34AEFB26BB8AC50037FD77 /* LocationTrends.swift */; };
 		5D34AF0026BB97450037FD77 /* LocationBarChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D34AEFF26BB97450037FD77 /* LocationBarChartView.swift */; };
@@ -54,6 +58,10 @@
 /* Begin PBXFileReference section */
 		496079D326BEC91500A4E81A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		496079E326BECCBE00A4E81A /* DbConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DbConnection.swift; sourceTree = "<group>"; };
+		49607A4726BEFE8A00A4E81A /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		49607A4826BEFE8A00A4E81A /* KompasScraper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KompasScraper.swift; sourceTree = "<group>"; };
+		49607A4926BEFE8B00A4E81A /* AntaraScraper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AntaraScraper.swift; sourceTree = "<group>"; };
+		49607A4A26BEFE8B00A4E81A /* GoogleCrawler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleCrawler.swift; sourceTree = "<group>"; };
 		5D34AEF926BB86670037FD77 /* AnimalTrends.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalTrends.swift; sourceTree = "<group>"; };
 		5D34AEFB26BB8AC50037FD77 /* LocationTrends.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTrends.swift; sourceTree = "<group>"; };
 		5D34AEFF26BB97450037FD77 /* LocationBarChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationBarChartView.swift; sourceTree = "<group>"; };
@@ -116,6 +124,17 @@
 				496079E326BECCBE00A4E81A /* DbConnection.swift */,
 			);
 			path = Connection;
+			sourceTree = "<group>";
+		};
+		49607A4626BEFE5600A4E81A /* Scraping */ = {
+			isa = PBXGroup;
+			children = (
+				49607A4926BEFE8B00A4E81A /* AntaraScraper.swift */,
+				49607A4726BEFE8A00A4E81A /* Constant.swift */,
+				49607A4A26BEFE8B00A4E81A /* GoogleCrawler.swift */,
+				49607A4826BEFE8A00A4E81A /* KompasScraper.swift */,
+			);
+			path = Scraping;
 			sourceTree = "<group>";
 		};
 		5DF49D8026BA69290091CF5E /* Model */ = {
@@ -209,6 +228,7 @@
 		D569F05626B1495700F39E8E /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				49607A4626BEFE5600A4E81A /* Scraping */,
 				D547CD6626BAB56300E8B91E /* Notification Popover */,
 				D569F05A26B14A5E00F39E8E /* SidebarMenu */,
 				D569F06326B14FBB00F39E8E /* Trends */,
@@ -489,11 +509,13 @@
 				D569F06826B152DB00F39E8E /* TrendsView.swift in Sources */,
 				5D34AF0826BBA9460037FD77 /* AnimalChartViewModel.swift in Sources */,
 				D53DDF8526BB8B8500913A35 /* EdgeBorder.swift in Sources */,
+				49607A4D26BEFE8B00A4E81A /* AntaraScraper.swift in Sources */,
 				D57BC8DF26B7AE1000F8DB8B /* View+Extensions.swift in Sources */,
 				D58FD4A226B8042B001F7B15 /* NSImage+Extensions.swift in Sources */,
 				5D34AF0026BB97450037FD77 /* LocationBarChartView.swift in Sources */,
 				5D34AF0226BB99CD0037FD77 /* LocationChartViewModel.swift in Sources */,
 				D569F06026B14C5500F39E8E /* SidebarViewModel.swift in Sources */,
+				49607A4C26BEFE8B00A4E81A /* KompasScraper.swift in Sources */,
 				5D34AF0626BBA8F00037FD77 /* AnimalBarChartView.swift in Sources */,
 				D53DDF8726BB8DE200913A35 /* NotificationRow.swift in Sources */,
 				D5C2CFCD26B05D7F0003C89A /* SidebarView.swift in Sources */,
@@ -504,6 +526,7 @@
 				5D34AEFC26BB8AC50037FD77 /* LocationTrends.swift in Sources */,
 				D50DDFC526B8FBE900B5D172 /* TableHeader.swift in Sources */,
 				D547CD6B26BAB6DB00E8B91E /* NotificationPopoverView.swift in Sources */,
+				49607A4B26BEFE8B00A4E81A /* Constant.swift in Sources */,
 				D547CD6D26BAB6F000E8B91E /* NotificationPopoverViewModel.swift in Sources */,
 				D57BC8D826B79C2800F8DB8B /* DateSelectorView.swift in Sources */,
 				D58FD4A026B7DD81001F7B15 /* FileType.swift in Sources */,
@@ -513,6 +536,7 @@
 				D50DDFC226B8FA7500B5D172 /* TableHeaderView.swift in Sources */,
 				D547CD6F26BAB71100E8B91E /* Notification.swift in Sources */,
 				D50DDFC726B9009C00B5D172 /* TableCellView.swift in Sources */,
+				49607A4E26BEFE8B00A4E81A /* GoogleCrawler.swift in Sources */,
 				D569F06B26B152F700F39E8E /* CasesView.swift in Sources */,
 				D569F06226B14C8100F39E8E /* SidebarMenu.swift in Sources */,
 			);

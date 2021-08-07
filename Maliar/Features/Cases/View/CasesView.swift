@@ -83,7 +83,8 @@ struct CasesView: View {
             .help("Sort Table")
             Button {
                 print("Edit button pressed")
-                viewModel.getData()
+//                viewModel.getData()
+                GoogleCrawler.shared.crawl()
             } label: {
                 Image(systemName: "square.and.pencil")
             }
