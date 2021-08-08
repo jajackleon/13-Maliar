@@ -83,6 +83,10 @@ struct CasesView: View {
             .help("Sort Table")
             Button {
                 print("Edit button pressed")
+//                viewModel.getData()
+//                AntaraScraper.shared.fetchDoc()
+                GoogleCrawler.shared.crawl()
+//                print(KompasScraper.shared.getNewsTime(url: ""))
             } label: {
                 Image(systemName: "square.and.pencil")
             }
