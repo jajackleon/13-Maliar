@@ -13,6 +13,7 @@ class CasesViewModel: ObservableObject {
     @Published var filterEndDate = Date()
     @Published var searchQuery = ""
     @Published var csvContent = ""
+    @Published var isTableEditing = false
     
     var db = DbConnection.shared
     
@@ -86,6 +87,10 @@ class CasesViewModel: ObservableObject {
             }
         }
         generateCSVContent()
+    }
+    
+    func editTable() {
+        isTableEditing.toggle()
     }
     
     func getData(){
