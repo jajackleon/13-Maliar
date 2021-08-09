@@ -14,11 +14,7 @@ class CasesViewModel: ObservableObject {
     @Published var searchQuery = ""
     @Published var csvContent = ""
     
-    private var db = Firestore.firestore()
-    
-    private var tableData: CollectionReference{
-        db.collection("tableDatas")
-    }
+    var db = DbConnection.shared
     
     var gridItem: [GridItem] = [
         GridItem(.fixed(40), spacing: 0),
@@ -90,5 +86,9 @@ class CasesViewModel: ObservableObject {
             }
         }
         generateCSVContent()
+    }
+    
+    func getData(){
+        db.getAllData()
     }
 }
