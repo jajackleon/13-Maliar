@@ -54,14 +54,14 @@ struct CasesView: View {
                             // Show the Data
                             ForEach(Array(viewModel.filtered.enumerated()), id: \.0) { index, data in
                                 TableCellView(text: "\(index + 1)")
-                                TableCellView(text: "\(data.getFormattedDate(date: data.date))")
-                                TableCellView(text: "\(data.newsTitle)")
-                                TableCellView(text: "\(data.animalName)")
-                                TableCellView(text: "\(data.numberOfAnimal)")
-                                TableCellView(text: "\(data.province)")
-                                TableCellView(text: "\(data.district)")
-                                TableCellView(text: "\(data.getFormattedDate(date: data.date))")
-                                TableCellView(text: "\(data.link)")
+                                TableCellView(text: .constant(data.getFormattedDate(date: data.date)), isEditing: $viewModel.isTableEditing)
+                                TableCellView(text: $viewModel.filtered[index].newsTitle, isEditing: $viewModel.isTableEditing)
+                                TableCellView(text: $viewModel.filtered[index].animalName, isEditing: $viewModel.isTableEditing)
+                                TableCellView(text: $viewModel.filtered[index].numberOfAnimal, isEditing: $viewModel.isTableEditing)
+                                TableCellView(text: $viewModel.filtered[index].province, isEditing: $viewModel.isTableEditing)
+                                TableCellView(text: $viewModel.filtered[index].district, isEditing: $viewModel.isTableEditing)
+                                TableCellView(text: .constant(data.getFormattedDate(date: data.date)), isEditing: $viewModel.isTableEditing)
+                                TableCellView(text: $viewModel.filtered[index].link, isEditing: $viewModel.isTableEditing)
                             }
                         }
                     }
@@ -72,26 +72,47 @@ struct CasesView: View {
             .cornerRadius(10)
         }
         .navigationTitle("Cases")
-        .padding()
+        .padding(.horizontal, 24.0)
+        .padding(.vertical, 27.0)
         .toolbar {
             // The header toolbar content
-            Button {
-                print("Sort button pressed")
+            Menu {
+                Button("None") {
+                    // "Action when none clicked"
+                    viewModel.searchOnTable(keyword: "")
+                }
+                Divider()
+                Button("Date Added") {
+                    viewModel.sortTable(.rowDate)
+                }
+                Button("Case Time") {
+                    viewModel.sortTable(.caseTime)
+                }
+                Button("Number of Animal") {
+                    viewModel.sortTable(.numOfAnimal)
+                }
             } label: {
                 Image(systemName: "line.horizontal.3.decrease.circle")
             }
             .help("Sort Table")
+            
+            // Edit button
             Button {
                 print("Edit button pressed")
 //                viewModel.getData()
 //                AntaraScraper.shared.fetchDoc()
                 GoogleCrawler.shared.crawl()
 //                print(KompasScraper.shared.getNewsTime(url: ""))
+                viewModel.editTable()
             } label: {
                 Image(systemName: "square.and.pencil")
             }
             .help("Edit Data")
+            
+            // Download and Share Button
             DownloadShareButtonView(textItem: $viewModel.csvContent)
+            
+            // Search bar
             TextField("Search", text: $viewModel.searchQuery)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .frame(minWidth: 200)

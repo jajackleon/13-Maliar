@@ -79,6 +79,7 @@ struct TrendsView: View {
             }
             
         }
+        .navigationTitle("Trends")
         .padding(.horizontal, 24.0)
         .padding(.vertical, 27.0)
         .toolbar {
