@@ -1,77 +1,39 @@
 //
 //  APIRequest.swift
-//  RequestAPIData
+//  Maliar
 //
-//  Created by zein rezky chandra on 06/07/21.
-//  Copyright © 2021 Haryanto Salim. All rights reserved.
+//  Created by Jackie Leonardy on 10/08/21.
 //
 
 import Foundation
-import UIKit
+import Alamofire
 
-class APIRequest: NSObject {
+class APIRequest: NSObject{
     
-    static func fetchCountry(url: String,
-                             header: [String: String],
-                             showLoader: Bool,
-                             successCompletion: @escaping ([CountryModel]) -> Void,
-                             failCompletion: @escaping (String) -> Void) {
-        BaseRequest.GET(url: url, header: header, showLoader: showLoader) { response in
-
-            var dataModel = DataManager.COUNTRY
-
-            do {
-                let json = try JSONSerialization.jsonObject(with: (response as? Data)!, options: .mutableContainers) as! [String: AnyObject]
+    static func fetchNewsCase(completionHandler: @escaping([NewsCase]) -> Void){
+        var newsCases : [NewsCase] = [NewsCase]()
+        
+        let header:HTTPHeaders = [
+            "Authorization": "Bearer keysCSuJoizCcFgHS" ]
+//        AF.request(Constants.GET_LEARNING_LIST, method: .get, headers: header).responseJSON { (data) in
+//            print(data)
+//        }
+        
+        AF.request(Constants.GET_LEARNING_LIST, method: .get, headers: header).responseDecodable(of: NewsCaseData.self) { (response) in
+//            print(response)
+            guard let newsData = response.value else { return }
+            newsData.records?.forEach{ record in
+                let fields = record.fields
+                let cases = NewsCase(caseID: record.caseID!, animalName: fields!.AnimalName, district: fields!.District, link: fields!.Link, newsTitle: fields!.NewsTitle, numberOfAnimal: fields!.NumberOfAnimal, province: fields!.Province[0], caseTime: fields!.CaseTime)
+                newsCases.append(cases)
+                print(cases)
                 
-                for item in json["response"] as! NSArray{
-                    dataModel.append(CountryModel(countryName: (item as! String)))
-                }
-                successCompletion(dataModel)
-            } catch let error {
-                failCompletion(error.localizedDescription)
             }
-        }
+            completionHandler(newsCases)
+
+//            print(newsData.records![0].fields!.AnimalName)
+          }
+//        print(newsCases)
+//        return newsCases
     }
-    
-    static func fetchLearningData(url: String,
-                                  header: [String: String],
-                                  showLoader: Bool,
-                                  successCompletion: @escaping (LearningData) -> Void,
-                                  failCompletion: @escaping (String) -> Void) {
-        BaseRequest.GET(url: url, header: header, showLoader: showLoader) { response in
-            print(response)
-            var dataModel = DataManager.LEARNINGDATA
-            
-            do {
-                let quarantineModel = try JSONDecoder().decode(LearningData.self, from: response as! Data)
-                dataModel = quarantineModel
-                successCompletion(dataModel!)       
-            } catch let error {
-                print("error reading json file content: \(error.localizedDescription)")
-            }
-        }
-    }
-    
-    static func addNewLearningData(url: String,
-                                   header: [String: String],
-                                   type: String,
-                                   name: String,
-                                   status: String,
-                                   showLoader: Bool,
-                                   successCompletion: @escaping (LearningData) -> Void,
-                                   failCompletion: @escaping (String) -> Void) {
-        BaseRequest.POST(url: url, header: header, type: type, name: name, status: status, showLoader: showLoader) { response in
-            print(response)
-            var dataModel = DataManager.LEARNINGDATA
-            
-            do {
-                let quarantineModel = try JSONDecoder().decode(LearningData.self, from: response as! Data)
-                dataModel = quarantineModel
-                successCompletion(dataModel!)
-            } catch let error {
-                print("error reading json file content: \(error.localizedDescription)")
-            }
-        }
-    }
-    
 }

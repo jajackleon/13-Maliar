@@ -15,8 +15,6 @@ class CasesViewModel: ObservableObject {
     @Published var csvContent = ""
     @Published var isTableEditing = false
     
-    var db = DbConnection.shared
-    
     var gridItem: [GridItem] = [
         GridItem(.fixed(40), spacing: 0),
         GridItem( spacing: 0),
@@ -31,11 +29,11 @@ class CasesViewModel: ObservableObject {
     
     // Full data ini nanti bisa ngambil dari 
     var fullData: [NewsCase] = [
-        NewsCase(animalName: "", district: "", link: "", newsTitle: "", numberOfAnimal: "", province: "", newsTime: "", caseTime: ""),
-        NewsCase(animalName: "", district: "", link: "", newsTitle: "", numberOfAnimal: "", province: "", newsTime: "", caseTime: ""),
-        NewsCase(animalName: "", district: "", link: "", newsTitle: "", numberOfAnimal: "", province: "", newsTime: "", caseTime: ""),
-        NewsCase(animalName: "", district: "", link: "", newsTitle: "", numberOfAnimal: "", province: "", newsTime: "", caseTime: ""),
-        NewsCase(animalName: "", district: "", link: "", newsTitle: "", numberOfAnimal: "", province: "", newsTime: "", caseTime: ""),
+        NewsCase(caseID: "", animalName: "", district: "", link: "", newsTitle: "", numberOfAnimal: "", province: "", caseTime: ""),
+        NewsCase(caseID: "", animalName: "", district: "", link: "", newsTitle: "", numberOfAnimal: "", province: "", caseTime: ""),
+        NewsCase(caseID: "", animalName: "", district: "", link: "", newsTitle: "", numberOfAnimal: "", province: "", caseTime: ""),
+        NewsCase(caseID: "", animalName: "", district: "", link: "", newsTitle: "", numberOfAnimal: "", province: "", caseTime: ""),
+        NewsCase(caseID: "", animalName: "", district: "", link: "", newsTitle: "", numberOfAnimal: "", province: "", caseTime: "")
     ]
     
     @Published var filtered = [NewsCase]()
@@ -44,7 +42,7 @@ class CasesViewModel: ObservableObject {
     func generateCSVContent() {
         var csvHead = "No,Date,News Title,Animal Name,Number of Animal,Province,District,Case Time,News Link\n"
         for (index, data) in fullData.enumerated() {
-            csvHead.append("\(index+1),\(data.date),\(data.newsTitle),\(data.animalName),\(data.numberOfAnimal),\(data.province),\(data.district),\(data.caseTime),\(data.link)\n")
+            csvHead.append("\(index+1),\(data.newsTime),\(data.newsTitle),\(data.animalName),\(data.numberOfAnimal),\(data.province),\(data.district),\(data.caseTime),\(data.link)\n")
         }
         self.csvContent = csvHead
     }
@@ -54,10 +52,10 @@ class CasesViewModel: ObservableObject {
         filtered.sort { lNews, rNews in
             switch tableHeader {
             case .rowDate:
-                if lNews.date < rNews.date {
-                    return lNews.date > rNews.date
+                if lNews.newsTime < rNews.newsTime {
+                    return lNews.newsTime > rNews.newsTime
                 } else {
-                    return lNews.date < rNews.date
+                    return lNews.newsTime < rNews.newsTime
                 }
             case .caseTime:
                 if lNews.caseTime < rNews.caseTime {
@@ -72,7 +70,7 @@ class CasesViewModel: ObservableObject {
                     return lNews.numberOfAnimal < rNews.numberOfAnimal
                 }
             default:
-                return lNews.date > rNews.date
+                return lNews.newsTime > rNews.newsTime
             }
         }
     }
@@ -90,10 +88,14 @@ class CasesViewModel: ObservableObject {
     }
     
     func editTable() {
+        APIRequest.fetchNewsCase { (result) in
+            self.filtered = result
+        }
+//        self.filtered = APIRequest.fetchNewsCase()
         isTableEditing.toggle()
     }
     
-    func getData(){
-        db.getAllData()
+    func fetchData(){
+        
     }
 }
