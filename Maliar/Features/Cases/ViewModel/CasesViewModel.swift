@@ -85,8 +85,4 @@ class CasesViewModel: ObservableObject {
     func editTable() {
         isTableEditing.toggle()
     }
-    
-    func fetchData(){
-        
-    }
 }
