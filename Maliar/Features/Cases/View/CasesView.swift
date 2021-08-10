@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import Alamofire
+import SwiftyJSON
 
 struct CasesView: View {
     @StateObject var viewModel = CasesViewModel()
@@ -54,13 +56,13 @@ struct CasesView: View {
                             // Show the Data
                             ForEach(Array(viewModel.filtered.enumerated()), id: \.0) { index, data in
                                 TableCellView(text: "\(index + 1)")
-                                TableCellView(text: .constant(data.getFormattedDate(date: data.date)), isEditing: $viewModel.isTableEditing)
+                                TableCellView(text: .constant(data.getFormattedDate(date: data.newsTime)), isEditing: $viewModel.isTableEditing)
                                 TableCellView(text: $viewModel.filtered[index].newsTitle, isEditing: $viewModel.isTableEditing)
                                 TableCellView(text: $viewModel.filtered[index].animalName, isEditing: $viewModel.isTableEditing)
                                 TableCellView(text: $viewModel.filtered[index].numberOfAnimal, isEditing: $viewModel.isTableEditing)
                                 TableCellView(text: $viewModel.filtered[index].province, isEditing: $viewModel.isTableEditing)
                                 TableCellView(text: $viewModel.filtered[index].district, isEditing: $viewModel.isTableEditing)
-                                TableCellView(text: .constant(data.getFormattedDate(date: data.date)), isEditing: $viewModel.isTableEditing)
+                                TableCellView(text: .constant(data.getFormattedDate(date: data.newsTime)), isEditing: $viewModel.isTableEditing)
                                 TableCellView(text: $viewModel.filtered[index].link, isEditing: $viewModel.isTableEditing)
                             }
                         }
@@ -99,10 +101,8 @@ struct CasesView: View {
             // Edit button
             Button {
                 print("Edit button pressed")
-//                viewModel.getData()
-//                AntaraScraper.shared.fetchDoc()
                 GoogleCrawler.shared.crawl()
-//                print(KompasScraper.shared.getNewsTime(url: ""))
+                
                 viewModel.editTable()
             } label: {
                 Image(systemName: "square.and.pencil")
