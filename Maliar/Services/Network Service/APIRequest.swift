@@ -69,4 +69,69 @@ class APIRequest: NSObject{
 //            }
 //          }
     }
+    
+    static func addNewsCase(completionHandler: @escaping(Data) -> Void){
+        
+        let header = [
+            "Authorization": "Bearer keysCSuJoizCcFgHS",
+            "Content-Type" : "application/json"]
+        
+        let animalName = "Burung Rangkong"
+        let numberOfAnimal = "23"
+        let province = "reczczWUqMUP9iU16"
+        let newsTitle = "Sebanyak 23 paruh Burung Rangkong ditemukan di Kota Singkawang, Kalimantan Barat"
+        let link = "https://www.instagram.com/jajackleon/"
+        let disctrict = "Singkawang"
+        
+        
+        let caseTime = Date()
+        let dateFormatter = DateFormatter()
+
+        dateFormatter.dateFormat = "YY/MM/dd"
+        dateFormatter.string(from: caseTime)
+        
+        let jsonstring = """
+                            {"records":
+                              [
+                                {"fields":
+                                  {
+                                    "AnimalName":"\(animalName)",
+                                    "NumberOfAnimal":"\(numberOfAnimal)",
+                                    "Province":[
+                                        "\(province)"
+                                        ],
+                                    "NewsTitle":"\(newsTitle)",
+                                    "Link":"\(link)",
+                                    "District":"\(disctrict)",
+                                    "CaseTime":"\(dateFormatter)"
+                                  }
+                                }
+                              ]
+                             }
+                            """
+        let request = NSMutableURLRequest(url: NSURL(string: Constants.POST_LEARNING)! as URL,
+                                                cachePolicy: .useProtocolCachePolicy,
+                                            timeoutInterval: 10.0)
+        let jsonSessionData = jsonstring.data(using: .utf8)!
+        let jsonSession = try! JSONSerialization.jsonObject(with: jsonSessionData, options: .allowFragments)
+        let jsonData = try? JSONSerialization.data(withJSONObject: jsonSession)
+        
+        request.httpMethod = "POST"
+        request.allHTTPHeaderFields = header
+        request.httpBody = jsonData
+
+        let session = URLSession.shared
+
+        let dataTask = session.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) -> Void in
+            if (error != nil) {
+                print(error as Any)
+            } else {
+                if let dataFromAPI = data {
+                    completionHandler(dataFromAPI)
+                }
+            }
+        })
+
+        dataTask.resume()
+    }
 }

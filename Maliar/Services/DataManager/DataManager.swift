@@ -9,4 +9,5 @@
 import Foundation
 
 struct DataManager {
+    static var CASEDATA:NewsCase!
 }
