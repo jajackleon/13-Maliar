@@ -15,12 +15,12 @@ class APIRequest: NSObject{
         
         let header:HTTPHeaders = [
             "Authorization": "Bearer keysCSuJoizCcFgHS" ]
-//        AF.request(Constants.GET_LEARNING_LIST, method: .get, headers: header).responseJSON { (data) in
-//            print(data)
-//        }
+
         
         AF.request(Constants.GET_LEARNING_LIST, method: .get, headers: header).responseDecodable(of: NewsCaseData.self) { (response) in
-//            print(response)
+
+            print(response)
+            
             guard let newsData = response.value else { return }
             newsData.records?.forEach{ record in
                 let fields = record.fields
@@ -31,9 +31,6 @@ class APIRequest: NSObject{
             }
             completionHandler(newsCases)
 
-//            print(newsData.records![0].fields!.AnimalName)
           }
-//        print(newsCases)
-//        return newsCases
     }
 }

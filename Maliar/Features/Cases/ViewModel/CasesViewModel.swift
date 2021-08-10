@@ -29,11 +29,6 @@ class CasesViewModel: ObservableObject {
     
     // Full data ini nanti bisa ngambil dari 
     var fullData: [NewsCase] = [
-        NewsCase(caseID: "", animalName: "", district: "", link: "", newsTitle: "", numberOfAnimal: "", province: "", caseTime: ""),
-        NewsCase(caseID: "", animalName: "", district: "", link: "", newsTitle: "", numberOfAnimal: "", province: "", caseTime: ""),
-        NewsCase(caseID: "", animalName: "", district: "", link: "", newsTitle: "", numberOfAnimal: "", province: "", caseTime: ""),
-        NewsCase(caseID: "", animalName: "", district: "", link: "", newsTitle: "", numberOfAnimal: "", province: "", caseTime: ""),
-        NewsCase(caseID: "", animalName: "", district: "", link: "", newsTitle: "", numberOfAnimal: "", province: "", caseTime: "")
     ]
     
     @Published var filtered = [NewsCase]()
@@ -88,10 +83,6 @@ class CasesViewModel: ObservableObject {
     }
     
     func editTable() {
-        APIRequest.fetchNewsCase { (result) in
-            self.filtered = result
-        }
-//        self.filtered = APIRequest.fetchNewsCase()
         isTableEditing.toggle()
     }
     

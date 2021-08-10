@@ -122,6 +122,9 @@ struct CasesView: View {
         }
         .onAppear {
             viewModel.searchOnTable(keyword: "")
+            APIRequest.fetchNewsCase { (result) in
+                viewModel.filtered = result
+            }
         }
     }
 }
