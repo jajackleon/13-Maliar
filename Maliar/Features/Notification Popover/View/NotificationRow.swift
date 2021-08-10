@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct NotificationRow: View {
-    @State var notification: Notification
+    @Binding var notification: Notification
     @State var hovering: Bool = false
     var onReadButtonClicked: (Notification) -> Void
     
@@ -48,9 +48,10 @@ struct NotificationRow: View {
                     } label: {
                         // xmark.circle.fill
                         Image(systemName: "r.circle.fill")
-                            .foregroundColor(.accentColor)
+                        Text("Read")
                     }
-                    .buttonStyle(PlainButtonStyle())
+                    .buttonStyle(LinkButtonStyle())
+                    .foregroundColor(.accentColor)
                 }
             }
             .padding(.all, 7)
@@ -65,10 +66,7 @@ struct NotificationRow: View {
 
 struct NotificationRow_Previews: PreviewProvider {
     static var previews: some View {
-        NotificationRow(notification: Notification(firebaseID: "asdfv", title: "SSS", dateReceived: Date(timeIntervalSinceNow: -1000000), opened: false)) {
-            print("\($0) Should clear")
-        }
-        NotificationRow(notification: Notification(firebaseID: "asdfv", title: "SSS", image: NSImage(named: "notif_placeholder"),  dateReceived: Date(timeIntervalSinceNow: -1000000), opened: false)) {
+        NotificationRow(notification: .constant(Notification(firebaseID: "asdfv", title: "SSS", dateReceived: Date(timeIntervalSinceNow: -1000000), opened: false))) {
             print("\($0) Should clear")
         }
     }

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Notification {
+struct Notification: Identifiable {
     var id = UUID()
     var firebaseID: String
     var notifTitle: String
