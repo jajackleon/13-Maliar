@@ -84,6 +84,7 @@ class CasesViewModel: ObservableObject {
     func editTable() {
         isTableEditing.toggle()
         // TODO: Insert the code to push everything to Airtable API
+        GoogleCrawler.shared.crawl()
         APIRequest.addNewsCase { (data) in
             print(data)
         }

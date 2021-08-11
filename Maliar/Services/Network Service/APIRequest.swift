@@ -16,7 +16,6 @@ class APIRequest: NSObject{
         
         let header:HTTPHeaders = [
             "Authorization": "Bearer keysCSuJoizCcFgHS" ]
-
         
         AF.request(Constants.GET_LEARNING_LIST, method: .get, headers: header).responseData { data in
             guard let stData = data.data else {return}
@@ -68,6 +67,10 @@ class APIRequest: NSObject{
 //
 //            }
 //          }
+    }
+    
+    static func updateNewsCase(documentID: String, completionHandler: @escaping(Data) -> Void){
+        
     }
     
     static func addNewsCase(completionHandler: @escaping(Data) -> Void){
