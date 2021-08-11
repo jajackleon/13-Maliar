@@ -15,7 +15,7 @@ class BaseRequest: NSObject {
     static func GET_NOTIFICATION(isRead: Bool,
                     completionHandler: @escaping ([Notification]) -> Void) {
         
-        let url = isRead ? Constants.GET_LEARNING_LIST_READ_NOTIFICATION : Constants.GET_LEARNING_LIST_UNREAD_NOTIFICATION
+        let url = isRead ? Constants.GET_LEARNING_LIST : Constants.GET_LEARNING_LIST
         
         let header:HTTPHeaders = [
             "Authorization": "Bearer keysCSuJoizCcFgHS" ]
@@ -42,7 +42,7 @@ class BaseRequest: NSObject {
                                 firebaseID: data["id"].stringValue ,
                                 title: fields["NewsTitle"].stringValue,
                                 dateReceived: createdTimeDate,
-                                opened: false)
+                                opened: fields["IsRead"].stringValue == "1" ? false : true)
                         notificationCases.append(newsCase)
                     }
                 }
