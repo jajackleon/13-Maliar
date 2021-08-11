@@ -79,7 +79,11 @@ struct NotificationPopoverView: View {
         }
         .onAppear {
             // Show unread news
-            viewModel.showUnread()
+            APIRequest.fetchNotification(isRead: true) { (notifications) in
+                viewModel.notifs = notifications
+                viewModel.showUnread()
+            }
+            
         }
         .frame(width: 350, height: 550)
     }

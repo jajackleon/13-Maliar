@@ -41,8 +41,10 @@ class APIRequest: NSObject{
                             numberOfAnimal: fields["NumberOfAnimal"].stringValue,
                             province: fields["Province"][0].stringValue,
                             newsTime: createdTimeDate,
-                            caseTime: fields["CaseTime"].stringValue
+                            caseTime: fields["CaseTime"].stringValue,
+                            isRead: fields["IsRead"].stringValue
                         )
+                        print(newsCase)
                         newsCases.append(newsCase)
                     }
                 }
@@ -50,23 +52,13 @@ class APIRequest: NSObject{
             } catch {
                 print("Error handling JSON: \(error)")
             }
-            
         }
-            
-//            .responseDecodable(of: NewsCaseData.self) { (response) in
-//            let respJ
-//            guard let newsData = response.value else { return }
-//            newsData.records?.forEach{ record in
-//                let df = DateFormatter()
-//                guard let fields = record.fields,
-//                      let createdTime = df.date(from: record.createdTime!)
-//                else { return }
-//
-//                let cases = NewsCase(caseID: record.caseID!, animalName: fields.AnimalName, district: fields.District, link: fields.Link, newsTitle: fields.NewsTitle, numberOfAnimal: fields.NumberOfAnimal, province: fields.Province[0], newsTime: createdTime, caseTime: fields.CaseTime)
-//                newsCases.append(cases)
-//
-//            }
-//          }
+    }
+    
+    static func fetchNotification(isRead: Bool, completionHandler: @escaping([Notification]) -> Void){
+        BaseRequest.GET_NOTIFICATION(isRead: isRead) { data in
+            completionHandler(data)
+        }
     }
     
     static func updateNewsCase(documentID: String, completionHandler: @escaping(Data) -> Void){
@@ -106,7 +98,8 @@ class APIRequest: NSObject{
                                     "NewsTitle":"\(newsTitle)",
                                     "Link":"\(link)",
                                     "District":"\(disctrict)",
-                                    "CaseTime":"\(dateFormatter)"
+                                    "CaseTime":"\(dateFormatter)",
+                                    "IsRead" : "0"
                                   }
                                 }
                               ]

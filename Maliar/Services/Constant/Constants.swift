@@ -8,7 +8,8 @@
 
 import Foundation
 
-class Constants: NSObject {    
+class Constants: NSObject {
+    static let GET_LEARNING_LIST = "https://api.airtable.com/v0/appcZaklzY11JKhVU/NewsScraping"
     static let GET_LEARNING_LIST_NEWEST = "https://api.airtable.com/v0/appcZaklzY11JKhVU/NewsScraping?view=Newest"
     static let GET_LEARNING_LIST_OLDEST = "https://api.airtable.com/v0/appcZaklzY11JKhVU/NewsScraping?view=Oldest"
     static let GET_LEARNING_LIST_UNREAD_NOTIFICATION = "https://api.airtable.com/v0/appcZaklzY11JKhVU/NewsScraping?view=UnreadNotification"
