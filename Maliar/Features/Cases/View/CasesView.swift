@@ -23,6 +23,12 @@ struct CasesView: View {
                     .foregroundColor(.accentColor)
                 Spacer()
                 DateSelectorView(startDate: $viewModel.filterStartDate, endDate: $viewModel.filterEndDate)
+                    .onChange(of: viewModel.filterStartDate) { value in
+                        viewModel.dateFilter()
+                    }
+                    .onChange(of: viewModel.filterEndDate) { value in
+                        viewModel.dateFilter()
+                    }
             }
             GroupBox {
                 if isLoading{
@@ -53,19 +59,13 @@ struct CasesView: View {
                             LazyVGrid(columns: viewModel.gridItem, alignment: .center, spacing: 0) {
                                 // Header in the first place
                                 TableHeaderView(TableHeader.number)
-                                TableHeaderView(TableHeader.rowDate) /* { header in
-                                    viewModel.sortTable(header)
-                                } */
+                                TableHeaderView(TableHeader.rowDate)
                                 TableHeaderView(TableHeader.newsTitle)
                                 TableHeaderView(TableHeader.animalName)
-                                TableHeaderView(TableHeader.numOfAnimal) /* { header in
-                                 viewModel.sortTable(header)
-                             } */
+                                TableHeaderView(TableHeader.numOfAnimal)
                                 TableHeaderView(TableHeader.province)
                                 TableHeaderView(TableHeader.district)
-                                TableHeaderView(TableHeader.caseTime) /* { header in
-                                 viewModel.sortTable(header)
-                             } */
+                                TableHeaderView(TableHeader.caseTime)
                                 TableHeaderView(TableHeader.link)
                                 
                                 // Show the Data
@@ -98,7 +98,7 @@ struct CasesView: View {
             Menu {
                 Button("None") {
                     // "Action when none clicked"
-                    viewModel.searchOnTable(keyword: "")
+                    viewModel.dateFilter()
                 }
                 Divider()
                 Button("Date Added") {
@@ -138,10 +138,10 @@ struct CasesView: View {
                 }
         }
         .onAppear {
-            viewModel.searchOnTable(keyword: "")
             APIRequest.fetchNewsCase { (result) in
                 isLoading.toggle()
-                viewModel.filtered = result
+                viewModel.fullData = result
+                viewModel.dateFilter()
             }
         }
     }

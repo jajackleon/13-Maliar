@@ -16,7 +16,7 @@ struct NewsCase: Identifiable {
     var newsTitle: String
     var numberOfAnimal: String
     var province: String
-    var newsTime: Date = Date()
+    var newsTime: Date
     var caseTime: String
         
     func getFormattedDate(date: Date) -> String {
