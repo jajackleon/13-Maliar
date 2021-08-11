@@ -20,16 +20,18 @@ struct SidebarView: View {
                         Image(systemName: "bell")
                         Text("Notification")
                         Spacer()
-                        Text("0") // based on how many received notif
-                            .foregroundColor(.white)
-                            .padding(.horizontal, 5)
-                            .background(Color.red)
-                            .cornerRadius(4)
+                        if viewModel.notifBadgeNumber > 0 {
+                            Text("\(viewModel.notifBadgeNumber)") // based on how many received notif
+                                .foregroundColor(.white)
+                                .padding(.horizontal, 5)
+                                .background(Color.red)
+                                .cornerRadius(4)
+                        }
                     }
                 }
                 .buttonStyle(PlainButtonStyle())
                 .popover(isPresented: $viewModel.notificationPopoverShown, arrowEdge: .leading) {
-                    NotificationPopoverView()
+                    NotificationPopoverView(sidebarVM: self.viewModel)
                 }
                 ForEach(
                     viewModel.menuItems,

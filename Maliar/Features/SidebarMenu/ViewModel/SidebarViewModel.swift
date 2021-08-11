@@ -12,6 +12,7 @@ class SidebarViewModel: ObservableObject {
     @Published var menuItems = SidebarMenu.allCases
     @Published var selection: SidebarMenu? = .trends
     @Published var notificationPopoverShown: Bool = false
+    @Published var notifBadgeNumber: Int = 6
     
     func toggleSidebar() {
         NSApp.keyWindow?.firstResponder?
@@ -20,5 +21,10 @@ class SidebarViewModel: ObservableObject {
     
     func showPopover() {
         notificationPopoverShown.toggle()
+    }
+    
+    // MARK: - Called on Notification Popover
+    func openFromNotif() {
+        self.selection = .cases
     }
 }

@@ -9,11 +9,12 @@ import SwiftUI
 
 class CasesViewModel: ObservableObject {
     // Table Filter
-    @Published var filterStartDate = Date()
+    @Published var filterStartDate = Calendar.current.date(byAdding: .day, value: -7, to: Date())!
     @Published var filterEndDate = Date()
     @Published var searchQuery = ""
     @Published var csvContent = ""
     @Published var isTableEditing = false
+    var reverseSort = true
     
     var gridItem: [GridItem] = [
         GridItem(.fixed(40), spacing: 0),
@@ -44,28 +45,17 @@ class CasesViewModel: ObservableObject {
     
     // MARK: - Sort the table based on ...
     func sortTable(_ tableHeader: TableHeader) {
+        reverseSort.toggle()
         filtered.sort { lNews, rNews in
             switch tableHeader {
             case .rowDate:
-                if lNews.newsTime < rNews.newsTime {
-                    return lNews.newsTime > rNews.newsTime
-                } else {
-                    return lNews.newsTime < rNews.newsTime
-                }
+                return reverseSort ? (lNews.newsTime > rNews.newsTime) : (lNews.newsTime < rNews.newsTime)
             case .caseTime:
-                if lNews.caseTime < rNews.caseTime {
-                    return lNews.caseTime > rNews.caseTime
-                } else {
-                    return lNews.caseTime < rNews.caseTime
-                }
+                return reverseSort ? (lNews.caseTime > rNews.caseTime) : (lNews.caseTime < rNews.caseTime)
             case .numOfAnimal:
-                if lNews.numberOfAnimal < rNews.numberOfAnimal {
-                    return lNews.numberOfAnimal > rNews.numberOfAnimal
-                } else {
-                    return lNews.numberOfAnimal < rNews.numberOfAnimal
-                }
+                return reverseSort ? (lNews.numberOfAnimal < rNews.numberOfAnimal) : (lNews.numberOfAnimal < rNews.numberOfAnimal)
             default:
-                return lNews.newsTime > rNews.newsTime
+                return reverseSort ? (lNews.newsTime > rNews.newsTime) : (lNews.newsTime < rNews.newsTime)
             }
         }
     }
@@ -82,7 +72,17 @@ class CasesViewModel: ObservableObject {
         generateCSVContent()
     }
     
+    // MARK: - Filter by date
+    func dateFilter() {
+//        let dateRange = filterStartDate...filterEndDate
+        self.filtered = fullData.filter { filtering in
+            return filtering.newsTime >= filterStartDate && filtering.newsTime <= filterEndDate
+        }
+    }
+    
+    // MARK: - Edit Table
     func editTable() {
         isTableEditing.toggle()
+        // TODO: Insert the code to push everything to Airtable API
     }
 }

@@ -9,6 +9,7 @@ import SwiftUI
 
 struct NotificationPopoverView: View {
     @StateObject var viewModel = NotificationPopoverViewModel()
+    @StateObject var sidebarVM: SidebarViewModel
     
     var body: some View {
         VStack(alignment: .center, spacing: 0) {
@@ -63,10 +64,16 @@ struct NotificationPopoverView: View {
                     .padding()
                 Spacer()
             } else {
-                List(viewModel.sorted, id: \.id) { element in
-                    NotificationRow(notification: element) {
-                        viewModel.readNotif($0)
+                List(Array(viewModel.sorted.enumerated()), id: \.0) { index, element in
+                    Button {
+                        viewModel.readNotif(element)
+                        sidebarVM.openFromNotif()
+                    } label: {
+                        NotificationRow(notification: $viewModel.sorted[index]) {
+                            viewModel.readNotif($0)
+                        }
                     }
+                    .buttonStyle(PlainButtonStyle())
                 }
             }
         }
@@ -80,6 +87,6 @@ struct NotificationPopoverView: View {
 
 struct NotificationPopoverView_Previews: PreviewProvider {
     static var previews: some View {
-        NotificationPopoverView()
+        NotificationPopoverView(sidebarVM: SidebarViewModel())
     }
 }
