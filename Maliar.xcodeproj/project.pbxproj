@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		49426B1D26C57D74002C60A2 /* TableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49426B1C26C57D74002C60A2 /* TableCell.swift */; };
 		49607A4426BEFD0400A4E81A /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = 49607A4326BEFD0400A4E81A /* SwiftSoup */; };
 		49607A4C26BEFE8B00A4E81A /* KompasScraper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49607A4826BEFE8A00A4E81A /* KompasScraper.swift */; };
 		49607A4D26BEFE8B00A4E81A /* AntaraScraper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49607A4926BEFE8B00A4E81A /* AntaraScraper.swift */; };
@@ -54,6 +55,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		49426B1C26C57D74002C60A2 /* TableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableCell.swift; sourceTree = "<group>"; };
 		49607A4826BEFE8A00A4E81A /* KompasScraper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KompasScraper.swift; sourceTree = "<group>"; };
 		49607A4926BEFE8B00A4E81A /* AntaraScraper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AntaraScraper.swift; sourceTree = "<group>"; };
 		49607A4A26BEFE8B00A4E81A /* GoogleCrawler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleCrawler.swift; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 				D50DDFC426B8FBE900B5D172 /* TableHeader.swift */,
 				D50DDFBF26B8ECF400B5D172 /* NewsCaseDataFieldResponse.swift */,
 				49D7FA0226C18F2200F952A4 /* NewsCase.swift */,
+				49426B1C26C57D74002C60A2 /* TableCell.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -520,6 +523,7 @@
 				D57BC8DF26B7AE1000F8DB8B /* View+Extensions.swift in Sources */,
 				D58FD4A226B8042B001F7B15 /* NSImage+Extensions.swift in Sources */,
 				49D7F9DF26C114A800F952A4 /* Constants.swift in Sources */,
+				49426B1D26C57D74002C60A2 /* TableCell.swift in Sources */,
 				5D34AF0026BB97450037FD77 /* LocationBarChartView.swift in Sources */,
 				5D34AF0226BB99CD0037FD77 /* LocationChartViewModel.swift in Sources */,
 				D569F06026B14C5500F39E8E /* SidebarViewModel.swift in Sources */,
@@ -676,7 +680,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Maliar/Preview Content\"";
-				DEVELOPMENT_TEAM = SCZQ3M4JVY;
+				DEVELOPMENT_TEAM = TATAZHHLZ7;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Maliar/Supporting Files/Info.plist";
@@ -700,7 +704,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Maliar/Preview Content\"";
-				DEVELOPMENT_TEAM = SCZQ3M4JVY;
+				DEVELOPMENT_TEAM = TATAZHHLZ7;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Maliar/Supporting Files/Info.plist";

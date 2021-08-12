@@ -30,7 +30,13 @@ struct CasesView: View {
                         viewModel.dateFilter()
                     }
                 RetrieveDataButton {
-                    // TODO: Input action to retreive new data
+                    isLoading = true
+                    APIRequest.fetchNewsCase { (result) in
+                        isLoading.toggle()
+                        viewModel.fullData = result
+                        viewModel.dateFilter()
+                        print(isLoading)
+                    }
                 }
             }
             GroupBox {
@@ -73,15 +79,16 @@ struct CasesView: View {
                                 
                                 // Show the Data
                                 ForEach(Array(viewModel.filtered.enumerated()), id: \.0) { index, data in
+//                                    print(data)
                                     TableCellView(text: "\(index + 1)")
                                     TableCellView(text: .constant(data.getFormattedDate(date: data.newsTime)), isEditing: $viewModel.isTableEditing)
-                                    TableCellView(text: $viewModel.filtered[index].newsTitle, isEditing: $viewModel.isTableEditing)
-                                    TableCellView(text: $viewModel.filtered[index].animalName, isEditing: $viewModel.isTableEditing)
-                                    TableCellView(text: $viewModel.filtered[index].numberOfAnimal, isEditing: $viewModel.isTableEditing)
+                                    TableCellView(text: $viewModel.filtered[index].newsTitle, isEditing: $viewModel.isTableEditing, cellColumn: .newsTitle, caseID: data.caseID)
+                                    TableCellView(text: $viewModel.filtered[index].animalName, isEditing: $viewModel.isTableEditing, cellColumn: .animalName, caseID: data.caseID)
+                                    TableCellView(text: $viewModel.filtered[index].numberOfAnimal, isEditing: $viewModel.isTableEditing, cellColumn: .numOfAnimal, caseID: data.caseID)
                                     TableCellView(text: $viewModel.filtered[index].province, isEditing: $viewModel.isTableEditing)
-                                    TableCellView(text: $viewModel.filtered[index].district, isEditing: $viewModel.isTableEditing)
+                                    TableCellView(text: $viewModel.filtered[index].district, isEditing: $viewModel.isTableEditing, cellColumn: .district, caseID: data.caseID)
                                     TableCellView(text: .constant(data.getFormattedDate(date: data.newsTime)), isEditing: $viewModel.isTableEditing)
-                                    TableCellView(text: $viewModel.filtered[index].link, isEditing: $viewModel.isTableEditing)
+                                    TableCellView(text: $viewModel.filtered[index].link, isEditing: $viewModel.isTableEditing, cellColumn: .link, caseID: data.caseID)
                                 }
                             }
                         }
@@ -118,10 +125,7 @@ struct CasesView: View {
             }
             .help("Sort Table")
             
-            // Edit button
             Button {
-                print("Edit button pressed")
-                
                 viewModel.editTable()
             } label: {
                 Image(systemName: "square.and.pencil")

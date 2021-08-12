@@ -83,9 +83,5 @@ class CasesViewModel: ObservableObject {
     // MARK: - Edit Table
     func editTable() {
         isTableEditing.toggle()
-        // TODO: Insert the code to push everything to Airtable API
-//        APIRequest.addNewsCase { (data) in
-//            print(data)
-//        }
     }
 }
