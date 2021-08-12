@@ -46,6 +46,7 @@
 		D57BC8DF26B7AE1000F8DB8B /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57BC8DE26B7AE1000F8DB8B /* View+Extensions.swift */; };
 		D58FD4A026B7DD81001F7B15 /* FileType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58FD49F26B7DD81001F7B15 /* FileType.swift */; };
 		D58FD4A226B8042B001F7B15 /* NSImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58FD4A126B8042B001F7B15 /* NSImage+Extensions.swift */; };
+		D5BEF6E226C5158B00740AC4 /* RetrieveDataButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5BEF6E126C5158B00740AC4 /* RetrieveDataButton.swift */; };
 		D5C2CFCB26B05D7F0003C89A /* MaliarApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C2CFCA26B05D7F0003C89A /* MaliarApp.swift */; };
 		D5C2CFCD26B05D7F0003C89A /* SidebarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C2CFCC26B05D7F0003C89A /* SidebarView.swift */; };
 		D5C2CFCF26B05D820003C89A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5C2CFCE26B05D820003C89A /* Assets.xcassets */; };
@@ -88,6 +89,7 @@
 		D57BC8DE26B7AE1000F8DB8B /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
 		D58FD49F26B7DD81001F7B15 /* FileType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileType.swift; sourceTree = "<group>"; };
 		D58FD4A126B8042B001F7B15 /* NSImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSImage+Extensions.swift"; sourceTree = "<group>"; };
+		D5BEF6E126C5158B00740AC4 /* RetrieveDataButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetrieveDataButton.swift; sourceTree = "<group>"; };
 		D5C2CFC726B05D7F0003C89A /* Maliar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Maliar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5C2CFCA26B05D7F0003C89A /* MaliarApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaliarApp.swift; sourceTree = "<group>"; };
 		D5C2CFCC26B05D7F0003C89A /* SidebarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarView.swift; sourceTree = "<group>"; };
@@ -354,6 +356,7 @@
 		D57BC8D526B798DF00F8DB8B /* Reusables */ = {
 			isa = PBXGroup;
 			children = (
+				D5BEF6E026C5156700740AC4 /* RetrieveButton */,
 				D57BC8D926B79F7900F8DB8B /* DownloadShareButton */,
 				D57BC8D626B79C0900F8DB8B /* DateSelector */,
 			);
@@ -376,6 +379,14 @@
 				D58FD49F26B7DD81001F7B15 /* FileType.swift */,
 			);
 			path = DownloadShareButton;
+			sourceTree = "<group>";
+		};
+		D5BEF6E026C5156700740AC4 /* RetrieveButton */ = {
+			isa = PBXGroup;
+			children = (
+				D5BEF6E126C5158B00740AC4 /* RetrieveDataButton.swift */,
+			);
+			path = RetrieveButton;
 			sourceTree = "<group>";
 		};
 		D5C2CFBE26B05D7F0003C89A = {
@@ -504,6 +515,7 @@
 				49D7FA0326C18F2200F952A4 /* NewsCase.swift in Sources */,
 				D53DDF8526BB8B8500913A35 /* EdgeBorder.swift in Sources */,
 				49D7FA0726C198D200F952A4 /* APIRequest.swift in Sources */,
+				D5BEF6E226C5158B00740AC4 /* RetrieveDataButton.swift in Sources */,
 				49607A4D26BEFE8B00A4E81A /* AntaraScraper.swift in Sources */,
 				D57BC8DF26B7AE1000F8DB8B /* View+Extensions.swift in Sources */,
 				D58FD4A226B8042B001F7B15 /* NSImage+Extensions.swift in Sources */,
@@ -664,7 +676,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Maliar/Preview Content\"";
-				DEVELOPMENT_TEAM = TATAZHHLZ7;
+				DEVELOPMENT_TEAM = SCZQ3M4JVY;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Maliar/Supporting Files/Info.plist";
@@ -688,7 +700,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Maliar/Preview Content\"";
-				DEVELOPMENT_TEAM = TATAZHHLZ7;
+				DEVELOPMENT_TEAM = SCZQ3M4JVY;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Maliar/Supporting Files/Info.plist";

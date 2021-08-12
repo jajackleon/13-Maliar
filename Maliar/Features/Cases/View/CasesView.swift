@@ -16,7 +16,7 @@ struct CasesView: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            HStack {
+            HStack(spacing: 24) {
                 Text("Cases")
                     .font(.largeTitle)
                     .fontWeight(.bold)
@@ -29,6 +29,9 @@ struct CasesView: View {
                     .onChange(of: viewModel.filterEndDate) { value in
                         viewModel.dateFilter()
                     }
+                RetrieveDataButton {
+                    // TODO: Input action to retreive new data
+                }
             }
             GroupBox {
                 if isLoading{

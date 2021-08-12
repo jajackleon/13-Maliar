@@ -21,13 +21,16 @@ struct TrendsView: View {
     
     var body: some View {
         VStack {
-            HStack {
+            HStack(spacing: 24) {
                 Text("Trends")
                     .font(.largeTitle)
                     .fontWeight(.semibold)
                     .foregroundColor(.accentColor)
                 Spacer()
                 DateSelectorView(startDate: $startDate, endDate: $endDate)
+                RetrieveDataButton {
+                    // TODO: Input action to retreive new data
+                }
             }
             
             Spacer()
