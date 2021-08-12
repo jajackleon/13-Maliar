@@ -18,7 +18,7 @@ class GoogleCrawler {
                 try String(contentsOf: URL(string: "https://www.google.com/search?q=berita+fauna&rlz=1C5CHFA_enID944ID944&sxsrf=ALeKk000Udq79oDLLgBTd2XtQjcOOM1nWg:1627483357097&source=lnms&tbm=nws&sa=X&ved=2ahUKEwj4lIL7_4XyAhW7-nMBHULZAeAQ_AUoAnoECAEQBA&biw=1792&bih=1040")!)
                 
             let doc: Document = try SwiftSoup.parse(content)
-            
+            print(doc)
             let data = try doc.select("div.kCrYT")
             try data.forEach{ data in
                 let link = try data.select("a").first()!.attr("href")

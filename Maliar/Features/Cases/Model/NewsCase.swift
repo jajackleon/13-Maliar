@@ -18,6 +18,7 @@ struct NewsCase: Identifiable {
     var province: String
     var newsTime: Date
     var caseTime: String
+    var isRead: String = "0"
         
     func getFormattedDate(date: Date) -> String {
         let df = DateFormatter()

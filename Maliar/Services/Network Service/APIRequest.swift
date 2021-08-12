@@ -16,7 +16,6 @@ class APIRequest: NSObject{
         
         let header:HTTPHeaders = [
             "Authorization": "Bearer keysCSuJoizCcFgHS" ]
-
         
         AF.request(Constants.GET_LEARNING_LIST, method: .get, headers: header).responseData { data in
             guard let stData = data.data else {return}
@@ -42,8 +41,10 @@ class APIRequest: NSObject{
                             numberOfAnimal: fields["NumberOfAnimal"].stringValue,
                             province: fields["Province"][0].stringValue,
                             newsTime: createdTimeDate,
-                            caseTime: fields["CaseTime"].stringValue
+                            caseTime: fields["CaseTime"].stringValue,
+                            isRead: fields["IsRead"].stringValue
                         )
+                        print(newsCase)
                         newsCases.append(newsCase)
                     }
                 }
@@ -51,22 +52,82 @@ class APIRequest: NSObject{
             } catch {
                 print("Error handling JSON: \(error)")
             }
-            
         }
-            
-//            .responseDecodable(of: NewsCaseData.self) { (response) in
-//            let respJ
-//            guard let newsData = response.value else { return }
-//            newsData.records?.forEach{ record in
-//                let df = DateFormatter()
-//                guard let fields = record.fields,
-//                      let createdTime = df.date(from: record.createdTime!)
-//                else { return }
-//
-//                let cases = NewsCase(caseID: record.caseID!, animalName: fields.AnimalName, district: fields.District, link: fields.Link, newsTitle: fields.NewsTitle, numberOfAnimal: fields.NumberOfAnimal, province: fields.Province[0], newsTime: createdTime, caseTime: fields.CaseTime)
-//                newsCases.append(cases)
-//
-//            }
-//          }
+    }
+    
+    static func fetchNotification(isRead: Bool, completionHandler: @escaping([Notification]) -> Void){
+        BaseRequest.GET_NOTIFICATION(isRead: isRead) { data in
+            completionHandler(data)
+        }
+    }
+    
+    static func updateNewsCase(documentID: String, completionHandler: @escaping(Data) -> Void){
+        
+    }
+    
+    static func addNewsCase(completionHandler: @escaping(Data) -> Void){
+        
+        let header = [
+            "Authorization": "Bearer keysCSuJoizCcFgHS",
+            "Content-Type" : "application/json"]
+        
+        let animalName = "Burung Rangkong"
+        let numberOfAnimal = "23"
+        let province = "reczczWUqMUP9iU16"
+        let newsTitle = "Sebanyak 23 paruh Burung Rangkong ditemukan di Kota Singkawang, Kalimantan Barat"
+        let link = "https://www.instagram.com/jajackleon/"
+        let disctrict = "Singkawang"
+        
+        
+        let caseTime = Date()
+        let dateFormatter = DateFormatter()
+
+        dateFormatter.dateFormat = "YY/MM/dd"
+        dateFormatter.string(from: caseTime)
+        
+        let jsonstring = """
+                            {"records":
+                              [
+                                {"fields":
+                                  {
+                                    "AnimalName":"\(animalName)",
+                                    "NumberOfAnimal":"\(numberOfAnimal)",
+                                    "Province":[
+                                        "\(province)"
+                                        ],
+                                    "NewsTitle":"\(newsTitle)",
+                                    "Link":"\(link)",
+                                    "District":"\(disctrict)",
+                                    "CaseTime":"\(dateFormatter)",
+                                    "IsRead" : "0"
+                                  }
+                                }
+                              ]
+                             }
+                            """
+        let request = NSMutableURLRequest(url: NSURL(string: Constants.POST_LEARNING)! as URL,
+                                                cachePolicy: .useProtocolCachePolicy,
+                                            timeoutInterval: 10.0)
+        let jsonSessionData = jsonstring.data(using: .utf8)!
+        let jsonSession = try! JSONSerialization.jsonObject(with: jsonSessionData, options: .allowFragments)
+        let jsonData = try? JSONSerialization.data(withJSONObject: jsonSession)
+        
+        request.httpMethod = "POST"
+        request.allHTTPHeaderFields = header
+        request.httpBody = jsonData
+
+        let session = URLSession.shared
+
+        let dataTask = session.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) -> Void in
+            if (error != nil) {
+                print(error as Any)
+            } else {
+                if let dataFromAPI = data {
+                    completionHandler(dataFromAPI)
+                }
+            }
+        })
+
+        dataTask.resume()
     }
 }

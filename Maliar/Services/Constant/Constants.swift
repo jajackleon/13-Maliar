@@ -8,10 +8,17 @@
 
 import Foundation
 
-class Constants: NSObject {    
+class Constants: NSObject {
     static let GET_LEARNING_LIST = "https://api.airtable.com/v0/appcZaklzY11JKhVU/NewsScraping"
-    static let POST_LEARNING = "https://api.airtable.com/v0/appcZaklzY11JKhVU/NewsScraping?api_key=keysCSuJoizCcFgHS"
-    static let LOOKUP_LIST = "https://api.airtable.com/v0/appcZaklzY11JKhVU/ProvinceLookUp?api_key=keysCSuJoizCcFgHS"
-    
-//    "keysCSuJoizCcFgHS"
+    static let GET_LEARNING_LIST_NEWEST = "https://api.airtable.com/v0/appcZaklzY11JKhVU/NewsScraping?view=Newest"
+    static let GET_LEARNING_LIST_OLDEST = "https://api.airtable.com/v0/appcZaklzY11JKhVU/NewsScraping?view=Oldest"
+    static let GET_LEARNING_LIST_UNREAD_NOTIFICATION = "https://api.airtable.com/v0/appcZaklzY11JKhVU/NewsScraping?view=UnreadNotification"
+    static let GET_LEARNING_LIST_READ_NOTIFICATION = "https://api.airtable.com/v0/appcZaklzY11JKhVU/NewsScraping?view=ReadNotification"
+    static let POST_LEARNING = "https://api.airtable.com/v0/appcZaklzY11JKhVU/NewsScraping"
+    static let LOOKUP_LIST = "https://api.airtable.com/v0/appcZaklzY11JKhVU/maxRecords=10&view=TopProvince"
+    static let KOMPAS_URL_EXTENSION = "?page=all"
+    static var KOMPAS_URL = ""
+    static var ANTARA_NEWS_URL = ""
+    static var GOOGLE_SEARCH_URL = ""
+    private static var API_KEY = "keysCSuJoizCcFgHS"
 }

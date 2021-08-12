@@ -118,7 +118,6 @@ struct CasesView: View {
             // Edit button
             Button {
                 print("Edit button pressed")
-                GoogleCrawler.shared.crawl()
                 
                 viewModel.editTable()
             } label: {
