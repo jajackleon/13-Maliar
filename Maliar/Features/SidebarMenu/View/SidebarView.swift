@@ -22,7 +22,7 @@ struct SidebarView: View {
                         Text("Notification")
                         Spacer()
                         if notificationViewModel.sorted.count > 0 {
-                            Text("\(notificationViewModel.sorted.count)") // based on how many received notif
+                            Text("\(notificationViewModel.unreadNotifs)") // based on how many received notif
                                 .foregroundColor(.white)
                                 .padding(.horizontal, 5)
                                 .background(Color.red)
@@ -54,12 +54,18 @@ struct SidebarView: View {
                         .help("Toggle Sidebar")
                 }
             }
-        }.onAppear(){
+        }
+        .onAppear {
             APIRequest.fetchNotification(isRead: true) { (notifications) in
                 notificationViewModel.notifs.removeAll()
                 notificationViewModel.notifs = notifications
                 notificationViewModel.showUnread()
+                notificationViewModel.unreadNotifs = notificationViewModel.countUnread()
             }
+        }
+        .onChange(of: notificationViewModel.sorted.count) { value in
+            // Reload the unread notif value
+            notificationViewModel.unreadNotifs = notificationViewModel.countUnread()
         }
     }
 }

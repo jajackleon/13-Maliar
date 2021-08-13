@@ -12,6 +12,7 @@ class NotificationPopoverViewModel: ObservableObject {
     @Published var notifs: [Notification] = [Notification]()
     @Published var sorted = [Notification]()
     @Published var showingOpened = true
+    @Published var unreadNotifs = 0
     
     func readNotif(_ notific: Notification) {
         for (idx, notif) in notifs.enumerated() {
@@ -48,5 +49,13 @@ class NotificationPopoverViewModel: ObservableObject {
         showingOpened = false
         sorted = notifs
         print("showallnotif \(sorted.count)")
+    }
+    
+    func countUnread() -> Int {
+        let unreadCount = sorted.count { unread in
+            return !unread.opened
+        }
+        
+        return unreadCount
     }
 }
