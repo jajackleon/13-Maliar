@@ -15,5 +15,6 @@ enum TableCell: String {
     case district = "District"
     case caseTime = "CaseTime"
     case link = "Link"
+    case isRead = "IsRead"
     case null = ""
 }

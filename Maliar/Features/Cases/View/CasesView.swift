@@ -81,13 +81,13 @@ struct CasesView: View {
                                 ForEach(Array(viewModel.filtered.enumerated()), id: \.0) { index, data in
 //                                    print(data)
                                     TableCellView(text: "\(index + 1)")
-                                    TableCellView(text: .constant(data.getFormattedDate(date: data.newsTime)), isEditing: $viewModel.isTableEditing)
+                                    TableCellView(text: data.getFormattedDate(date: data.newsTime))
                                     TableCellView(text: $viewModel.filtered[index].newsTitle, isEditing: $viewModel.isTableEditing, cellColumn: .newsTitle, caseID: data.caseID)
                                     TableCellView(text: $viewModel.filtered[index].animalName, isEditing: $viewModel.isTableEditing, cellColumn: .animalName, caseID: data.caseID)
                                     TableCellView(text: $viewModel.filtered[index].numberOfAnimal, isEditing: $viewModel.isTableEditing, cellColumn: .numOfAnimal, caseID: data.caseID)
-                                    TableCellView(text: $viewModel.filtered[index].province, isEditing: $viewModel.isTableEditing)
+                                    TableCellView(text: data.province)
                                     TableCellView(text: $viewModel.filtered[index].district, isEditing: $viewModel.isTableEditing, cellColumn: .district, caseID: data.caseID)
-                                    TableCellView(text: .constant(data.getFormattedDate(date: data.newsTime)), isEditing: $viewModel.isTableEditing)
+                                    TableCellView(text: data.getFormattedDate(date: data.newsTime))
                                     TableCellView(text: $viewModel.filtered[index].link, isEditing: $viewModel.isTableEditing, cellColumn: .link, caseID: data.caseID)
                                 }
                             }

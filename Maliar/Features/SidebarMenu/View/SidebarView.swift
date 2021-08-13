@@ -9,6 +9,7 @@ import SwiftUI
 
 struct SidebarView: View {
     @StateObject var viewModel = SidebarViewModel()
+    @StateObject var notificationViewModel = NotificationPopoverViewModel()
     
     var body: some View {
         NavigationView {
@@ -20,8 +21,8 @@ struct SidebarView: View {
                         Image(systemName: "bell")
                         Text("Notification")
                         Spacer()
-                        if viewModel.notifBadgeNumber > 0 {
-                            Text("\(viewModel.notifBadgeNumber)") // based on how many received notif
+                        if notificationViewModel.sorted.count > 0 {
+                            Text("\(notificationViewModel.sorted.count)") // based on how many received notif
                                 .foregroundColor(.white)
                                 .padding(.horizontal, 5)
                                 .background(Color.red)
@@ -31,7 +32,7 @@ struct SidebarView: View {
                 }
                 .buttonStyle(PlainButtonStyle())
                 .popover(isPresented: $viewModel.notificationPopoverShown, arrowEdge: .leading) {
-                    NotificationPopoverView(sidebarVM: self.viewModel)
+                    NotificationPopoverView(viewModel: self.notificationViewModel, sidebarVM: self.viewModel)
                 }
                 ForEach(
                     viewModel.menuItems,
@@ -52,6 +53,12 @@ struct SidebarView: View {
                     Image(systemName: "sidebar.left")
                         .help("Toggle Sidebar")
                 }
+            }
+        }.onAppear(){
+            APIRequest.fetchNotification(isRead: true) { (notifications) in
+                notificationViewModel.notifs.removeAll()
+                notificationViewModel.notifs = notifications
+                notificationViewModel.showUnread()
             }
         }
     }
