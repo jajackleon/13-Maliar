@@ -47,6 +47,7 @@
 		D57BC8DF26B7AE1000F8DB8B /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57BC8DE26B7AE1000F8DB8B /* View+Extensions.swift */; };
 		D58FD4A026B7DD81001F7B15 /* FileType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58FD49F26B7DD81001F7B15 /* FileType.swift */; };
 		D58FD4A226B8042B001F7B15 /* NSImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58FD4A126B8042B001F7B15 /* NSImage+Extensions.swift */; };
+		D5B95B0A26C68E6900BB5076 /* Collection+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B95B0926C68E6900BB5076 /* Collection+Extensions.swift */; };
 		D5BEF6E226C5158B00740AC4 /* RetrieveDataButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5BEF6E126C5158B00740AC4 /* RetrieveDataButton.swift */; };
 		D5C2CFCB26B05D7F0003C89A /* MaliarApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C2CFCA26B05D7F0003C89A /* MaliarApp.swift */; };
 		D5C2CFCD26B05D7F0003C89A /* SidebarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C2CFCC26B05D7F0003C89A /* SidebarView.swift */; };
@@ -91,6 +92,7 @@
 		D57BC8DE26B7AE1000F8DB8B /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
 		D58FD49F26B7DD81001F7B15 /* FileType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileType.swift; sourceTree = "<group>"; };
 		D58FD4A126B8042B001F7B15 /* NSImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSImage+Extensions.swift"; sourceTree = "<group>"; };
+		D5B95B0926C68E6900BB5076 /* Collection+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Extensions.swift"; sourceTree = "<group>"; };
 		D5BEF6E126C5158B00740AC4 /* RetrieveDataButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetrieveDataButton.swift; sourceTree = "<group>"; };
 		D5C2CFC726B05D7F0003C89A /* Maliar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Maliar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5C2CFCA26B05D7F0003C89A /* MaliarApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaliarApp.swift; sourceTree = "<group>"; };
@@ -352,6 +354,7 @@
 				D569F06D26B159ED00F39E8E /* ButtonStyle+Extensions.swift */,
 				D57BC8DE26B7AE1000F8DB8B /* View+Extensions.swift */,
 				D58FD4A126B8042B001F7B15 /* NSImage+Extensions.swift */,
+				D5B95B0926C68E6900BB5076 /* Collection+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -540,6 +543,7 @@
 				D547CD6D26BAB6F000E8B91E /* NotificationPopoverViewModel.swift in Sources */,
 				D57BC8D826B79C2800F8DB8B /* DateSelectorView.swift in Sources */,
 				D58FD4A026B7DD81001F7B15 /* FileType.swift in Sources */,
+				D5B95B0A26C68E6900BB5076 /* Collection+Extensions.swift in Sources */,
 				5D34AEFA26BB86670037FD77 /* AnimalTrends.swift in Sources */,
 				D5C2CFCB26B05D7F0003C89A /* MaliarApp.swift in Sources */,
 				D569F06E26B159ED00F39E8E /* ButtonStyle+Extensions.swift in Sources */,
@@ -680,7 +684,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Maliar/Preview Content\"";
-				DEVELOPMENT_TEAM = TATAZHHLZ7;
+				DEVELOPMENT_TEAM = SCZQ3M4JVY;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Maliar/Supporting Files/Info.plist";
@@ -704,7 +708,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Maliar/Preview Content\"";
-				DEVELOPMENT_TEAM = TATAZHHLZ7;
+				DEVELOPMENT_TEAM = SCZQ3M4JVY;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Maliar/Supporting Files/Info.plist";

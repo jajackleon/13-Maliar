@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct NotificationPopoverView: View {
-    @StateObject var viewModel = NotificationPopoverViewModel()
+    @StateObject var viewModel : NotificationPopoverViewModel
     @StateObject var sidebarVM: SidebarViewModel
     
     var body: some View {
@@ -69,7 +69,7 @@ struct NotificationPopoverView: View {
                         viewModel.readNotif(element)
                         sidebarVM.openFromNotif()
                     } label: {
-                        NotificationRow(notification: $viewModel.sorted[index]) {
+                        NotificationRow(notification: $viewModel.notifs[index]) {
                             viewModel.readNotif($0)
                         }
                     }
@@ -80,6 +80,7 @@ struct NotificationPopoverView: View {
         .onAppear {
             // Show unread news
             APIRequest.fetchNotification(isRead: true) { (notifications) in
+                viewModel.notifs.removeAll()
                 viewModel.notifs = notifications
                 viewModel.showUnread()
             }
@@ -91,6 +92,6 @@ struct NotificationPopoverView: View {
 
 struct NotificationPopoverView_Previews: PreviewProvider {
     static var previews: some View {
-        NotificationPopoverView(sidebarVM: SidebarViewModel())
+        NotificationPopoverView(viewModel: NotificationPopoverViewModel(), sidebarVM: SidebarViewModel())
     }
 }

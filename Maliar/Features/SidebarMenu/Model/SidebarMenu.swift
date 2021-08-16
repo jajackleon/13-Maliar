@@ -19,7 +19,6 @@ enum SidebarMenu: String, CaseIterable {
         case .cases:
             return Image(systemName: "doc")
         }
-        return Image(systemName: "x.square")
     }
     
     @ViewBuilder func getContainingView() -> some View {
