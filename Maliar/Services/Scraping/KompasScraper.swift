@@ -15,7 +15,7 @@ class KompasScraper {
     
     private func fetchDoc(url: String){
         do {
-            let kompas = try String(contentsOf: URL(string: "https://www.kompas.com/tren/read/2021/08/04/213238365/bagaimana-jika-janji-sumbangan-rp-2-triliun-tidak-direalisasikan" + Constants.KOMPAS_URL_EXTENSION)!)
+            let kompas = try String(contentsOf: URL(string: url + Constants.KOMPAS_URL_EXTENSION)!)
 
         kompasDoc = try SwiftSoup.parse(kompas)
         } catch Exception.Error( _, let message) {
@@ -65,8 +65,6 @@ class KompasScraper {
             fetchDoc(url: url)
 
             let title = try kompasDoc!.select("title").text()
-
-            print("Title ==> \(title)")
 
             return title
         } catch Exception.Error( _, let message) {
