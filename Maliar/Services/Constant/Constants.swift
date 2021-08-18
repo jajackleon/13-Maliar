@@ -16,9 +16,7 @@ class Constants: NSObject {
     static let GET_LEARNING_LIST_READ_NOTIFICATION = "https://api.airtable.com/v0/appcZaklzY11JKhVU/NewsScraping?view=ReadNotification"
     static let POST_LEARNING = "https://api.airtable.com/v0/appcZaklzY11JKhVU/NewsScraping"
     static let LOOKUP_LIST = "https://api.airtable.com/v0/appcZaklzY11JKhVU/maxRecords=10&view=TopProvince"
+    
     static let KOMPAS_URL_EXTENSION = "?page=all"
-    static var KOMPAS_URL = ""
-    static var ANTARA_NEWS_URL = ""
-    static var GOOGLE_SEARCH_URL = ""
     private static var API_KEY = "keysCSuJoizCcFgHS"
 }
