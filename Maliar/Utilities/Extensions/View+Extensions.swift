@@ -9,13 +9,13 @@ import SwiftUI
 
 extension View {
     func saveAsImage(width: CGFloat, height: CGFloat, _ completion: @escaping (NSImage) -> Void) {
-        let size = CGSize(width: width, height: height)
+//        let size = CGSize(width: width, height: height)
         
         let nsView = NSHostingView(rootView: self)
         guard let bitmapRep = nsView.bitmapImageRepForCachingDisplay(in: nsView.bounds) else { return }
         bitmapRep.size = nsView.bounds.size
         nsView.cacheDisplay(in: nsView.bounds, to: bitmapRep)
-        let data = bitmapRep.representation(using: .png, properties: [:])
+//        let data = bitmapRep.representation(using: .png, properties: [:])
     }
     
     func snapshot() -> NSImage {

@@ -17,6 +17,8 @@ struct TableCellView: View {
             }
         }
     }
+    private var cellColumn: TableCell?
+    private var caseID: String?
     
     // Constant String init
     init(text: String) {
@@ -30,6 +32,14 @@ struct TableCellView: View {
         self._url = .constant(nil)
         self._stringValue = text
         self._isEditing = isEditing
+    }
+    
+    init(text: Binding<String>, isEditing: Binding<Bool>, cellColumn: TableCell, caseID: String) {
+        self._url = .constant(nil)
+        self._stringValue = text
+        self._isEditing = isEditing
+        self.cellColumn = cellColumn
+        self.caseID = caseID
     }
     
     // URL init editable:
@@ -48,9 +58,9 @@ struct TableCellView: View {
             if isEditing {
                 // if true, change to textfield
                 TextField("", text: $stringValue) { isEditing in
-                    print("Editing: \(isEditing)")
                 } onCommit: {
-                    print("On commit")
+                    APIRequest.updateNewsCase(documentID: caseID ?? "", tableCell: cellColumn ?? .null, updatedData: self._stringValue.wrappedValue) {
+                    }
                 }
                 .padding(5)
 

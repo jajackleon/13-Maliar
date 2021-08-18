@@ -44,7 +44,6 @@ class APIRequest: NSObject{
                             caseTime: fields["CaseTime"].stringValue,
                             isRead: fields["IsRead"].stringValue
                         )
-                        print(newsCase)
                         newsCases.append(newsCase)
                     }
                 }
@@ -61,8 +60,18 @@ class APIRequest: NSObject{
         }
     }
     
-    static func updateNewsCase(documentID: String, completionHandler: @escaping(Data) -> Void){
+    static func updateNewsCase(documentID: String, tableCell: TableCell, updatedData: String, completionHandler: @escaping() -> Void){
+        let patchURL = Constants.GET_LEARNING_LIST + "/" + documentID
         
+        let header:HTTPHeaders = [
+            "Authorization": "Bearer keysCSuJoizCcFgHS",
+            "Content-Type" : "application/json"]
+        
+        let params: Parameters = ["fields":[tableCell.rawValue: updatedData], "typecast":true]
+        
+        AF.request(patchURL, method: .patch, parameters: params, encoding: JSONEncoding.default, headers: header).responseJSON { data in
+            completionHandler()
+        }
     }
     
     static func addNewsCase(completionHandler: @escaping(Data) -> Void){

@@ -7,10 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		49426B1D26C57D74002C60A2 /* TableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49426B1C26C57D74002C60A2 /* TableCell.swift */; };
 		49607A4426BEFD0400A4E81A /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = 49607A4326BEFD0400A4E81A /* SwiftSoup */; };
 		49607A4C26BEFE8B00A4E81A /* KompasScraper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49607A4826BEFE8A00A4E81A /* KompasScraper.swift */; };
 		49607A4D26BEFE8B00A4E81A /* AntaraScraper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49607A4926BEFE8B00A4E81A /* AntaraScraper.swift */; };
 		49607A4E26BEFE8B00A4E81A /* GoogleCrawler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49607A4A26BEFE8B00A4E81A /* GoogleCrawler.swift */; };
+		49AFC18C26CBC889004D6643 /* Sequence+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AFC18B26CBC889004D6643 /* Sequence+.swift */; };
 		49D7F9DF26C114A800F952A4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D7F9DE26C114A800F952A4 /* Constants.swift */; };
 		49D7F9E426C114BB00F952A4 /* BaseRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D7F9E226C114BB00F952A4 /* BaseRequest.swift */; };
 		49D7F9E726C114C300F952A4 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D7F9E626C114C300F952A4 /* DataManager.swift */; };
@@ -46,6 +48,7 @@
 		D57BC8DF26B7AE1000F8DB8B /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57BC8DE26B7AE1000F8DB8B /* View+Extensions.swift */; };
 		D58FD4A026B7DD81001F7B15 /* FileType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58FD49F26B7DD81001F7B15 /* FileType.swift */; };
 		D58FD4A226B8042B001F7B15 /* NSImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58FD4A126B8042B001F7B15 /* NSImage+Extensions.swift */; };
+		D5B95B0A26C68E6900BB5076 /* Collection+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B95B0926C68E6900BB5076 /* Collection+Extensions.swift */; };
 		D5BEF6E226C5158B00740AC4 /* RetrieveDataButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5BEF6E126C5158B00740AC4 /* RetrieveDataButton.swift */; };
 		D5C2CFCB26B05D7F0003C89A /* MaliarApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C2CFCA26B05D7F0003C89A /* MaliarApp.swift */; };
 		D5C2CFCD26B05D7F0003C89A /* SidebarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C2CFCC26B05D7F0003C89A /* SidebarView.swift */; };
@@ -54,9 +57,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		49426B1C26C57D74002C60A2 /* TableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableCell.swift; sourceTree = "<group>"; };
 		49607A4826BEFE8A00A4E81A /* KompasScraper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KompasScraper.swift; sourceTree = "<group>"; };
 		49607A4926BEFE8B00A4E81A /* AntaraScraper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AntaraScraper.swift; sourceTree = "<group>"; };
 		49607A4A26BEFE8B00A4E81A /* GoogleCrawler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleCrawler.swift; sourceTree = "<group>"; };
+		49AFC18B26CBC889004D6643 /* Sequence+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sequence+.swift"; sourceTree = "<group>"; };
 		49D7F9DE26C114A800F952A4 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		49D7F9E226C114BB00F952A4 /* BaseRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseRequest.swift; sourceTree = "<group>"; };
 		49D7F9E626C114C300F952A4 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
@@ -89,6 +94,7 @@
 		D57BC8DE26B7AE1000F8DB8B /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
 		D58FD49F26B7DD81001F7B15 /* FileType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileType.swift; sourceTree = "<group>"; };
 		D58FD4A126B8042B001F7B15 /* NSImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSImage+Extensions.swift"; sourceTree = "<group>"; };
+		D5B95B0926C68E6900BB5076 /* Collection+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Extensions.swift"; sourceTree = "<group>"; };
 		D5BEF6E126C5158B00740AC4 /* RetrieveDataButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetrieveDataButton.swift; sourceTree = "<group>"; };
 		D5C2CFC726B05D7F0003C89A /* Maliar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Maliar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5C2CFCA26B05D7F0003C89A /* MaliarApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaliarApp.swift; sourceTree = "<group>"; };
@@ -129,6 +135,7 @@
 			children = (
 				49D7F9DB26C1132200F952A4 /* Constant */,
 				49D7F9DA26C112F200F952A4 /* Network Service */,
+				49607A4626BEFE5600A4E81A /* Scraping */,
 				49D7F9D926C112A600F952A4 /* DataManager */,
 			);
 			path = Services;
@@ -191,6 +198,7 @@
 				D50DDFC426B8FBE900B5D172 /* TableHeader.swift */,
 				D50DDFBF26B8ECF400B5D172 /* NewsCaseDataFieldResponse.swift */,
 				49D7FA0226C18F2200F952A4 /* NewsCase.swift */,
+				49426B1C26C57D74002C60A2 /* TableCell.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -250,7 +258,6 @@
 		D569F05626B1495700F39E8E /* Features */ = {
 			isa = PBXGroup;
 			children = (
-				49607A4626BEFE5600A4E81A /* Scraping */,
 				D547CD6626BAB56300E8B91E /* Notification Popover */,
 				D569F05A26B14A5E00F39E8E /* SidebarMenu */,
 				D569F06326B14FBB00F39E8E /* Trends */,
@@ -349,6 +356,8 @@
 				D569F06D26B159ED00F39E8E /* ButtonStyle+Extensions.swift */,
 				D57BC8DE26B7AE1000F8DB8B /* View+Extensions.swift */,
 				D58FD4A126B8042B001F7B15 /* NSImage+Extensions.swift */,
+				D5B95B0926C68E6900BB5076 /* Collection+Extensions.swift */,
+				49AFC18B26CBC889004D6643 /* Sequence+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -520,6 +529,7 @@
 				D57BC8DF26B7AE1000F8DB8B /* View+Extensions.swift in Sources */,
 				D58FD4A226B8042B001F7B15 /* NSImage+Extensions.swift in Sources */,
 				49D7F9DF26C114A800F952A4 /* Constants.swift in Sources */,
+				49426B1D26C57D74002C60A2 /* TableCell.swift in Sources */,
 				5D34AF0026BB97450037FD77 /* LocationBarChartView.swift in Sources */,
 				5D34AF0226BB99CD0037FD77 /* LocationChartViewModel.swift in Sources */,
 				D569F06026B14C5500F39E8E /* SidebarViewModel.swift in Sources */,
@@ -531,11 +541,13 @@
 				D50DDFC026B8ECF400B5D172 /* NewsCaseDataFieldResponse.swift in Sources */,
 				D57BC8DB26B7A12700F8DB8B /* DownloadShareButtonView.swift in Sources */,
 				5D34AEFC26BB8AC50037FD77 /* LocationTrends.swift in Sources */,
+				49AFC18C26CBC889004D6643 /* Sequence+.swift in Sources */,
 				D50DDFC526B8FBE900B5D172 /* TableHeader.swift in Sources */,
 				D547CD6B26BAB6DB00E8B91E /* NotificationPopoverView.swift in Sources */,
 				D547CD6D26BAB6F000E8B91E /* NotificationPopoverViewModel.swift in Sources */,
 				D57BC8D826B79C2800F8DB8B /* DateSelectorView.swift in Sources */,
 				D58FD4A026B7DD81001F7B15 /* FileType.swift in Sources */,
+				D5B95B0A26C68E6900BB5076 /* Collection+Extensions.swift in Sources */,
 				5D34AEFA26BB86670037FD77 /* AnimalTrends.swift in Sources */,
 				D5C2CFCB26B05D7F0003C89A /* MaliarApp.swift in Sources */,
 				D569F06E26B159ED00F39E8E /* ButtonStyle+Extensions.swift in Sources */,
@@ -676,7 +688,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Maliar/Preview Content\"";
-				DEVELOPMENT_TEAM = SCZQ3M4JVY;
+				DEVELOPMENT_TEAM = TATAZHHLZ7;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Maliar/Supporting Files/Info.plist";
@@ -700,7 +712,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Maliar/Preview Content\"";
-				DEVELOPMENT_TEAM = SCZQ3M4JVY;
+				DEVELOPMENT_TEAM = TATAZHHLZ7;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Maliar/Supporting Files/Info.plist";
