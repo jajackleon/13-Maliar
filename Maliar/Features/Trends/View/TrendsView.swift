@@ -33,54 +33,53 @@ struct TrendsView: View {
                 }
             }
             
-            Spacer()
-            
-            HStack(spacing: 24) {
-                GroupBox() {
-                    HStack {
-                        Spacer()
-                        VStack (alignment: .leading) {
-                            Text("Animal Overview")
-                                .font(.title)
-                                .fontWeight(.semibold)
-                                .foregroundColor(.accentColor)
-                            Text("Based on the total number of news")
-                                .font(.body)
-                                .foregroundColor(.secondary)
+            GeometryReader { geo in
+                HStack(spacing: 24) {
+                    GroupBox() {
+                        HStack {
                             Spacer()
-                            AnimalBarChartView( animalSelected: $animalSelected, isAnimalSelected: $isAnimalSelected)
-                        }
-                        Spacer()
-                    }
-                }
-                .aspectRatio(CGSize(width: 1.2, height: 1), contentMode: .fit)
-                .background(colorScheme == .light ? Color.white : Color(red: 0.2, green: 0.2, blue: 0.2))
-                .cornerRadius(10)
-                
-                
-                GroupBox() {
-                    HStack {
-                        Spacer()
-                        VStack (alignment: .leading) {
-                            Text("Location Overview")
-                                .font(.title)
-                                .fontWeight(.semibold)
-                                .foregroundColor(.accentColor)
-                            Text("Based on the total number of news")
-                                .font(.body)
-                                .foregroundColor(.secondary)
+                            VStack (alignment: .leading) {
+                                Text("Animal Overview")
+                                    .font(.title)
+                                    .fontWeight(.semibold)
+                                    .foregroundColor(.accentColor)
+                                Text("Based on the total number of news")
+                                    .font(.body)
+                                    .foregroundColor(.secondary)
+                                Spacer()
+                                AnimalBarChartView( animalSelected: $animalSelected, isAnimalSelected: $isAnimalSelected)
+                            }
                             Spacer()
-                            LocationBarChartView(animalSelected: $animalSelected, isAnimalSelected: $isAnimalSelected, viewModel: LocationChartViewModel(), entries: viewModel.setLocationTrend(isAnimalSelected: isAnimalSelected, animalSelected: animalSelected))
                         }
-                        Spacer()
                     }
+                    .background(colorScheme == .light ? Color.white : Color(red: 0.2, green: 0.2, blue: 0.2))
+                    .cornerRadius(10)
+                    .frame(width: geo.size.width * 0.60)
                     
+                    
+                    GroupBox() {
+                        HStack {
+                            Spacer()
+                            VStack (alignment: .leading) {
+                                Text("Location Overview")
+                                    .font(.title)
+                                    .fontWeight(.semibold)
+                                    .foregroundColor(.accentColor)
+                                Text("Based on the total number of news")
+                                    .font(.body)
+                                    .foregroundColor(.secondary)
+                                Spacer()
+                                LocationBarChartView(animalSelected: $animalSelected, isAnimalSelected: $isAnimalSelected, viewModel: LocationChartViewModel(), entries: viewModel.setLocationTrend(isAnimalSelected: isAnimalSelected, animalSelected: animalSelected))
+                            }
+                            Spacer()
+                        }
+                        
+                    }
+                    .background(colorScheme == .light ? Color.white : Color(red: 0.2, green: 0.2, blue: 0.2))
+                    .cornerRadius(10)
                 }
-                .aspectRatio(CGSize(width: 0.8, height: 1), contentMode: .fit)
-                .background(colorScheme == .light ? Color.white : Color(red: 0.2, green: 0.2, blue: 0.2))
-                .cornerRadius(10)
+                
             }
-            
         }
         .navigationTitle("Trends")
         .padding(.horizontal, 24.0)
