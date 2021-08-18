@@ -44,7 +44,6 @@ class APIRequest: NSObject{
                             caseTime: fields["CaseTime"].stringValue,
                             isRead: fields["IsRead"].stringValue
                         )
-                        print(newsCase)
                         newsCases.append(newsCase)
                     }
                 }
