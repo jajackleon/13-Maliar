@@ -126,9 +126,11 @@ struct CasesView: View {
             .help("Sort Table")
             
             Button {
-                GoogleCrawler.shared.crawl(){
-                    
-                }
+//                GoogleCrawler.shared.crawl(){
+//                    viewModel.editTable()
+//                    
+//                }
+                viewModel.editTable()
             } label: {
                 Image(systemName: "square.and.pencil")
             }

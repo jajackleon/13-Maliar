@@ -28,9 +28,7 @@ class CasesViewModel: ObservableObject {
         GridItem( spacing: 0),
     ]
     
-    // Full data ini nanti bisa ngambil dari 
-    var fullData: [NewsCase] = [
-    ]
+    var fullData: [NewsCase] = []
     
     @Published var filtered = [NewsCase]()
     
@@ -74,7 +72,6 @@ class CasesViewModel: ObservableObject {
     
     // MARK: - Filter by date
     func dateFilter() {
-//        let dateRange = filterStartDate...filterEndDate
         self.filtered = fullData.filter { filtering in
             return filtering.newsTime >= filterStartDate && filtering.newsTime <= filterEndDate
         }
