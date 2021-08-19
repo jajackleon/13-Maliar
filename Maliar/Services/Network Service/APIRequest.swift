@@ -17,7 +17,7 @@ class APIRequest: NSObject{
         let header:HTTPHeaders = [
             "Authorization": "Bearer keysCSuJoizCcFgHS" ]
         
-        AF.request(Constants.GET_LEARNING_LIST, method: .get, headers: header).responseData { data in
+        AF.request(Constants.GET_LEARNING_LIST_OLDEST, method: .get, headers: header).responseData { data in
             guard let stData = data.data else {return}
             do {
                 let json = try JSON(data: stData)
@@ -39,12 +39,13 @@ class APIRequest: NSObject{
                             link: fields["Link"].stringValue,
                             newsTitle: fields["NewsTitle"].stringValue,
                             numberOfAnimal: fields["NumberOfAnimal"].stringValue,
-                            province: fields["Province"][0].stringValue,
+                            province: fields["Province"][0].stringValue.getProvince(id: fields["Province"][0].stringValue),
                             newsTime: createdTimeDate,
                             caseTime: fields["CaseTime"].stringValue,
                             isRead: fields["IsRead"].stringValue
                         )
                         newsCases.append(newsCase)
+                        print(createdTimeDate)
                     }
                 }
                 completionHandler(newsCases)
@@ -74,7 +75,7 @@ class APIRequest: NSObject{
         }
     }
     
-    static func addNewsCase(completionHandler: @escaping(Data) -> Void){
+    static func addNewsCase(animalName: String, numberOfAnimal: String, province: String, newsTitle: String, link: String, district: String, completionHandler: @escaping(Data) -> Void){
         
         let header = [
             "Authorization": "Bearer keysCSuJoizCcFgHS",

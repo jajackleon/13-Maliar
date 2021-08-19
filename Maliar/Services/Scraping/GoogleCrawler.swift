@@ -37,7 +37,7 @@ class GoogleCrawler {
                     
                     let doc: Document = try SwiftSoup.parse(content)
                     let data = try doc.select("div.kCrYT")
-                    try data.forEach{ data in
+                    data.forEach{ data in
                         
                         guard let link = try? data.select("a").first()?.attr("href") else{
                             return

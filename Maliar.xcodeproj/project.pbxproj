@@ -13,6 +13,7 @@
 		49607A4D26BEFE8B00A4E81A /* AntaraScraper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49607A4926BEFE8B00A4E81A /* AntaraScraper.swift */; };
 		49607A4E26BEFE8B00A4E81A /* GoogleCrawler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49607A4A26BEFE8B00A4E81A /* GoogleCrawler.swift */; };
 		4963DB2826CD0D08008E0884 /* DataRequestScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4963DB2726CD0D08008E0884 /* DataRequestScheduler.swift */; };
+		4973C83026CE56CD00E9C169 /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4973C82F26CE56CD00E9C169 /* String+.swift */; };
 		49AFC18C26CBC889004D6643 /* Sequence+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AFC18B26CBC889004D6643 /* Sequence+.swift */; };
 		49D7F9DF26C114A800F952A4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D7F9DE26C114A800F952A4 /* Constants.swift */; };
 		49D7F9E426C114BB00F952A4 /* BaseRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D7F9E226C114BB00F952A4 /* BaseRequest.swift */; };
@@ -62,6 +63,7 @@
 		49607A4926BEFE8B00A4E81A /* AntaraScraper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AntaraScraper.swift; sourceTree = "<group>"; };
 		49607A4A26BEFE8B00A4E81A /* GoogleCrawler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleCrawler.swift; sourceTree = "<group>"; };
 		4963DB2726CD0D08008E0884 /* DataRequestScheduler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataRequestScheduler.swift; sourceTree = "<group>"; };
+		4973C82F26CE56CD00E9C169 /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
 		49AFC18B26CBC889004D6643 /* Sequence+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sequence+.swift"; sourceTree = "<group>"; };
 		49D7F9DE26C114A800F952A4 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		49D7F9E226C114BB00F952A4 /* BaseRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseRequest.swift; sourceTree = "<group>"; };
@@ -356,6 +358,7 @@
 				D569F06D26B159ED00F39E8E /* ButtonStyle+Extensions.swift */,
 				D57BC8DE26B7AE1000F8DB8B /* View+Extensions.swift */,
 				D58FD4A126B8042B001F7B15 /* NSImage+Extensions.swift */,
+				4973C82F26CE56CD00E9C169 /* String+.swift */,
 				D5B95B0926C68E6900BB5076 /* Collection+Extensions.swift */,
 				49AFC18B26CBC889004D6643 /* Sequence+.swift */,
 			);
@@ -524,6 +527,7 @@
 				49D7FA0326C18F2200F952A4 /* NewsCase.swift in Sources */,
 				D53DDF8526BB8B8500913A35 /* EdgeBorder.swift in Sources */,
 				49D7FA0726C198D200F952A4 /* APIRequest.swift in Sources */,
+				4973C83026CE56CD00E9C169 /* String+.swift in Sources */,
 				D5BEF6E226C5158B00740AC4 /* RetrieveDataButton.swift in Sources */,
 				49607A4D26BEFE8B00A4E81A /* AntaraScraper.swift in Sources */,
 				D57BC8DF26B7AE1000F8DB8B /* View+Extensions.swift in Sources */,
