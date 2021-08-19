@@ -13,4 +13,8 @@ class AnimalChartViewModel: ObservableObject {
     
     //berhubungan sama db
     
+    // Create the CSV Structure on String
+    func generateCSV() -> String {
+        return "asd,fgh,jkl\nqwer,tyu,iop"
+    }
 }

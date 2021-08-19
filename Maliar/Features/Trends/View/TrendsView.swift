@@ -14,6 +14,8 @@ struct TrendsView: View {
     @State private var startDate: Date = Date()
     @State private var endDate: Date = Date()
     
+    @State private var csvString: String = ""
+    
     @Environment(\.colorScheme)
     
     var colorScheme
@@ -47,7 +49,7 @@ struct TrendsView: View {
                                     .font(.body)
                                     .foregroundColor(.secondary)
                                 Spacer()
-                                AnimalBarChartView( animalSelected: $animalSelected, isAnimalSelected: $isAnimalSelected)
+                                AnimalBarChartView( animalSelected: $animalSelected, isAnimalSelected: $isAnimalSelected, csvString: $csvString)
                             }
                             Spacer()
                         }
@@ -85,7 +87,7 @@ struct TrendsView: View {
         .padding(.horizontal, 24.0)
         .padding(.vertical, 27.0)
         .toolbar {
-            DownloadShareButtonView(textItem: .constant("Trends"))
+            DownloadShareButtonView(textItem: $csvString)
         }
     }
 }

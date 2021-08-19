@@ -16,6 +16,8 @@ struct AnimalBarChartView: NSViewRepresentable {
     @Binding var animalSelected: Double
     @Binding var isAnimalSelected: Bool
     
+    @Binding var csvString: String
+    
     func makeNSView(context: Context) -> BarChartView {
         barChart.delegate = context.coordinator
         return barChart
