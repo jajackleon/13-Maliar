@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		491FFBB726CEA6ED006CD99E /* Trend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491FFBB626CEA6ED006CD99E /* Trend.swift */; };
 		49426B1D26C57D74002C60A2 /* TableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49426B1C26C57D74002C60A2 /* TableCell.swift */; };
 		49607A4426BEFD0400A4E81A /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = 49607A4326BEFD0400A4E81A /* SwiftSoup */; };
 		49607A4C26BEFE8B00A4E81A /* KompasScraper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49607A4826BEFE8A00A4E81A /* KompasScraper.swift */; };
@@ -58,6 +59,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		491FFBB626CEA6ED006CD99E /* Trend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trend.swift; sourceTree = "<group>"; };
 		49426B1C26C57D74002C60A2 /* TableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableCell.swift; sourceTree = "<group>"; };
 		49607A4826BEFE8A00A4E81A /* KompasScraper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KompasScraper.swift; sourceTree = "<group>"; };
 		49607A4926BEFE8B00A4E81A /* AntaraScraper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AntaraScraper.swift; sourceTree = "<group>"; };
@@ -173,6 +175,7 @@
 			children = (
 				5D34AEFB26BB8AC50037FD77 /* LocationTrends.swift */,
 				5D34AEF926BB86670037FD77 /* AnimalTrends.swift */,
+				491FFBB626CEA6ED006CD99E /* Trend.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -539,6 +542,7 @@
 				D569F06026B14C5500F39E8E /* SidebarViewModel.swift in Sources */,
 				49607A4C26BEFE8B00A4E81A /* KompasScraper.swift in Sources */,
 				5D34AF0626BBA8F00037FD77 /* AnimalBarChartView.swift in Sources */,
+				491FFBB726CEA6ED006CD99E /* Trend.swift in Sources */,
 				D53DDF8726BB8DE200913A35 /* NotificationRow.swift in Sources */,
 				D5C2CFCD26B05D7F0003C89A /* SidebarView.swift in Sources */,
 				D50DDFBD26B8EAF100B5D172 /* CasesViewModel.swift in Sources */,

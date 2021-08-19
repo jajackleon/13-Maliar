@@ -45,7 +45,6 @@ class APIRequest: NSObject{
                             isRead: fields["IsRead"].stringValue
                         )
                         newsCases.append(newsCase)
-                        print(createdTimeDate)
                     }
                 }
                 completionHandler(newsCases)
@@ -139,5 +138,91 @@ class APIRequest: NSObject{
         })
 
         dataTask.resume()
+    }
+}
+
+// MARK: - Trend Fetch
+extension APIRequest {
+    static func fetchTrend(completionHandler: @escaping([AnimalTrend]) -> Void){
+        var newsCases : [AnimalProvince] = [AnimalProvince]()
+        var allCases : [[AnimalProvince]] = [[AnimalProvince]]()
+        var animalTrendDictionary = [[String : [AnimalProvince]]]()
+        var animalTrend : [AnimalTrend] = [AnimalTrend]()
+        
+        
+        let header:HTTPHeaders = [
+            "Authorization": "Bearer keysCSuJoizCcFgHS" ]
+        
+        AF.request(Constants.GET_TRENDS, method: .get, headers: header).responseData { data in
+            guard let stData = data.data else {return}
+            do {
+                let json = try JSON(data: stData)
+                guard let records = json["records"].array
+                else {return}
+                
+                for data in records {
+                    let fields = data["fields"]
+                    let animalProvince = AnimalProvince(
+                        animalProvinceID: data["id"].stringValue,
+                        provinceName: fields["ProvinceName"][0].stringValue,
+                        animalsName: fields["AnimalName"][0].stringValue)
+                    newsCases.append(animalProvince)
+                }
+                
+                var animal = newsCases[0].animalsName
+                
+                var animalProvinceDump : [AnimalProvince] = [AnimalProvince]()
+                
+                for (idx, animalProvince) in newsCases.enumerated() {
+                    
+                    if animalProvince.animalsName == animal {
+                        animalProvinceDump.append(animalProvince)
+                    }
+                    else {
+                        animal = animalProvince.animalsName
+                        allCases.append(animalProvinceDump)
+                        animalProvinceDump.removeAll()
+                        animalProvinceDump.append(animalProvince)
+                    }
+                    
+                    if idx == newsCases.count - 1{
+                        allCases.append(animalProvinceDump)
+                        animalProvinceDump.removeAll()
+
+                    }
+                }
+                
+                for cases in allCases{
+                    let dictionary = Dictionary(grouping: cases, by: { (element: AnimalProvince) in
+                        return element.provinceName
+                    })
+                    animalTrendDictionary.append(dictionary)
+                }
+                
+                
+                for index in stride(from: 0, to: animalTrendDictionary.count, by: 1) {
+                    var provinceCollection: [ProvinceTrend] = [ProvinceTrend]()
+                    var count = 0
+                    var animalName = ""
+                    for data in animalTrendDictionary[index] {
+                        let province = ProvinceTrend(totalProvince: "\(data.value.count)", provinceName: data.key)
+                        count += data.value.count
+                        animalName = data.value[0].animalsName
+                        provinceCollection.append(province)
+                    }
+                
+                    let animal = AnimalTrend(totalCase: "\(count)", animalName: animalName, provinceTrend: provinceCollection)
+                    animalTrend.append(animal)
+                    provinceCollection.removeAll()
+                    count = 0
+                }
+                
+                completionHandler(animalTrend)
+            } catch {
+                print("Error handling JSON: \(error)")
+            }
+        }
+        
+        
     }
 }

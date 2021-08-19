@@ -131,7 +131,14 @@ struct CasesView: View {
 //                    
 //                }
 //                DataRequestScheduler.shared.startScheduler()
-                viewModel.editTable()
+//                viewModel.editTable()
+                APIRequest.fetchTrend { (animalTrends) in
+                    for animalTrend in animalTrends {
+                        print()
+                        print(animalTrend)
+                        print()
+                    }
+                }
             } label: {
                 Image(systemName: "square.and.pencil")
             }

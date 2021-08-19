@@ -31,7 +31,6 @@ class GoogleCrawler {
         baseLinks.forEach { baseLink in
             print(baseLink)
             for i in stride(from: 0, to: 40, by: 10) {
-//                print("i == > \(i)")
                 do {
                     let content = try String(contentsOf: URL(string: baseLink + "&start=\(i)")!)
                     
