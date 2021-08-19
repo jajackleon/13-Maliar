@@ -75,6 +75,7 @@ class CasesViewModel: ObservableObject {
         self.filtered = fullData.filter { filtering in
             return filtering.newsTime >= filterStartDate && filtering.newsTime <= filterEndDate
         }
+        generateCSVContent()
     }
     
     // MARK: - Edit Table
