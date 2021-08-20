@@ -222,7 +222,32 @@ extension APIRequest {
                 print("Error handling JSON: \(error)")
             }
         }
-        
-        
     }
+    
+    static func fetchTopProvince(completionHandler: @escaping([LookUpProvince]) -> Void){
+        let header:HTTPHeaders = [
+            "Authorization": "Bearer keysCSuJoizCcFgHS" ]
+        
+        var topProvince : [LookUpProvince] = [LookUpProvince]()
+        
+        AF.request(Constants.GET_PROVINCE_LOOKUP_LIST, method: .get, headers: header).responseData { data in
+            guard let stData = data.data else {return}
+            do {
+                let json = try JSON(data: stData)
+                guard let records = json["records"].array
+                else {return}
+                
+                for data in records {
+                    let fields = data["fields"]
+                    let newsCase = LookUpProvince(provinceName: fields["Name"].stringValue, totalCase: fields["TotalCase"].stringValue
+                    )
+                    topProvince.append(newsCase)
+                }
+                completionHandler(topProvince)
+            } catch {
+                print("Error handling JSON: \(error)")
+            }
+        }
+    }
+    
 }

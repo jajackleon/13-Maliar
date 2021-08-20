@@ -15,7 +15,7 @@ class BaseRequest: NSObject {
     static func GET_NOTIFICATION(isRead: Bool,
                     completionHandler: @escaping ([Notification]) -> Void) {
         
-        let url = isRead ? Constants.GET_LEARNING_LIST : Constants.GET_LEARNING_LIST
+        let url = isRead ? Constants.GET_LEARNING_LIST_NEWEST : Constants.GET_LEARNING_LIST_NEWEST
         
         let header:HTTPHeaders = [
             "Authorization": "Bearer keysCSuJoizCcFgHS" ]
