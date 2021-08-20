@@ -11,12 +11,8 @@ import Charts
 struct AnimalBarChartView: NSViewRepresentable {
     
     let barChart = BarChartView()
-    @StateObject var viewModel = AnimalChartViewModel()
-    
-    @Binding var animalSelected: Double
-    @Binding var isAnimalSelected: Bool
-    
-    @Binding var csvString: String
+//    @StateObject var viewModel = AnimalChartViewModel()
+    @ObservedObject var viewModel: TrendsViewModel
     
     func makeNSView(context: Context) -> BarChartView {
         barChart.delegate = context.coordinator
@@ -31,13 +27,13 @@ struct AnimalBarChartView: NSViewRepresentable {
         }
         
         func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
-            parent.isAnimalSelected = true
-            parent.animalSelected = entry.x
-            print("\(parent.animalSelected)")
+            parent.viewModel.isAnimalSelected = true
+            parent.viewModel.animalSelected = entry.x
+            print("\(parent.viewModel.animalSelected)")
         }
         
         func chartValueNothingSelected(_ chartView: ChartViewBase) {
-            parent.isAnimalSelected = false
+            parent.viewModel.isAnimalSelected = false
         }
     }
     

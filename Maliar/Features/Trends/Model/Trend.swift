@@ -26,6 +26,7 @@ struct AnimalProvince: Identifiable, Hashable {
 
 struct AnimalTrend: Identifiable {
     var id: String = UUID().uuidString
+    var index: Int
     var totalCase: String
     var animalName: String
     var provinceTrend: [ProvinceTrend]
@@ -33,6 +34,7 @@ struct AnimalTrend: Identifiable {
 
 struct ProvinceTrend: Identifiable {
     var id: String = UUID().uuidString
+    var index: Int
     var totalProvince: String
     var provinceName: String
 }
