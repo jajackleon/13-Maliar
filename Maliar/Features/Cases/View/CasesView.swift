@@ -143,6 +143,12 @@ struct CasesView: View {
                         print()
                     }
                 }
+                
+                APIRequest.fetchTopProvince { (provinces) in
+                    for province in provinces {
+                        print(province)
+                    }
+                }
             } label: {
                 Image(systemName: "square.and.pencil")
             }
