@@ -36,17 +36,5 @@ struct NewsCaseDataFieldResponse: Codable {
     let CaseTime: String
     let Link: String
     let Province: [String]
-    
-//    enum CodingKeys: String, CodingKey{
-//        case caseID = "id"
-//        case number
-//        case AnimalName
-//        case NewsTitle
-//        case NumberOfAnimal
-//        case District
-//        case CaseTime
-//        case Link
-//        case Province
-//    }
 }
 

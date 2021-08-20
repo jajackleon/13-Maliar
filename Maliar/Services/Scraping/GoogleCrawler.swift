@@ -27,32 +27,36 @@ class GoogleCrawler {
     }
     
     func crawl(completion: @escaping () -> ()){
+        links.removeAll()
         baseLinks.forEach { baseLink in
             print(baseLink)
             for i in stride(from: 0, to: 40, by: 10) {
-                print("i == > \(i)")
                 do {
                     let content = try String(contentsOf: URL(string: baseLink + "&start=\(i)")!)
                     
                     let doc: Document = try SwiftSoup.parse(content)
                     let data = try doc.select("div.kCrYT")
-                    try data.forEach{ data in
-                            let link = try data.select("a").first()!.attr("href")
-                            var trimmedLink = link.replacingOccurrences(of: "/url?q=", with: "")
-                            
-                            if let index = (trimmedLink.range(of: "&sa")?.lowerBound)
-                            {
-                                trimmedLink = String(trimmedLink.prefix(upTo: index))
-                            }
-                            links.insert(trimmedLink)
+                    data.forEach{ data in
+                        
+                        guard let link = try? data.select("a").first()?.attr("href") else{
+                            return
+                        }
+                        var trimmedLink = link.replacingOccurrences(of: "/url?q=", with: "")
+                        
+                        if let index = (trimmedLink.range(of: "&sa")?.lowerBound)
+                        {
+                            trimmedLink = String(trimmedLink.prefix(upTo: index))
+                        }
+                        links.insert(trimmedLink)
                     }
                     links.forEach{ link in
-//                        print(link)
                         if link.contains("kompas"){
+                            print(KompasScraper.shared.getBerita(url: link))
                             print(KompasScraper.shared.getTitle(url: link))
                         }
                         else if link.contains("antaranews"){
                             print(AntaraScraper.shared.getTitle(url: link))
+                            print(AntaraScraper.shared.getBerita(url: link))
                         }
                     }
                     
@@ -64,6 +68,7 @@ class GoogleCrawler {
             }
         }
         print(links.count)
+        links.removeAll()
         completion()
     }
 }
