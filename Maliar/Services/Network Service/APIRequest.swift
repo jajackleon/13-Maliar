@@ -34,7 +34,7 @@ class APIRequest: NSObject{
                     if let createdTimeDate = df.date(from: data["createdTime"].stringValue) {
                         let newsCase = NewsCase(
                             caseID: data["id"].stringValue,
-                            animalName: fields["AnimalName"].stringValue,
+                            animalName: fields["AnimalName"][0].stringValue,
                             district: fields["District"].stringValue,
                             link: fields["Link"].stringValue,
                             newsTitle: fields["NewsTitle"].stringValue,

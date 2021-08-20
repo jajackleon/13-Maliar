@@ -135,7 +135,11 @@ struct CasesView: View {
                 APIRequest.fetchTrend { (animalTrends) in
                     for animalTrend in animalTrends {
                         print()
-                        print(animalTrend)
+                        print(animalTrend.animalName)
+                        print(animalTrend.totalCase)
+                        for province in animalTrend.provinceTrend {
+                            print(province)
+                        }
                         print()
                     }
                 }
