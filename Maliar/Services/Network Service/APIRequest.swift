@@ -204,14 +204,14 @@ extension APIRequest {
                     var provinceCollection: [ProvinceTrend] = [ProvinceTrend]()
                     var count = 0
                     var animalName = ""
-                    for data in animalTrendDictionary[index] {
-                        let province = ProvinceTrend(totalProvince: "\(data.value.count)", provinceName: data.key)
+                    for (idx, data) in animalTrendDictionary[index].enumerated() {
+                        let province = ProvinceTrend(index: idx, totalProvince: "\(data.value.count)", provinceName: data.key)
                         count += data.value.count
                         animalName = data.value[0].animalsName
                         provinceCollection.append(province)
                     }
                 
-                    let animal = AnimalTrend(totalCase: "\(count)", animalName: animalName, provinceTrend: provinceCollection)
+                    let animal = AnimalTrend(index: index, totalCase: "\(count)", animalName: animalName, provinceTrend: provinceCollection)
                     animalTrend.append(animal)
                     provinceCollection.removeAll()
                     count = 0

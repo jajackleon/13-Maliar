@@ -169,6 +169,7 @@ struct CasesView: View {
             APIRequest.fetchNewsCase { (result) in
                 isLoading.toggle()
                 viewModel.fullData = result
+                print(viewModel.fullData)
                 viewModel.dateFilter()
             }
         }

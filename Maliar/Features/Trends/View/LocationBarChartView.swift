@@ -9,19 +9,14 @@ import SwiftUI
 import Charts
 
 struct LocationBarChartView: NSViewRepresentable {
-   
-    @Binding var animalSelected: Double
-    @Binding var isAnimalSelected: Bool
-    @StateObject var viewModel = LocationChartViewModel()
-    
-    let entries: [BarChartDataEntry]
+    @ObservedObject var viewModel: TrendsViewModel
     
     func makeNSView(context: Context) -> HorizontalBarChartView {
         return HorizontalBarChartView()
     }
     
     func updateNSView(_ nsView: HorizontalBarChartView, context: Context) {
-        let dataSet = BarChartDataSet(entries: entries)
+        let dataSet = BarChartDataSet(entries: viewModel.locationList)
         dataSet.label = "Location"
         nsView.noDataText = "No Data"
         nsView.data = BarChartData(dataSet: dataSet)
@@ -68,7 +63,7 @@ struct LocationBarChartView: NSViewRepresentable {
     }
     
     func formatXAxis (xAxis: XAxis) {
-        xAxis.valueFormatter = IndexAxisValueFormatter(values: LocationTrends.locations)
+        xAxis.valueFormatter = IndexAxisValueFormatter(values: viewModel.locationNames)
         xAxis.labelPosition = .bottom
         xAxis.labelTextColor = NSColor(.primary)
         xAxis.drawGridLinesEnabled = false

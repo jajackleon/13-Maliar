@@ -26,9 +26,7 @@
 		5D34AEFA26BB86670037FD77 /* AnimalTrends.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D34AEF926BB86670037FD77 /* AnimalTrends.swift */; };
 		5D34AEFC26BB8AC50037FD77 /* LocationTrends.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D34AEFB26BB8AC50037FD77 /* LocationTrends.swift */; };
 		5D34AF0026BB97450037FD77 /* LocationBarChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D34AEFF26BB97450037FD77 /* LocationBarChartView.swift */; };
-		5D34AF0226BB99CD0037FD77 /* LocationChartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D34AF0126BB99CD0037FD77 /* LocationChartViewModel.swift */; };
 		5D34AF0626BBA8F00037FD77 /* AnimalBarChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D34AF0526BBA8F00037FD77 /* AnimalBarChartView.swift */; };
-		5D34AF0826BBA9460037FD77 /* AnimalChartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D34AF0726BBA9460037FD77 /* AnimalChartViewModel.swift */; };
 		D50DDFBD26B8EAF100B5D172 /* CasesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50DDFBC26B8EAF100B5D172 /* CasesViewModel.swift */; };
 		D50DDFC026B8ECF400B5D172 /* NewsCaseDataFieldResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50DDFBF26B8ECF400B5D172 /* NewsCaseDataFieldResponse.swift */; };
 		D50DDFC226B8FA7500B5D172 /* TableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50DDFC126B8FA7500B5D172 /* TableHeaderView.swift */; };
@@ -49,6 +47,7 @@
 		D57BC8DB26B7A12700F8DB8B /* DownloadShareButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57BC8DA26B7A12700F8DB8B /* DownloadShareButtonView.swift */; };
 		D57BC8DD26B7A54200F8DB8B /* DownloadShareButtonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57BC8DC26B7A54200F8DB8B /* DownloadShareButtonViewModel.swift */; };
 		D57BC8DF26B7AE1000F8DB8B /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57BC8DE26B7AE1000F8DB8B /* View+Extensions.swift */; };
+		D583716126CF4ED500AA4121 /* TrendsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D583716026CF4ED500AA4121 /* TrendsViewModel.swift */; };
 		D58FD4A026B7DD81001F7B15 /* FileType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58FD49F26B7DD81001F7B15 /* FileType.swift */; };
 		D58FD4A226B8042B001F7B15 /* NSImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58FD4A126B8042B001F7B15 /* NSImage+Extensions.swift */; };
 		D5B95B0A26C68E6900BB5076 /* Collection+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B95B0926C68E6900BB5076 /* Collection+Extensions.swift */; };
@@ -76,9 +75,7 @@
 		5D34AEF926BB86670037FD77 /* AnimalTrends.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalTrends.swift; sourceTree = "<group>"; };
 		5D34AEFB26BB8AC50037FD77 /* LocationTrends.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTrends.swift; sourceTree = "<group>"; };
 		5D34AEFF26BB97450037FD77 /* LocationBarChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationBarChartView.swift; sourceTree = "<group>"; };
-		5D34AF0126BB99CD0037FD77 /* LocationChartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationChartViewModel.swift; sourceTree = "<group>"; };
 		5D34AF0526BBA8F00037FD77 /* AnimalBarChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalBarChartView.swift; sourceTree = "<group>"; };
-		5D34AF0726BBA9460037FD77 /* AnimalChartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalChartViewModel.swift; sourceTree = "<group>"; };
 		D50DDFBC26B8EAF100B5D172 /* CasesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CasesViewModel.swift; sourceTree = "<group>"; };
 		D50DDFBF26B8ECF400B5D172 /* NewsCaseDataFieldResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCaseDataFieldResponse.swift; sourceTree = "<group>"; };
 		D50DDFC126B8FA7500B5D172 /* TableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableHeaderView.swift; sourceTree = "<group>"; };
@@ -98,6 +95,7 @@
 		D57BC8DA26B7A12700F8DB8B /* DownloadShareButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadShareButtonView.swift; sourceTree = "<group>"; };
 		D57BC8DC26B7A54200F8DB8B /* DownloadShareButtonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadShareButtonViewModel.swift; sourceTree = "<group>"; };
 		D57BC8DE26B7AE1000F8DB8B /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
+		D583716026CF4ED500AA4121 /* TrendsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendsViewModel.swift; sourceTree = "<group>"; };
 		D58FD49F26B7DD81001F7B15 /* FileType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileType.swift; sourceTree = "<group>"; };
 		D58FD4A126B8042B001F7B15 /* NSImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSImage+Extensions.swift"; sourceTree = "<group>"; };
 		D5B95B0926C68E6900BB5076 /* Collection+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Extensions.swift"; sourceTree = "<group>"; };
@@ -186,8 +184,7 @@
 		5DF49D8126BA69360091CF5E /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				5D34AF0126BB99CD0037FD77 /* LocationChartViewModel.swift */,
-				5D34AF0726BBA9460037FD77 /* AnimalChartViewModel.swift */,
+				D583716026CF4ED500AA4121 /* TrendsViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -529,19 +526,18 @@
 				D57BC8DD26B7A54200F8DB8B /* DownloadShareButtonViewModel.swift in Sources */,
 				D569F06826B152DB00F39E8E /* TrendsView.swift in Sources */,
 				49D7F9E426C114BB00F952A4 /* BaseRequest.swift in Sources */,
-				5D34AF0826BBA9460037FD77 /* AnimalChartViewModel.swift in Sources */,
 				49D7FA0326C18F2200F952A4 /* NewsCase.swift in Sources */,
 				D53DDF8526BB8B8500913A35 /* EdgeBorder.swift in Sources */,
 				49D7FA0726C198D200F952A4 /* APIRequest.swift in Sources */,
 				4973C83026CE56CD00E9C169 /* String+.swift in Sources */,
 				D5BEF6E226C5158B00740AC4 /* RetrieveDataButton.swift in Sources */,
+				D583716126CF4ED500AA4121 /* TrendsViewModel.swift in Sources */,
 				49607A4D26BEFE8B00A4E81A /* AntaraScraper.swift in Sources */,
 				D57BC8DF26B7AE1000F8DB8B /* View+Extensions.swift in Sources */,
 				D58FD4A226B8042B001F7B15 /* NSImage+Extensions.swift in Sources */,
 				49D7F9DF26C114A800F952A4 /* Constants.swift in Sources */,
 				49426B1D26C57D74002C60A2 /* TableCell.swift in Sources */,
 				5D34AF0026BB97450037FD77 /* LocationBarChartView.swift in Sources */,
-				5D34AF0226BB99CD0037FD77 /* LocationChartViewModel.swift in Sources */,
 				D569F06026B14C5500F39E8E /* SidebarViewModel.swift in Sources */,
 				49607A4C26BEFE8B00A4E81A /* KompasScraper.swift in Sources */,
 				5D34AF0626BBA8F00037FD77 /* AnimalBarChartView.swift in Sources */,
@@ -700,7 +696,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Maliar/Preview Content\"";
-				DEVELOPMENT_TEAM = TATAZHHLZ7;
+				DEVELOPMENT_TEAM = SCZQ3M4JVY;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Maliar/Supporting Files/Info.plist";
@@ -724,7 +720,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Maliar/Preview Content\"";
-				DEVELOPMENT_TEAM = TATAZHHLZ7;
+				DEVELOPMENT_TEAM = SCZQ3M4JVY;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Maliar/Supporting Files/Info.plist";
