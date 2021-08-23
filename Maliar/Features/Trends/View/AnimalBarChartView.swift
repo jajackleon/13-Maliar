@@ -29,7 +29,6 @@ struct AnimalBarChartView: NSViewRepresentable {
         func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
             parent.viewModel.isAnimalSelected = true
             parent.viewModel.animalSelected = entry.x
-            print("\(parent.viewModel.animalSelected)")
         }
         
         func chartValueNothingSelected(_ chartView: ChartViewBase) {

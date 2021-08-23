@@ -108,7 +108,6 @@ class TrendsViewModel: ObservableObject {
         // Fetch the Animal Trends
         APIRequest.fetchTrend { animalTrends in
             for trend in animalTrends {
-                print(trend)
                 self.animalTrend.append(trend)
             }
             self.isLoading = false
@@ -117,7 +116,6 @@ class TrendsViewModel: ObservableObject {
         // Fetch the total prov trends
         APIRequest.fetchTopProvince { provinceTrends in
             for (index, trend) in provinceTrends.enumerated() {
-                print(trend)
                 self.allProvinceTrends.append(ProvinceTrend(index: index, totalProvince: trend.totalCase, provinceName: trend.provinceName))
             }
             self.isLoading = false

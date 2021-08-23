@@ -17,9 +17,12 @@ class DataRequestScheduler{
         activity.repeats = true
         activity.qualityOfService = .userInteractive
         activity.tolerance = TimeInterval(1)
-        print("FIRED")
         activity.schedule { (completion: NSBackgroundActivityScheduler.CompletionHandler) in
-            print("SCRAPING is On Going...")
+            
+            GoogleCrawler.shared.crawl(){
+                
+            }
+            
             if self.activity.shouldDefer {
                 completion(NSBackgroundActivityScheduler.Result.deferred)
             } else {

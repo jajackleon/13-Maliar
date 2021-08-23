@@ -17,6 +17,7 @@
 		4973C83026CE56CD00E9C169 /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4973C82F26CE56CD00E9C169 /* String+.swift */; };
 		4989DBA526CF53B900C7BA85 /* LookUpProvince.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4989DBA426CF53B900C7BA85 /* LookUpProvince.swift */; };
 		49AFC18C26CBC889004D6643 /* Sequence+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AFC18B26CBC889004D6643 /* Sequence+.swift */; };
+		49D69F5B26D3F3E400137F3D /* Model1.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 49D69F5A26D3F3E400137F3D /* Model1.mlmodel */; };
 		49D7F9DF26C114A800F952A4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D7F9DE26C114A800F952A4 /* Constants.swift */; };
 		49D7F9E426C114BB00F952A4 /* BaseRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D7F9E226C114BB00F952A4 /* BaseRequest.swift */; };
 		49D7F9F226C16E7700F952A4 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 49D7F9F126C16E7700F952A4 /* Alamofire */; };
@@ -71,6 +72,7 @@
 		4973C82F26CE56CD00E9C169 /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
 		4989DBA426CF53B900C7BA85 /* LookUpProvince.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookUpProvince.swift; sourceTree = "<group>"; };
 		49AFC18B26CBC889004D6643 /* Sequence+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sequence+.swift"; sourceTree = "<group>"; };
+		49D69F5A26D3F3E400137F3D /* Model1.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Model1.mlmodel; sourceTree = "<group>"; };
 		49D7F9DE26C114A800F952A4 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		49D7F9E226C114BB00F952A4 /* BaseRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseRequest.swift; sourceTree = "<group>"; };
 		49D7FA0226C18F2200F952A4 /* NewsCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCase.swift; sourceTree = "<group>"; };
@@ -461,6 +463,7 @@
 		D5C372F126D36257003674B2 /* Model 1 */ = {
 			isa = PBXGroup;
 			children = (
+				49D69F5A26D3F3E400137F3D /* Model1.mlmodel */,
 				D5C372F326D362B4003674B2 /* ML1.swift */,
 			);
 			path = "Model 1";
@@ -589,6 +592,7 @@
 				D547CD6B26BAB6DB00E8B91E /* NotificationPopoverView.swift in Sources */,
 				D547CD6D26BAB6F000E8B91E /* NotificationPopoverViewModel.swift in Sources */,
 				D57BC8D826B79C2800F8DB8B /* DateSelectorView.swift in Sources */,
+				49D69F5B26D3F3E400137F3D /* Model1.mlmodel in Sources */,
 				D58FD4A026B7DD81001F7B15 /* FileType.swift in Sources */,
 				D5B95B0A26C68E6900BB5076 /* Collection+Extensions.swift in Sources */,
 				5D34AEFA26BB86670037FD77 /* AnimalTrends.swift in Sources */,
@@ -732,7 +736,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Maliar/Preview Content\"";
-				DEVELOPMENT_TEAM = SCZQ3M4JVY;
+				DEVELOPMENT_TEAM = TATAZHHLZ7;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Maliar/Supporting Files/Info.plist";
@@ -756,7 +760,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Maliar/Preview Content\"";
-				DEVELOPMENT_TEAM = SCZQ3M4JVY;
+				DEVELOPMENT_TEAM = TATAZHHLZ7;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Maliar/Supporting Files/Info.plist";
