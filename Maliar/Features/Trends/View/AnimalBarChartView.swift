@@ -83,7 +83,7 @@ struct AnimalBarChartView: NSViewRepresentable {
     }
     
     func formatXAXis(xAxis: XAxis) {
-        xAxis.valueFormatter = IndexAxisValueFormatter(values: AnimalTrends.animals)
+        xAxis.valueFormatter = IndexAxisValueFormatter(values: viewModel.animalNames)
         xAxis.labelPosition = .bottom
         xAxis.labelTextColor = NSColor(.primary)
         xAxis.drawGridLinesEnabled = false
