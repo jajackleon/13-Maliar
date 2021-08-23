@@ -58,6 +58,7 @@
 		D5C2CFD226B05D820003C89A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5C2CFD126B05D820003C89A /* Preview Assets.xcassets */; };
 		D5C372F426D362B4003674B2 /* ML1.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C372F326D362B4003674B2 /* ML1.swift */; };
 		D5C372F626D362BF003674B2 /* ML3.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C372F526D362BF003674B2 /* ML3.swift */; };
+		D5C372F826D3666E003674B2 /* MaliarML3.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = D5C372F726D3666E003674B2 /* MaliarML3.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -111,6 +112,7 @@
 		D5C2CFD426B05D820003C89A /* Maliar.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Maliar.entitlements; sourceTree = "<group>"; };
 		D5C372F326D362B4003674B2 /* ML1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ML1.swift; sourceTree = "<group>"; };
 		D5C372F526D362BF003674B2 /* ML3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ML3.swift; sourceTree = "<group>"; };
+		D5C372F726D3666E003674B2 /* MaliarML3.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MaliarML3.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -467,6 +469,7 @@
 		D5C372F226D3625F003674B2 /* Model 3 */ = {
 			isa = PBXGroup;
 			children = (
+				D5C372F726D3666E003674B2 /* MaliarML3.mlmodel */,
 				D5C372F526D362BF003674B2 /* ML3.swift */,
 			);
 			path = "Model 3";
@@ -564,6 +567,7 @@
 				D583716126CF4ED500AA4121 /* TrendsViewModel.swift in Sources */,
 				49607A4D26BEFE8B00A4E81A /* AntaraScraper.swift in Sources */,
 				D57BC8DF26B7AE1000F8DB8B /* View+Extensions.swift in Sources */,
+				D5C372F826D3666E003674B2 /* MaliarML3.mlmodel in Sources */,
 				D58FD4A226B8042B001F7B15 /* NSImage+Extensions.swift in Sources */,
 				49D7F9DF26C114A800F952A4 /* Constants.swift in Sources */,
 				49426B1D26C57D74002C60A2 /* TableCell.swift in Sources */,
