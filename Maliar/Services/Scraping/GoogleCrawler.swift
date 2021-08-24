@@ -50,13 +50,26 @@ class GoogleCrawler {
                         links.insert(trimmedLink)
                     }
                     links.forEach{ link in
-                        if link.contains("kompas"){
-                            print(KompasScraper.shared.getBerita(url: link))
-                            print(KompasScraper.shared.getTitle(url: link))
+                        if link.contains("kompas") {
+                            let news = KompasScraper.shared.getTitle(url: link)
+                            let newsTitle = KompasScraper.shared.getBerita(url: link)
+                            let prediction = ML3Helper.getNewsPrediction(input: news)
+                            
+                            if prediction != "others" {
+//                                ML1Helper.getTagger(input: news, newsTitle: newsTitle, newsLink: link)
+                            }
+                            print(ML3Helper.getNewsPrediction(input: news))
                         }
-                        else if link.contains("antaranews"){
-                            print(AntaraScraper.shared.getTitle(url: link))
-                            print(AntaraScraper.shared.getBerita(url: link))
+                        else if link.contains("antaranews") {
+                            let news = AntaraScraper.shared.getTitle(url: link)
+                            let newsTitle = AntaraScraper.shared.getBerita(url: link)
+                            
+                            let prediction = ML3Helper.getNewsPrediction(input: news)
+                            
+                            if prediction != "others" {
+//                                ML1Helper.getTagger(input: news, newsTitle: newsTitle, newsLink: link)
+                            }
+                            print(ML3Helper.getNewsPrediction(input: news))
                         }
                     }
                     

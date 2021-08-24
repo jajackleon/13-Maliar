@@ -126,29 +126,9 @@ struct CasesView: View {
             .help("Sort Table")
             
             Button {
-//                GoogleCrawler.shared.crawl(){
-//                    viewModel.editTable()
-//                    
-//                }
 //                DataRequestScheduler.shared.startScheduler()
-//                viewModel.editTable()
-                APIRequest.fetchTrend { (animalTrends) in
-                    for animalTrend in animalTrends {
-                        print()
-                        print(animalTrend.animalName)
-                        print(animalTrend.totalCase)
-                        for province in animalTrend.provinceTrend {
-                            print(province)
-                        }
-                        print()
-                    }
-                }
+                viewModel.editTable()
                 
-                APIRequest.fetchTopProvince { (provinces) in
-                    for province in provinces {
-                        print(province)
-                    }
-                }
             } label: {
                 Image(systemName: "square.and.pencil")
             }
@@ -169,7 +149,6 @@ struct CasesView: View {
             APIRequest.fetchNewsCase { (result) in
                 isLoading.toggle()
                 viewModel.fullData = result
-                print(viewModel.fullData)
                 viewModel.dateFilter()
             }
         }
