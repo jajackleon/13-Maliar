@@ -127,6 +127,14 @@ struct CasesView: View {
             
             Button {
 //                DataRequestScheduler.shared.startScheduler()
+                let news = "Tersangka JN dituduh sebagai pembunuh gajah Sumatera di Desa Jambo Reuhat, Kecamatan Banda Alam, Kabupaten Aceh Timur, Aceh, Minggu 11 Juli 2021. Gajah Sumatera itu ditemukan mati dengan kepala hilang. Empat mpat tersangka lainnya ditangkap atas dugaan memperdagangkan gading gajah S yang dibunuh itu. Kapolres Aceh Timur, AKBP Eko Widiantoro, memaparkan, pengungkapan kasus pembunuhan gajah dan perdagangan satwa dilindungi berawal saat polisi menangkap tersangka JN di Desa Beururu, Kecamatan Peudada, Kabupaten Bireuen, Aceh, pada 10 Agustus 2021. “Kemudian, dari keterangan JN bahwa benar mereka dengan rekannya IS (buron) yang melakukan eksekusi terhadap gajah itu,” kata Eko, Kamis (19/8). Berdasarkan keterangan JN, dirinya telah melakukan perburuan satwa yang dilindungi dengan cara meracuni sebanyak lima kali sejak tahun 2017. JN melakukannya bersama IS yang saat ini masih buron.s"
+                
+                let prediction = ML3Helper.getNewsPrediction(input: news)
+                print(prediction)
+                if prediction != "others" {
+                                print(ML1Helper.getTagger(input: news, newsTitle: "newsTitle", newsLink: "newsLink"))
+                }
+//                print(ML3Helper.getNewsPrediction(input: news))
                 viewModel.editTable()
                 
             } label: {

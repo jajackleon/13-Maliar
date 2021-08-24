@@ -69,8 +69,5 @@ struct LocationBarChartView: NSViewRepresentable {
         xAxis.drawGridLinesEnabled = false
         xAxis.granularity = 1
         xAxis.labelCount = 10
-
     }
-    
-    
 }

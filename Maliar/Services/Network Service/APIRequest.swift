@@ -80,7 +80,7 @@ class APIRequest: NSObject{
             "Authorization": "Bearer keysCSuJoizCcFgHS",
             "Content-Type" : "application/json"]
         
-        let animalName = "Burung Rangkong"
+        let animalName = "rec9Ej7YXcNlPRQHU"
         let numberOfAnimal = "23"
         let province = "reczczWUqMUP9iU16"
         let newsTitle = "Sebanyak 23 paruh Burung Rangkong ditemukan di Kota Singkawang, Kalimantan Barat"
@@ -99,7 +99,7 @@ class APIRequest: NSObject{
                               [
                                 {"fields":
                                   {
-                                    "AnimalName":"\(animalName)",
+                                    "AnimalCode": ["\(animalName)"],
                                     "NumberOfAnimal":"\(numberOfAnimal)",
                                     "Province":[
                                         "\(province)"

@@ -9,7 +9,8 @@ import Foundation
 import Charts
 
 class TrendsViewModel: ObservableObject {
-    @Published var isLoading = true
+    @Published var isProvinceLoading = true
+    @Published var isAnimalLoading = true
     
     @Published var animalSelected: Double = 0 {
         didSet {
@@ -106,19 +107,24 @@ class TrendsViewModel: ObservableObject {
     
     func loadData() {
         // Fetch the Animal Trends
+        self.isProvinceLoading = true
+        self.isAnimalLoading = true
+        
         APIRequest.fetchTrend { animalTrends in
+            self.animalTrend.removeAll()
             for trend in animalTrends {
                 self.animalTrend.append(trend)
             }
-            self.isLoading = false
+            self.isAnimalLoading = false
         }
         
         // Fetch the total prov trends
-        APIRequest.fetchTopProvince { provinceTrends in
+        APIRequest.fetchTopProvince { [unowned self] provinceTrends in
+            self.allProvinceTrends.removeAll()
             for (index, trend) in provinceTrends.enumerated() {
                 self.allProvinceTrends.append(ProvinceTrend(index: index, totalProvince: trend.totalCase, provinceName: trend.provinceName))
             }
-            self.isLoading = false
+            self.isProvinceLoading = false
         }
     }
 }
