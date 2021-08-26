@@ -67,7 +67,6 @@ struct NotificationPopoverView: View {
                 List {
                     ForEach(Array(viewModel.sorted.enumerated()), id: \.0) { index, element in
                         Button {
-                            print(element)
                             viewModel.readNotif(element)
                             sidebarVM.openFromNotif()
                         } label: {

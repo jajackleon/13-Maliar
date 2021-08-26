@@ -15,7 +15,6 @@ class NotificationPopoverViewModel: ObservableObject {
     @Published var unreadNotifs = 0
     
     func readNotif(_ notific: Notification) {
-        print(notific)
         APIRequest.updateNewsCase(documentID: notific.firebaseID, tableCell: TableCell.isRead, updatedData: "0") {
             self.loadNotification {
                 if self.showingOpened {
@@ -47,9 +46,6 @@ class NotificationPopoverViewModel: ObservableObject {
     
     func showUnread() {
         showingOpened = true
-        print(notifs.filter({ notifil in
-            return !notifil.opened
-        }))
         sorted = notifs.filter { notifFil in
             return !notifFil.opened
         }
@@ -58,7 +54,6 @@ class NotificationPopoverViewModel: ObservableObject {
     func showAllNotif() {
         showingOpened = false
         sorted = notifs
-        print("showallnotif \(sorted.count)")
     }
     
     func countUnread() -> Int {
