@@ -15,15 +15,22 @@ class NotificationPopoverViewModel: ObservableObject {
     @Published var unreadNotifs = 0
     
     func readNotif(_ notific: Notification) {
-        for (idx, notif) in notifs.enumerated() {
-            if notif.id == notific.id {
-                notifs[idx].opened = true
-                APIRequest.updateNewsCase(documentID: notifs[idx].firebaseID, tableCell: TableCell.isRead, updatedData: "0") {
+        print(notific)
+        APIRequest.updateNewsCase(documentID: notific.firebaseID, tableCell: TableCell.isRead, updatedData: "0") {
+            self.loadNotification {
+                if self.showingOpened {
+                    self.showUnread()
                 }
             }
         }
-        if showingOpened {
-            showUnread()
+    }
+    
+    func loadNotification(_ completion: @escaping () -> ()) {
+        // Show unread news
+        APIRequest.fetchNotification(isRead: true) { (notifications) in
+            self.notifs.removeAll()
+            self.notifs = notifications
+            completion()
         }
     }
     
@@ -40,6 +47,9 @@ class NotificationPopoverViewModel: ObservableObject {
     
     func showUnread() {
         showingOpened = true
+        print(notifs.filter({ notifil in
+            return !notifil.opened
+        }))
         sorted = notifs.filter { notifFil in
             return !notifFil.opened
         }

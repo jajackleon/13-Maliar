@@ -64,27 +64,26 @@ struct NotificationPopoverView: View {
                     .padding()
                 Spacer()
             } else {
-                List(Array(viewModel.sorted.enumerated()), id: \.0) { index, element in
-                    Button {
-                        viewModel.readNotif(element)
-                        sidebarVM.openFromNotif()
-                    } label: {
-                        NotificationRow(notification: $viewModel.notifs[index]) {
-                            viewModel.readNotif($0)
+                List {
+                    ForEach(Array(viewModel.sorted.enumerated()), id: \.0) { index, element in
+                        Button {
+                            print(element)
+                            viewModel.readNotif(element)
+                            sidebarVM.openFromNotif()
+                        } label: {
+                            NotificationRow(notification: $viewModel.sorted[index]) {
+                                viewModel.readNotif($0)
+                            }
                         }
+                        .buttonStyle(PlainButtonStyle())
                     }
-                    .buttonStyle(PlainButtonStyle())
                 }
             }
         }
         .onAppear {
-            // Show unread news
-            APIRequest.fetchNotification(isRead: true) { (notifications) in
-                viewModel.notifs.removeAll()
-                viewModel.notifs = notifications
+            viewModel.loadNotification {
                 viewModel.showUnread()
             }
-            
         }
         .frame(width: 350, height: 550)
     }
