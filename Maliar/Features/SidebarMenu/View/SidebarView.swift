@@ -17,16 +17,21 @@ struct SidebarView: View {
                 Button {
                     viewModel.showPopover()
                 } label: {
-                    HStack {
-                        Image(systemName: "bell")
-                        Text("Notification")
-                        Spacer()
-                        if notificationViewModel.sorted.count > 0 {
-                            Text("\(notificationViewModel.unreadNotifs)") // based on how many received notif
-                                .foregroundColor(.white)
-                                .padding(.horizontal, 5)
-                                .background(Color.red)
-                                .cornerRadius(4)
+                    ZStack {
+                        Color(.displayP3, red: 0.01, green: 0.01, blue: 0.01, opacity: 0.01)
+                            .cornerRadius(4)
+                        HStack {
+                            Image(systemName: "bell")
+                            Text("Notification")
+                            Spacer()
+                            if notificationViewModel.unreadNotifs > 0 {
+                                // based on how many received notif
+                                Text("\(notificationViewModel.unreadNotifs)")
+                                    .foregroundColor(.white)
+                                    .padding(.horizontal, 5)
+                                    .background(Color.red)
+                                    .cornerRadius(4)
+                            }
                         }
                     }
                 }

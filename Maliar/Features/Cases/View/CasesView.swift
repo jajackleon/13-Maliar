@@ -35,7 +35,6 @@ struct CasesView: View {
                         isLoading.toggle()
                         viewModel.fullData = result
                         viewModel.dateFilter()
-                        print(isLoading)
                     }
                 }
             }
@@ -79,7 +78,6 @@ struct CasesView: View {
                                 
                                 // Show the Data
                                 ForEach(Array(viewModel.filtered.enumerated()), id: \.0) { index, data in
-//                                    print(data)
                                     TableCellView(text: "\(index + 1)")
                                     TableCellView(text: data.getFormattedDate(date: data.newsTime))
                                     TableCellView(text: $viewModel.filtered[index].newsTitle, isEditing: $viewModel.isTableEditing, cellColumn: .newsTitle, caseID: data.caseID)
@@ -134,7 +132,6 @@ struct CasesView: View {
                 if prediction != "others" {
                                 print(ML1Helper.getTagger(input: news, newsTitle: "newsTitle", newsLink: "newsLink"))
                 }
-//                print(ML3Helper.getNewsPrediction(input: news))
                 viewModel.editTable()
                 
             } label: {

@@ -43,11 +43,8 @@ struct NotificationRow: View {
                 if hovering && !notification.opened {
                     Button {
                         // Action to delete
-//                        notification.readNotif()
-                        print("Button clicked")
                         self.onReadButtonClicked(notification)
                     } label: {
-                        // xmark.circle.fill
                         Image(systemName: "r.circle.fill")
                         Text("Read")
                     }

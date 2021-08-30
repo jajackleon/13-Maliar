@@ -80,7 +80,6 @@ class GoogleCrawler {
                 }
             }
         }
-        print(links.count)
         links.removeAll()
         completion()
     }
