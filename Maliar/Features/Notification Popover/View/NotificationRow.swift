@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct NotificationRow: View {
-    @Binding var notification: Notification
+    var notification: Notification
     @State var hovering: Bool = false
     var onReadButtonClicked: (Notification) -> Void
     
@@ -43,7 +43,8 @@ struct NotificationRow: View {
                 if hovering && !notification.opened {
                     Button {
                         // Action to delete
-                        notification.readNotif()
+//                        notification.readNotif()
+                        print("Button clicked")
                         self.onReadButtonClicked(notification)
                     } label: {
                         // xmark.circle.fill
@@ -66,7 +67,7 @@ struct NotificationRow: View {
 
 struct NotificationRow_Previews: PreviewProvider {
     static var previews: some View {
-        NotificationRow(notification: .constant(Notification(firebaseID: "asdfv", title: "SSS", dateReceived: Date(timeIntervalSinceNow: -1000000), opened: false))) {
+        NotificationRow(notification: Notification(firebaseID: "asdfv", title: "SSS", dateReceived: Date(timeIntervalSinceNow: -1000000), opened: false)) {
             print("\($0) Should clear")
         }
     }

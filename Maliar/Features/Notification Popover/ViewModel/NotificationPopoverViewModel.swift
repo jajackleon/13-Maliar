@@ -29,6 +29,7 @@ class NotificationPopoverViewModel: ObservableObject {
         APIRequest.fetchNotification(isRead: true) { (notifications) in
             self.notifs.removeAll()
             self.notifs = notifications
+            print("Notif Fetched")
             completion()
         }
     }
@@ -46,9 +47,11 @@ class NotificationPopoverViewModel: ObservableObject {
     
     func showUnread() {
         showingOpened = true
-        sorted = notifs.filter { notifFil in
-            return !notifFil.opened
-        }
+        sorted = notifs.filter({ notif in
+            !notif.opened
+        })
+        print("Unread filtered")
+        print(sorted)
     }
     
     func showAllNotif() {
@@ -60,7 +63,7 @@ class NotificationPopoverViewModel: ObservableObject {
         let unreadCount = sorted.count { unread in
             return !unread.opened
         }
-        
+        print(unreadCount)
         return unreadCount
     }
 }

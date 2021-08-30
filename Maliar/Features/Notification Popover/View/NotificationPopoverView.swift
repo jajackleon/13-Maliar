@@ -51,33 +51,7 @@ struct NotificationPopoverView: View {
             }
             Divider()
             // Where to see the notification
-            if viewModel.sorted.count == 0 {
-                Spacer()
-                Image("notif_placeholder")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 150)
-                Text("All caught up!")
-                    .font(.title2)
-                    .fontWeight(.bold)
-                    .foregroundColor(.accentColor)
-                    .padding()
-                Spacer()
-            } else {
-                List {
-                    ForEach(Array(viewModel.sorted.enumerated()), id: \.0) { index, element in
-                        Button {
-                            viewModel.readNotif(element)
-                            sidebarVM.openFromNotif()
-                        } label: {
-                            NotificationRow(notification: $viewModel.sorted[index]) {
-                                viewModel.readNotif($0)
-                            }
-                        }
-                        .buttonStyle(PlainButtonStyle())
-                    }
-                }
-            }
+            notifTable
         }
         .onAppear {
             viewModel.loadNotification {
@@ -85,6 +59,37 @@ struct NotificationPopoverView: View {
             }
         }
         .frame(width: 350, height: 550)
+    }
+    
+    @ViewBuilder
+    var notifTable: some View {
+        if viewModel.sorted.count == 0 {
+            Spacer()
+            Image("notif_placeholder")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 150)
+            Text("All caught up!")
+                .font(.title2)
+                .fontWeight(.bold)
+                .foregroundColor(.accentColor)
+                .padding()
+            Spacer()
+        } else {
+            List {
+                ForEach(viewModel.sorted) { element in
+                    Button {
+                        viewModel.readNotif(element)
+                        sidebarVM.openFromNotif()
+                    } label: {
+                        NotificationRow(notification: element) {
+                            viewModel.readNotif($0)
+                        }
+                    }
+                    .buttonStyle(PlainButtonStyle())
+                }
+            }
+        }
     }
 }
 
